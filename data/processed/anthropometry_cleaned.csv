@@ -1,0 +1,39 @@
+iso3,data_id,indicator,value,precision,dhs_country_code,country_name,survey_year,survey_id,indicator_id,indicator_order,indicator_type,characteristic_id,characteristic_order,characteristic_category,characteristic_label,by_variable_id,by_variable_label,is_total,is_preferred,sdrid,survey_year_label,survey_type,denominator_weighted,denominator_unweighted
+#country+code,#meta+id,#indicator+name,#indicator+value+num,#indicator+precision,,#country+name,#date+year,#survey+id,#indicator+code,NA,,NA,NA,,,#indicator+label+code,#indicator+label,NA,NA,,NA,,NA,NA
+ZAF,198690,Children severely stunted,9.8,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_HA3,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCHA3,NA,DHS,NA,NA
+ZAF,198687,Children stunted,27.4,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_HA2,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCHA2,NA,DHS,NA,NA
+ZAF,198688,Mean height for age of children,-1.1,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_HAM,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCHAM,NA,DHS,NA,NA
+ZAF,597227,Children severely wasted,0.6,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WH3,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWH3,NA,DHS,NA,NA
+ZAF,597228,Children wasted,2.5,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WH2,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWH2,NA,DHS,NA,NA
+ZAF,597229,Children overweight,13.3,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WHP,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWHP,NA,DHS,NA,NA
+ZAF,597226,Mean weight for height of children,0.6,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WHM,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWHM,NA,DHS,NA,NA
+ZAF,26824,Children severely underweight,1.1,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WA3,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWA3,NA,DHS,NA,NA
+ZAF,26823,Children underweight,5.9,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WA2,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWA2,NA,DHS,NA,NA
+ZAF,26825,Children overweight for their age,4.5,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WAP,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWAP,NA,DHS,NA,NA
+ZAF,26822,Mean weight for age of children,-0.2,1,ZA,South Africa,2016,ZA2016DHS,CN_NUTS_C_WAM,NA,I,NA,NA,Total,Total,0,,NA,NA,CNNUTSCWAM,NA,DHS,NA,NA
+ZAF,755680,Women with height below 145 cm,1.5,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_SHT,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWSHT,NA,DHS,NA,NA
+ZAF,759177,Number of women,3272,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_NM1,NA,D,NA,NA,Total,Total,0,,NA,NA,ANNUTSWNM1,NA,DHS,NA,NA
+ZAF,371747,Number of women (unweighted),3405,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_UN1,NA,U,NA,NA,Total,Total,0,,NA,NA,ANNUTSWUN1,NA,DHS,NA,NA
+ZAF,654100,Mean Body Mass Index (BMI) for women,28.3,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_BMI,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWBMI,NA,DHS,NA,NA
+ZAF,654101,Women with normal BMI (18.5-24.9),34.7,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_NRM,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWNRM,NA,DHS,NA,NA
+ZAF,654102,Women who are thin according to BMI (<18.5),3.1,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_THN,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWTHN,NA,DHS,NA,NA
+ZAF,654103,Women who are mildly thin according to BMI (17.0-18.4),2.6,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_TH1,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWTH1,NA,DHS,NA,NA
+ZAF,654104,Women who are moderately thin according to BMI (<17.0),0.5,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_TH2,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWTH2,NA,DHS,NA,NA
+ZAF,654105,Women who are overweight or obese according to BMI (>=25.0),62.2,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_OWT,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWOWT,NA,DHS,NA,NA
+ZAF,654107,Women who are overweight according to BMI (25.0-29.9),26.3,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_OVW,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWOVW,NA,DHS,NA,NA
+ZAF,654106,Women who are obese according to BMI (>=30.0),35.9,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_OBS,NA,I,NA,NA,Total,Total,0,,NA,NA,ANNUTSWOBS,NA,DHS,NA,NA
+ZAF,660746,Number of women,3081,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_NUM,NA,D,NA,NA,Total,Total,0,,NA,NA,ANNUTSWNUM,NA,DHS,NA,NA
+ZAF,337857,Number of women (unweighted),3210,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_W_UNW,NA,U,NA,NA,Total,Total,0,,NA,NA,ANNUTSWUNW,NA,DHS,NA,NA
+ZAF,594654,Men with height below 145 cm,0.3,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_SHT,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMSHT,NA,DHS,NA,NA
+ZAF,603608,Number of men,3202,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_NM1,NA,D,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMNM1,NA,DHS,NA,NA
+ZAF,383574,Number of men (unweighted),3179,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_UN1,NA,U,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMUN1,NA,DHS,NA,NA
+ZAF,621589,Mean Body Mass Index (BMI) for men,23,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_BMI,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMBMI,NA,DHS,NA,NA
+ZAF,621583,Men with normal BMI (18.5-24.9),65.2,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_NRM,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMNRM,NA,DHS,NA,NA
+ZAF,621590,Men who are thin according to BMI (<18.5),9.6,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_THN,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMTHN,NA,DHS,NA,NA
+ZAF,621584,Men who are mildly thin according to BMI (17.0-18.4),7.4,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_TH1,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMTH1,NA,DHS,NA,NA
+ZAF,621585,Men who are moderately thin according to BMI (<17.0),2.2,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_TH2,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMTH2,NA,DHS,NA,NA
+ZAF,621586,Men who are overweight or obese according to BMI (>=25.0),25.1,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_OWT,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMOWT,NA,DHS,NA,NA
+ZAF,621587,Men who are overweight according to BMI (25.0-29.9),17.2,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_OVW,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMOVW,NA,DHS,NA,NA
+ZAF,621588,Men who are obese according to BMI (>=30.0),7.9,1,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_OBS,NA,I,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMOBS,NA,DHS,NA,NA
+ZAF,630792,Number of men,2336,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_NUM,NA,D,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMNUM,NA,DHS,NA,NA
+ZAF,342242,Number of men (unweighted),2457,0,ZA,South Africa,2016,ZA2016DHS,AN_NUTS_M_UNW,NA,U,NA,NA,Total 15-49,Total 15-49,0,,NA,NA,ANNUTSMUNW,NA,DHS,NA,NA
