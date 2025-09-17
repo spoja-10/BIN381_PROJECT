@@ -1,0 +1,275 @@
+---
+title: "09_Literacy"
+output: html_document
+---
+
+#Loading Libraries
+```{r}
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+library(here)
+library(purrr)
+library(ggplot2)
+
+```
+#Load Dataset 
+```{r}
+lit_df <- read_csv(here("data","raw", "literacy_national_zaf.csv"))
+```
+
+#Disdplay Dataset content
+```{r}
+head(lit_df)
+```
+
+#Remove the first row(meta data)
+```{r}
+lit_df <- lit_df[-1, ]
+```
+#dimensions 
+```{r}
+dim(lit_df)
+```
+
+#Inspect Duplicated rows
+```{r}
+dup_check <- lit_df %>%
+  group_by(Indicator, SurveyYear, CharacteristicId, Value) %>%
+  filter(n() > 1)
+
+dup_check
+
+```
+
+#perc na values
+```{r}
+
+data.frame(
+  Column = names(lit_df),
+  Missing_Percentage = paste0(round(colMeans(is.na(lit_df)) * 100, 2), "%")
+  )
+
+```
+
+```{r}
+data.frame(
+  Column = names(lit_df),
+  Missing_Data = paste0(colSums(is.na(lit_df)))
+  )
+```
+
+#check data types
+```{r}
+data.frame(
+  Column = names(lit_df),
+  paste0(sapply(lit_df, typeof))
+)
+
+```
+#Check The structure of the dataset 
+```{r}
+str(lit_df)
+
+```
+
+#Convert Data Types
+```{r}
+lit_df <- lit_df %>%
+  mutate(
+        Value = as.numeric(Value),
+    Precision = as.numeric(Precision),
+    SurveyYear = as.integer(SurveyYear),
+    IndicatorOrder = as.integer(IndicatorOrder),
+    CharacteristicId = as.integer(CharacteristicId),
+    CharacteristicOrder = as.integer(CharacteristicOrder),
+    IsTotal = as.logical(as.integer(IsTotal)),
+    IsPreferred = as.logical(as.integer(IsPreferred)),
+    SurveyYearLabel = as.integer(SurveyYearLabel),
+    DenominatorWeighted = as.numeric(DenominatorWeighted),
+    DenominatorUnweighted = as.numeric(DenominatorUnweighted),
+  )
+```
+# Summary table: column name, number of unique values, sample of unique values
+```{r}
+library(purrr)
+n_sample <- 3
+
+summary_tbl <- lit_df %>%
+  map_df(~ tibble(
+    n_unique = n_distinct(.),
+    sample_values = paste(head(unique(.), n_sample), collapse = ", ")
+  ), .id = "column")
+
+
+summary_tbl
+```
+
+
+#Drop the countries only onw unqiue value: reason, there is no useful information - county is also always za
+```{r}
+lit_df <- lit_df %>%
+  
+ select(
+     -ISO3, 
+    -DHS_CountryCode, 
+    -CountryName, 
+    -SurveyId,
+    -ByVariableId, 
+    -ByVariableLabel, 
+    -IsTotal,
+    -RegionId, 
+    -SurveyYearLabel, 
+    -SurveyType,
+    -CharacteristicOrder
+  )
+```
+#Missing Value Handling
+```{r}
+
+
+lit_df <- lit_df %>%
+  fill(DenominatorWeighted, DenominatorUnweighted, .direction = "downup")
+
+lit_df[
+       c("DenominatorWeighted", "DenominatorUnweighted")]
+
+```
+
+# 
+```{r}
+# 1. Scatterplot comparing weighted vs unweighted denominators
+if(all(c("DenominatorWeighted", "DenominatorUnweighted") %in% names(lit_df))) {
+  scatter_plot <- ggplot(lit_df, aes(x = DenominatorWeighted, y = DenominatorUnweighted)) +
+    geom_point(alpha = 0.6, color = "steelblue", size = 2) +
+    geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
+    labs(title = "Comparison of Weighted vs Unweighted Denominators",
+         x = "Denominator Weighted",
+         y = "Denominator Unweighted",
+         subtitle = "Red line represents perfect equality (y = x)") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5))
+  
+  print(scatter_plot)
+}
+
+# 2. Boxplot for DenominatorWeighted
+if("DenominatorWeighted" %in% names(lit_df)) {
+  boxplot_weighted <- ggplot(lit_df, aes(y = DenominatorWeighted)) +
+    geom_boxplot(fill = "lightblue", outlier.color = "red", outlier.shape = 16) +
+    labs(title = "Distribution of Denominator Weighted Values",
+         y = "Denominator Weighted") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5))
+  
+  print(boxplot_weighted)
+}
+
+# 3. Boxplot for DenominatorUnweighted
+if("DenominatorUnweighted" %in% names(lit_df)) {
+  boxplot_unweighted <- ggplot(lit_df, aes(y = DenominatorUnweighted)) +
+    geom_boxplot(fill = "lightgreen", outlier.color = "red", outlier.shape = 16) +
+    labs(title = "Distribution of Denominator Unweighted Values",
+         y = "Denominator Unweighted") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5))
+  
+  print(boxplot_unweighted)
+}
+
+# 4. Distribution of literacy values by survey year (if available)
+if(all(c("Value", "SurveyYear") %in% names(lit_df))) {
+  value_distribution <- ggplot(lit_df, aes(x = as.factor(SurveyYear), y = Value)) +
+    geom_boxplot(fill = "orange", alpha = 0.7) +
+    labs(title = "Distribution of Literacy Values by Survey Year",
+         x = "Survey Year",
+         y = "Literacy Value") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  print(value_distribution)
+}
+
+# 5. Histogram of literacy values
+if("Value" %in% names(lit_df)) {
+  value_histogram <- ggplot(lit_df, aes(x = Value)) +
+    geom_histogram(fill = "purple", alpha = 0.7, bins = 30) +
+    labs(title = "Distribution of Literacy Values",
+         x = "Literacy Value",
+         y = "Frequency") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5))
+  
+  print(value_histogram)
+}
+
+```
+
+```{r}
+# Create a copy for comparison
+lit_df_original <- lit_df
+numerical_cols <- c("Value", "DenominatorWeighted", "DenominatorUnweighted")
+
+# Outlier treatment for each numerical column
+for(col in numerical_cols) {
+  if(!all(is.na(lit_df[[col]]))) {
+    # Calculate IQR bounds
+    q1 <- quantile(lit_df[[col]], 0.25, na.rm = TRUE)
+    q3 <- quantile(lit_df[[col]], 0.75, na.rm = TRUE)
+    iqr <- q3 - q1
+    lower_bound <- q1 - 1.5 * iqr
+    upper_bound <- q3 + 1.5 * iqr
+    
+    # Method 1: Winsorization (cap outliers at bounds)
+    lit_df <- lit_df %>%
+      mutate(!!paste0(col, "_winsorized") := case_when(
+        .data[[col]] < lower_bound ~ lower_bound,
+        .data[[col]] > upper_bound ~ upper_bound,
+        TRUE ~ .data[[col]]
+      ))
+    
+    # Method 2: Log transformation (for positive values only)
+    if(all(lit_df[[col]] > 0, na.rm = TRUE)) {
+      lit_df <- lit_df %>%
+        mutate(!!paste0(col, "_log") := log(.data[[col]] + 1))  # +1 to avoid log(0)
+    }
+  }
+}
+
+# Compare summary statistics before and after outlier treatment
+cat("Summary statistics before outlier treatment:\n")
+summary(lit_df_original %>% select(all_of(numerical_cols)))
+
+cat("\nSummary statistics after winsorization:\n")
+winsorized_cols <- paste0(numerical_cols, "_winsorized")
+summary(lit_df %>% select(all_of(winsorized_cols)))
+
+# Visualize after winsorization
+if(length(winsorized_cols) > 0) {
+  for(i in seq_along(winsorized_cols)) {
+    col <- winsorized_cols[i]
+    orig_col <- numerical_cols[i]
+    
+    if(!all(is.na(lit_df[[col]]))) {
+      # Boxplot after treatment
+      p_box_after <- ggplot(lit_df, aes(y = .data[[col]])) +
+        geom_boxplot(fill = "orange", outlier.color = "red", outlier.shape = 16) +
+        labs(title = paste("Boxplot of", orig_col, "(After Winsorization)"),
+             y = paste(orig_col, "(winsorized)")) +
+        theme_minimal()
+      
+
+      
+      print(p_box_after)
+    
+    }
+  }
+}
+```
+
+#save cleaned data
+```{r}
+write_csv(lit_df, here("data","processed", "literacy_cleaned.csv"))
+```
