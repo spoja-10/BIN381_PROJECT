@@ -3,3 +3,225 @@ title: "05_DHS_Quickstats"
 output: html_document
 ---
 
+# DHS QuickStats (National, South Africa)
+
+## Load Libraries
+
+```{r}
+# Data manipulation
+library(dplyr)
+library(tidyr)
+library(readr)
+library(here)
+library(purrr)
+
+# Visualization and summaries
+library(ggplot2)
+library(skimr)
+library(visdat)
+```
+
+## Load the DHS QuickStats dataset
+
+```{r}
+dhs_df <- read_csv(
+  here("data", "raw", "dhs-quickstats_national_zaf.csv"),
+  skip = 1,           # skip metadata row if present
+  col_types = cols()  # suppress guessing messages
+)
+
+cat("DHS QuickStats dataset loaded successfully.\n")
+cat("Dimensions:", dim(dhs_df), "\n")
+```
+
+## Initial Data Assessment
+
+```{r}
+# Quick glimpse
+glimpse(dhs_df)
+
+# Summary of missingness
+skim(dhs_df)
+
+# Visualize missing values
+vis_miss(dhs_df)
+
+# Rename unnamed columns (...6, ...11, etc.) systematically
+dhs_df <- dhs_df %>% rename_with(~paste0("col_", seq_along(.)), .cols = everything())
+
+cat("Columns renamed systematically.\n")
+print(colnames(dhs_df))
+```
+
+## Rename Columns Meaningfully
+
+```{r}
+
+# Replace generic col_1, col_2, ... with actual names
+colnames(dhs_df) <- c(
+  "iso3", "data_id", "indicator", "value", "precision",
+  "dhs_country_code", "country_name", "survey_year", "survey_id",
+  "indicator_id", "indicator_order", "indicator_type", "characteristic_id",
+  "characteristic_order", "characteristic_category", "characteristic_label",
+  "by_variable_id", "by_variable_label", "is_total", "is_preferred",
+  "sdrid", "region_id", "survey_year_label", "survey_type",
+  "denominator_weighted", "denominator_unweighted", "ci_low", "ci_high",
+  "level_rank"
+)
+
+cat("Columns renamed to meaningful names.\n")
+print(colnames(dhs_df))
+
+```
+
+## Remove Duplicates
+
+```{r}
+# Exact duplicates
+exact_dups <- sum(duplicated(dhs_df))
+cat("Exact duplicate rows:", exact_dups, "\n")
+
+# Semantic duplicates
+semantic_dups <- dhs_df %>%
+  group_by(indicator, survey_year, characteristic_id, value) %>%
+  filter(n() > 1) %>%
+  ungroup()
+cat("Semantic duplicate groups:", nrow(semantic_dups), "\n")
+
+# Remove duplicates, keep first occurrence
+dhs_df <- dhs_df %>%
+  distinct(indicator, survey_year, characteristic_id, value, .keep_all = TRUE)
+
+cat("Dimensions after duplicate removal:", dim(dhs_df), "\n")
+
+```
+
+## Remove Columns that are 100% Missing
+
+```{r}
+all_na_cols <- dhs_df %>%
+  summarise(across(everything(), ~all(is.na(.)))) %>%
+  pivot_longer(everything(), names_to = "column", values_to = "all_na") %>%
+  filter(all_na) %>%
+  pull(column)
+
+if(length(all_na_cols) > 0) {
+  dhs_df <- dhs_df %>% select(-all_of(all_na_cols))
+  cat("Removed 100% missing columns:\n")
+  print(all_na_cols)
+} else {
+  cat("No columns were 100% missing.\n")
+}
+
+```
+
+## Convert Data Types Safely
+
+```{r}
+# List of numeric columns (existing)
+numeric_cols <- c("value", "precision", "denominator_weighted", "denominator_unweighted",
+                  "ci_low", "ci_high")
+numeric_cols <- numeric_cols[numeric_cols %in% colnames(dhs_df)]
+
+# List of integer columns (existing)
+integer_cols <- c("survey_year", "indicator_order", "characteristic_id",
+                  "characteristic_order", "survey_year_label", "by_variable_id")
+integer_cols <- integer_cols[integer_cols %in% colnames(dhs_df)]
+
+# List of logical columns (existing)
+logical_cols <- c("is_total", "is_preferred")
+logical_cols <- logical_cols[logical_cols %in% colnames(dhs_df)]
+
+dhs_df <- dhs_df %>%
+  mutate(
+    across(all_of(numeric_cols), as.numeric),
+    across(all_of(integer_cols), as.integer),
+    across(all_of(logical_cols), ~as.logical(as.integer(.)))
+  )
+
+str(dhs_df)
+
+```
+
+## Handle Missing Values
+
+```{r}
+# Handle high-missing columns safely
+
+# ci_low and ci_high
+for(col in c("ci_low", "ci_high")) {
+  if(col %in% colnames(dhs_df)) {
+    dhs_df[[col]] <- as.numeric(dhs_df[[col]])
+    dhs_df[[paste0(col, "_missing_flag")]] <- is.na(dhs_df[[col]])
+  }
+}
+
+# by_variable_label:
+if("by_variable_label" %in% colnames(dhs_df)) {
+  dhs_df <- dhs_df %>%
+    mutate(by_variable_label = ifelse(is.na(by_variable_label), "Unknown", by_variable_label))
+}
+
+# denominator_weighted and denominator_unweighted
+for(col in c("denominator_weighted", "denominator_unweighted")) {
+  if(col %in% colnames(dhs_df)) {
+    dhs_df[[col]] <- as.numeric(dhs_df[[col]])
+    dhs_df[[paste0(col, "_missing_flag")]] <- is.na(dhs_df[[col]])
+  }
+}
+
+# Recalculate missing summary
+missing_summary <- data.frame(
+  Column = colnames(dhs_df),
+  n_missing = colSums(is.na(dhs_df)),
+  total_rows = nrow(dhs_df),
+  missing_percent = round(colSums(is.na(dhs_df))/nrow(dhs_df)*100, 2)
+)
+
+missing_summary %>% arrange(desc(missing_percent))
+
+
+
+```
+
+## Outlier Detection
+
+```{r}
+
+# Identify potential outliers using IQR method
+numeric_cols <- c("value", "precision")
+
+for(col in numeric_cols) {
+  Q1 <- quantile(dhs_df[[col]], 0.25, na.rm = TRUE)
+  Q3 <- quantile(dhs_df[[col]], 0.75, na.rm = TRUE)
+  IQR_val <- Q3 - Q1
+  
+  lower_bound <- Q1 - 1.5 * IQR_val
+  upper_bound <- Q3 + 1.5 * IQR_val
+  
+  dhs_df[[paste0(col, "_outlier_flag")]] <- dhs_df[[col]] < lower_bound | dhs_df[[col]] > upper_bound
+}
+
+
+dhs_df %>% filter(value_outlier_flag == TRUE) %>% arrange(desc(value))
+
+# Winsorize 'value' at 1st and 99th percentile
+lower_cap <- quantile(dhs_df$value, 0.01, na.rm = TRUE)
+upper_cap <- quantile(dhs_df$value, 0.99, na.rm = TRUE)
+
+dhs_df <- dhs_df %>%
+  mutate(
+    value = pmax(pmin(value, upper_cap), lower_cap)
+  )
+
+summary(dhs_df$value)
+
+```
+
+## Save Cleaned Data
+
+```{r}
+write_csv(dhs_df, here("data", "processed", "dhs_quickstats_cleaned.csv"))
+cat("Cleaned DHS QuickStats dataset saved.\n")
+
+```

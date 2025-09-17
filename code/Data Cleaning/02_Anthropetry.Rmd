@@ -3,3 +3,160 @@ title: "02_Anthropetry"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+
+## 1. Load Libraries and Data
+
+```{r load_libraries}
+# Data Manipulation
+library(dplyr)
+library(tidyr)
+library(readr)
+library(here)
+library(purrr)
+# Visualization
+library(ggplot2)
+library(skimr)  # For comprehensive summary
+library(janitor)  # for cleaning column names
+library(visdat)   # visualize missingness
+library(mice)     # for advanced imputation 
+```
+
+```{r load_data}
+# Load data with correct path from project root
+anth_df <- read.csv(here("data", "raw", "anthropometry_national_zaf.csv"))
+
+cat("Initial dataset loaded successfully.\n")
+cat("Dimensions:", dim(anth_df), "\n")
+
+```
+
+# 2. Initial Data Assessment -----------------------------------------------
+
+```{r initial_assessment}
+
+
+# Clean column names for sanity
+anth_df <- janitor::clean_names(anth_df)
+
+# Peek at structure and summary
+glimpse(anth_df)
+skim(anth_df)
+
+# Check missingness visually
+vis_miss(anth_df)
+```
+
+## 3. Data Cleaning Process
+
+### 3.1 Handle Duplicates Systematically
+
+```{r handle_duplicates}
+# Exact duplicates
+cat("Exact duplicates:", sum(duplicated(anth_df)), "\n")
+
+# Keep first occurrence
+anth_df <- anth_df %>% distinct()
+
+cat("Dimensions after deduplication:", dim(anth_df), "\n")
+
+```
+
+### 3.2 Convert Data Types
+
+```{r convert_types}
+cmr_df <- cmr_df %>%
+  mutate(
+    across(c(Value, Precision, DenominatorWeighted, DenominatorUnweighted), as.numeric),
+    across(c(SurveyYear, IndicatorOrder, CharacteristicId, CharacteristicOrder,
+             SurveyYearLabel, ByVariableId, RegionId), as.integer),
+    across(c(IsTotal, IsPreferred), ~as.logical(as.integer(.)))
+  )
+
+cat("Data types converted successfully.\n")
+```
+
+### 3.3 Handle Missing Values
+
+```{r handle_missing}
+# Missingness summary
+missing_summary <- data.frame(
+  Column = names(anth_df),
+  Missing_Count = colSums(is.na(anth_df)),
+  Missing_Percent = round(colSums(is.na(anth_df))/nrow(anth_df)*100, 2)
+) %>% arrange(desc(Missing_Percent))
+
+print(missing_summary)
+
+# Drop columns with >40% missing
+cols_to_drop <- missing_summary %>% 
+  filter(Missing_Percent > 40) %>% pull(Column)
+
+anth_df <- anth_df %>% select(-all_of(cols_to_drop))
+
+# Simple imputation: median for numeric, mode for categorical
+impute_mode <- function(x) {
+  ux <- na.omit(x)
+  if (length(ux) == 0) return(x)
+  rep(names(sort(table(ux), decreasing=TRUE))[1], length(x))
+}
+
+anth_df <- anth_df %>%
+  mutate(across(where(is.numeric),
+                ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
+  mutate(across(where(is.character),
+                ~ifelse(is.na(.), impute_mode(.), .)))
+
+cat("Remaining NAs after imputation:", sum(is.na(anth_df)), "\n")
+```
+
+### 3.4 Handle Missing Values
+
+```{r Handle_Missing_Values}
+# Example: detect outliers in anthropometric measures using IQR
+num_cols <- anth_df %>% select(where(is.numeric))
+
+outlier_bounds <- function(x) {
+  qnt <- quantile(x, probs=c(.25, .75), na.rm=TRUE)
+  iqr <- diff(qnt)
+  c(lower=qnt[1]-1.5*iqr, upper=qnt[2]+1.5*iqr)
+}
+
+bounds <- map(num_cols, outlier_bounds)
+
+# Clip outliers (winsorization)
+anth_df <- anth_df %>%
+  mutate(across(where(is.numeric),
+                ~pmin(pmax(., bounds[[cur_column()]]["lower"]),
+                      bounds[[cur_column()]]["upper"])))
+```
+
+### 3.5 Deal with Noise / Special Values
+```{r Noise_Special_Values}
+# Replace impossible values (e.g., negative heights/weights) with NA
+anth_df <- anth_df %>%
+  mutate(across(matches("height|weight"),
+                ~ifelse(. < 0, NA, .)))
+```
+
+## 4. Final Data Validation
+
+```{r final_validation}
+cat("=== FINAL CLEANED DATA ===\n")
+cat("Dimensions:", dim(anth_df), "\n")
+
+skim(anth_df)
+
+```
+
+## 5. Save Cleaned Data
+
+```{r save_data}
+write_csv(anth_df, here("data", "processed", "anthropometry_cleaned.csv"))
+cat("Cleaned dataset saved to data/processed/anthropometry_cleaned.csv\n")
+
+```

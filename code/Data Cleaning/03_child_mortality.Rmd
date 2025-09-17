@@ -3,3 +3,166 @@ title: "03_child_mortality"
 output: html_document
 ---
 
+# Data Cleaning: Child Mortality Rates
+
+## Load Libraries 
+
+```{r load_libs}
+# Data manipulation
+library(dplyr)
+library(tidyr)
+library(readr)
+library(here)
+library(purrr)
+
+# Extras for cleaning and exploration
+library(janitor)  # clean column names
+library(visdat)   # visualize missingness
+library(skimr)    # summary stats
+library(ggplot2)  # visualizations
+
+```
+
+## Load Dataset
+```{r load_data}
+# Load the child mortality dataset
+cmr_df <- read_csv(
+  here("data", "raw", "child-mortality-rates_national_zaf.csv"),
+  
+  col_types = cols() # suppress column guessing warnings
+)
+
+cat("Dataset loaded successfully.\n")
+cat("Dimensions:", dim(cmr_df), "\n")
+
+
+
+```
+
+## Initial Data Assessment 
+```{r data_assessment }
+# Clean column names for readability
+cmr_df <- cmr_df %>% janitor::clean_names()
+
+# Glimpse the dataset structure
+glimpse(cmr_df)
+
+# Summary statistics for initial quality check
+skim(cmr_df)
+
+# Visualize missingness
+visdat::vis_miss(cmr_df)
+```
+
+## Drop Redundant / Empty Columns
+
+```{r redundant_empty_columns}
+# Columns we can safely remove
+cols_to_drop <- c(
+  "iso3", "data_id", "dhs_country_code", "country_name", "survey_id", 
+  "indicator_id", "sdrid", "region_id", "survey_type", "level_rank",
+  "denominator_weighted", "denominator_unweighted"
+)
+
+cmr_df <- cmr_df %>% select(-all_of(cols_to_drop))
+
+# Check the new structure
+glimpse(cmr_df)
+cat("Dimensions after dropping redundant columns:", dim(cmr_df), "\n")
+
+```
+
+## Convert Column Types
+
+```{r convert_column_types}
+# Convert columns to appropriate types
+cmr_df <- cmr_df %>%
+  mutate(
+    # Numeric values
+    value = as.numeric(value),
+    precision = as.numeric(precision),
+    survey_year = as.integer(survey_year),
+    indicator_order = as.integer(indicator_order),
+    characteristic_id = as.integer(characteristic_id),
+    characteristic_order = as.integer(characteristic_order),
+    survey_year_label = as.integer(survey_year_label),
+    ci_low = as.numeric(ci_low),
+    ci_high = as.numeric(ci_high),
+    
+    # Logical flags
+    is_total = as.logical(is_total),
+    is_preferred = as.logical(is_preferred)
+  )
+
+# Verify conversion
+glimpse(cmr_df)
+```
+
+## Remove Metadata Row
+```{r remove_metadata}
+# Remove the first row (metadata labels)
+cmr_df <- cmr_df[-1, ]
+
+# Reset row names
+rownames(cmr_df) <- NULL
+
+# Verify
+glimpse(cmr_df)
+```
+
+## Handle Missing Values
+```{r handle_missing_values}
+# Check missing values per column
+missing_summary <- cmr_df %>%
+  summarise(across(everything(), ~sum(is.na(.)))) %>%
+  pivot_longer(cols = everything(), names_to = "column", values_to = "n_missing") %>%
+  mutate(
+    total_rows = nrow(cmr_df),
+    missing_percent = round((n_missing / total_rows) * 100, 2)
+  )
+
+missing_summary %>% arrange(desc(missing_percent))
+
+# Optional: visualize missingness
+visdat::vis_miss(cmr_df)
+```
+
+## Remove Low-Value Columns
+```{r remove_low}
+# Drop by_variable_label if you don't need it
+cmr_df <- cmr_df %>% select(-by_variable_label)
+
+# check again for missingness
+colSums(is.na(cmr_df))
+
+# Final glimpse
+glimpse(cmr_df)
+```
+
+## Handle Outliers
+```{r Outliers}
+# Quick summary of value
+summary(cmr_df$value)
+
+# Identify potential outliers
+boxplot_stats <- boxplot.stats(cmr_df$value)
+outliers <- boxplot_stats$out
+outliers
+
+# Keep only values less than, say, 100
+cmr_df_clean <- cmr_df %>% filter(value <= 100)
+
+# Verify removal
+summary(cmr_df_clean$value)
+nrow(cmr_df_clean)
+```
+
+## Save the Cleaned Dataset
+```{r save dataset}
+# Save cleaned dataset to processed folder
+write_csv(cmr_df_clean, here("data", "processed", "child-mortality-rates_cleaned.csv"))
+
+cat("Cleaned dataset saved successfully.\n")
+cat("Dimensions:", dim(cmr_df_clean), "\n")
+
+```

@@ -35,7 +35,7 @@ acc_df <- read.csv(here("data","raw","access-to-health-care_national_zaf.csv"))
 cat("Initial dataset loaded successfully.\n")
 cat("Dimensions:", dim(acc_df), "\n")
 
-getwd()
+
 
 ```
 
@@ -155,10 +155,6 @@ cat("Redundant columns removed. New dimensions:", dim(acc_df), "\n")
 
 ```{r handle_outliers}
 ### 3.5 Handle Outliers and Anomalies
-
-library(dplyr)
-library(ggplot2)
-library(tidyr)
 
 # 1. Automatically detect numeric columns
 numeric_cols <- acc_df %>%
