@@ -3,7 +3,6 @@ title: "1_Access_To_Healthcare"
 output: html_document
 ---
 
-
 # Data Cleaning: Access to Healthcare
 
 ## 1. Load Libraries and Data
