@@ -1,0 +1,23 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Female deaths that are pregnancy-related,5.5,5.5,1
+1998,General fertility rate,97,97,1
+1998,Lifetime risk of pregnancy-related death,0.005,0.005,1
+1998,Number of pregnancy-related deaths,19,19,1
+1998,Pregnancy-related mortality rate,0.15,0.15,1
+1998,Pregnancy-related mortality ratio,150,150,1
+1998,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),77,77,1
+1998,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),223,223,1
+1998,Years of exposure to the risk of mortality for women,122701,122701,1
+1998,Years of exposure to the risk of mortality for women (unweighted),123738,123738,1
+2016,Female deaths that are pregnancy-related,7.8,7.8,1
+2016,General fertility rate,88,88,1
+2016,Lifetime risk of pregnancy-related death,0.015,0.015,1
+2016,Maternal mortality ratio,475,475,1
+2016,Number of pregnancy-related deaths,31,31,1
+2016,Pregnancy-related mortality rate,0.47,0.47,1
+2016,Pregnancy-related mortality ratio,536,536,1
+2016,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),270,270,1
+2016,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),802,802,1
+2016,Years of exposure to the risk of mortality for women,62768,62768,1
+2016,Years of exposure to the risk of mortality for women (unweighted),63523,63523,1
+NA,#indicator+name,NA,NA,1

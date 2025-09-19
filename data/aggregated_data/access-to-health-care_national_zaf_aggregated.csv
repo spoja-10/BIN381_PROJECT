@@ -1,0 +1,110 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Antenatal care from a skilled provider,95.26666666666667,95.1,3
+1998,Antenatal care provider: Doctor,28.6,28.5,3
+1998,Antenatal care provider: Missing,1.0666666666666667,1.1,3
+1998,Antenatal care provider: Nurse/midwife,66.66666666666667,66.6,3
+1998,Antenatal care provider: Other,0.6666666666666666,0.7,3
+1998,Antenatal care provider: Traditional birth attendant,0.1,0.1,3
+1998,Antenatal care: Total,100,100,3
+1998,Assistance during delivery from a skilled provider,85.43333333333334,85.5,3
+1998,Assistance during delivery: Doctor,29.166666666666668,29.3,3
+1998,Assistance during delivery: No one,2,2.1,3
+1998,Assistance during delivery: Nurse/midwife,56.2,56.1,3
+1998,Assistance during delivery: Relative or other,10.033333333333333,9.9,3
+1998,Assistance during delivery: Total,100,100,3
+1998,Assistance during delivery: Traditional birth attendant,1.3333333333333333,1.4,3
+1998,Assistance during delivery: don't know or missing,1.2666666666666666,1.2,3
+1998,Children with ARI for whom advice or treatment was sought,80.05000000000001,80.05000000000001,2
+1998,Children with symptoms of ARI,20.6,20.6,2
+1998,Delivery by cesarean section,15.333333333333334,15.4,3
+1998,No antenatal care,2.9,2.9,3
+1998,Number of children born in the last five (or three) years,2196.75,1769.5,4
+1998,Number of children born in the last five (or three) years (unweighted),2228,1796,4
+1998,Number of children with symptoms of ARI born in the last five (or three) years,775,775,2
+1998,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),734.5,734.5,2
+1998,Number of live births (or stillbirths) in the last two (or three/five) years,3381.6666666666665,3072,3
+1998,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),3432.6666666666665,3119,3
+1998,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,3001,2871,3
+1998,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),3030.6666666666665,2903,3
+1998,Place of delivery: At home,13.866666666666667,13.8,3
+1998,Place of delivery: Health facility,84.36666666666667,84.5,3
+1998,Place of delivery: Other,0.13333333333333333,0.1,3
+1998,Place of delivery: Private sector,8,8,3
+1998,Place of delivery: Public sector,76.33333333333333,76.5,3
+1998,Place of delivery: Total,100,100,3
+1998,Place of delivery: don't know or missing,1.6333333333333333,1.6,3
+1998,Treatment of diarrhea: Advice or treatment was sought,61.35,61.35,2
+1998,Treatment of diarrhea: Either ORS or RHF,82.05,82.05,2
+1998,Treatment of diarrhea: Home remedy - other,86.94999999999999,86.94999999999999,2
+1998,Treatment of diarrhea: Increased fluids,56.85,56.85,2
+1998,Treatment of diarrhea: Intravenous solution,0.45,0.45,2
+1998,"Treatment of diarrhea: No ORS, RHF or increased fluids",10.350000000000001,10.350000000000001,2
+1998,Treatment of diarrhea: No treatment,0.55,0.55,2
+1998,Treatment of diarrhea: ORT or increased fluids,89.65,89.65,2
+1998,Treatment of diarrhea: Oral rehydration solution (ORS),51.95,51.95,2
+1998,Treatment of diarrhea: Recommended home fluids (RHF) at home,69.6,69.6,2
+1998,Treatment of diarrhea: don't know or missing,1.3,1.3,2
+2016,Antenatal care from a skilled provider,93.56666666666666,93.7,3
+2016,Antenatal care provider: Doctor,16.76666666666667,17.1,3
+2016,Antenatal care provider: Nurse/midwife,76.8,76.8,3
+2016,Antenatal care provider: Other,0.5666666666666667,0.6,3
+2016,Antenatal care: Total,100,100,3
+2016,Assistance during delivery from a skilled provider,96.83333333333333,96.7,3
+2016,Assistance during delivery: Doctor,29.1,29.1,3
+2016,Assistance during delivery: No one,1.2,1.2,3
+2016,Assistance during delivery: Nurse/midwife,67.73333333333333,67.6,3
+2016,Assistance during delivery: Relative or other,1.7666666666666666,1.8,3
+2016,Assistance during delivery: Total,100,100,3
+2016,Assistance during delivery: Traditional birth attendant,0.16666666666666669,0.2,3
+2016,Child took antibiotic drugs for fever,29.75,29.75,2
+2016,Child took antimalarial drugs for fever,0.35,0.35,2
+2016,Children with ARI for whom advice or treatment was sought,92.25,92.25,2
+2016,Children with fever for whom advice or treatment was sought,67.6,67.6,2
+2016,Children with symptoms of ARI,3.25,3.25,2
+2016,Children with symptoms of ARI who received antibiotics,44.35,44.35,2
+2016,Delivery by cesarean section,24.8,24.9,3
+2016,No antenatal care,5.9,5.7,3
+2016,No postnatal checkup for mother within first two days of birth,16.4,16.4,1
+2016,No postnatal checkup for newborn within first two days of birth,13.8,13.8,1
+2016,Number of children born in the last five (or three) years,1517.75,1190.5,4
+2016,Number of children born in the last five (or three) years (unweighted),1511.25,1188,4
+2016,Number of children with fever in the last two weeks,550.5,550.5,2
+2016,Number of children with fever in the last two weeks (unweighted),528.5,528.5,2
+2016,Number of children with symptoms of ARI born in the last five (or three) years,87.5,87.5,2
+2016,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),76.5,76.5,2
+2016,Number of live births (or stillbirths) in the last two (or three/five) years,2359,2091,3
+2016,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),2353,2105,3
+2016,Number of mothers,1386,1386,1
+2016,Number of mothers (unweighted),1376,1376,1
+2016,Number of newborns,1386,1386,1
+2016,Number of newborns (unweighted),1376,1376,1
+2016,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,2128,1962,3
+2016,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),2129.6666666666665,1977,3
+2016,Place of delivery: At home,3.566666666666667,3.6,3
+2016,Place of delivery: Health facility,96,96,3
+2016,Place of delivery: Other,0.4,0.4,3
+2016,Place of delivery: Private sector,7.966666666666667,7.7,3
+2016,Place of delivery: Public sector,88.03333333333333,88.3,3
+2016,Place of delivery: Total,100,100,3
+2016,Provider of mothers' first postnatal checkup: Community health worker,0.2,0.2,1
+2016,Provider of mothers' first postnatal checkup: Doctor/nurse/midwife,83.2,83.2,1
+2016,Provider of mothers' first postnatal checkup: Total,100,100,1
+2016,Provider of mothers' first postnatal checkup: Traditional birth attendant,0.2,0.2,1
+2016,Provider of newborns' first postnatal checkup: Community health worker,0,0,1
+2016,Provider of newborns' first postnatal checkup: Doctor/nurse/midwife,86.2,86.2,1
+2016,Provider of newborns' first postnatal checkup: Total,100,100,1
+2016,Treatment of diarrhea: Advice or treatment was sought,61.1,61.1,2
+2016,Treatment of diarrhea: Antibiotics,8.9,8.9,2
+2016,Treatment of diarrhea: Antimotility drugs,2.1,2.1,2
+2016,Treatment of diarrhea: Either ORS or RHF,77.95,77.95,2
+2016,Treatment of diarrhea: Home remedy - other,9.7,9.7,2
+2016,Treatment of diarrhea: Increased fluids,14.8,14.8,2
+2016,Treatment of diarrhea: Injection,0.8,0.8,2
+2016,Treatment of diarrhea: Intravenous solution,0.4,0.4,2
+2016,"Treatment of diarrhea: No ORS, RHF or increased fluids",18.75,18.75,2
+2016,Treatment of diarrhea: No treatment,14.149999999999999,14.149999999999999,2
+2016,Treatment of diarrhea: ORT or increased fluids,81.25,81.25,2
+2016,Treatment of diarrhea: Oral rehydration solution (ORS),48.95,48.95,2
+2016,Treatment of diarrhea: Recommended home fluids (RHF) at home,69.85,69.85,2
+2016,Treatment of diarrhea: Zinc supplements,35.25,35.25,2
+NA,#indicator+name,NA,NA,1

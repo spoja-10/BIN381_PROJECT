@@ -1,0 +1,36 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Households with one room for sleeping,29.4,29.4,1
+1998,Mean number of household members,4.2,4.2,1
+1998,Mean number of persons per sleeping room,1.9,1.9,1
+1998,Population using a public tap/standpipe,19.3,19.3,1
+1998,Population using an improved water source,83.5,83.5,1
+1998,Population using open defecation,12.8,12.8,1
+1998,Population using water piped into dwelling,36,36,1
+1998,Population using water piped into yard/plot,23.1,23.1,1
+1998,Population with an improved sanitation facility,46.4,46.4,1
+1998,Population with an unimproved sanitation facility,40.8,40.8,1
+1998,Population with basic water service,80.2,80.2,1
+1998,Population with improved water source on the premises,60.3,60.3,1
+1998,Population with limited water service,3.3,3.3,1
+1998,Population with water more than 30 minutes away round trip,8.4,8.4,1
+2016,Households with one room for sleeping,35.1,35.1,1
+2016,Mean number of household members,3.4,3.4,1
+2016,Mean number of persons per sleeping room,1.5,1.5,1
+2016,Population using a public tap/standpipe,13.6,13.6,1
+2016,Population using an improved water source,93.4,93.4,1
+2016,Population using open defecation,2.2,2.2,1
+2016,Population using water piped into dwelling,45.5,45.5,1
+2016,Population using water piped into yard/plot,24,24,1
+2016,"Population with a basic handwashing facility, with soap and water available",46,46,1
+2016,"Population with a limited handwashing facility, lacking soap and/or water",46.5,46.5,1
+2016,Population with a place for handwashing was observed,86.1,86.1,1
+2016,Population with an improved sanitation facility,96,96,1
+2016,Population with an unimproved sanitation facility,1.7,1.7,1
+2016,Population with basic sanitation service,81.1,81.1,1
+2016,Population with basic water service,90.1,90.1,1
+2016,Population with improved water source on the premises,76.5,76.5,1
+2016,Population with limited sanitation service,15,15,1
+2016,Population with limited water service,3.2,3.2,1
+2016,Population with water more than 30 minutes away round trip,5.8,5.8,1
+2016,Population with water not available for at least one day,33,33,1
+NA,#indicator+name,NA,NA,1

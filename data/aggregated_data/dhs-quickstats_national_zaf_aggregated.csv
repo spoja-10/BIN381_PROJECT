@@ -1,0 +1,44 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Demand for family planning satisfied by modern methods,75.7,75.7,1
+1998,Fully vaccinated (8 basic antigens),63.4,63.4,1
+1998,Households with electricity,64.9,64.9,1
+1998,Infant mortality rate,43.5,43.5,2
+1998,Married women currently using any method of contraception,56.3,56.3,1
+1998,Married women currently using any modern method of contraception,55.1,55.1,1
+1998,Median age at first marriage [Women]: 25-49,24.2,24.2,1
+1998,Median age at first sexual intercourse [Women]: 25-49,18.4,18.4,1
+1998,Median duration of exclusive breastfeeding,0.4,0.4,1
+1998,Place of delivery: Health facility,84.36666666666667,84.5,3
+1998,Pregnancy-related mortality ratio,150,150,1
+1998,Total fertility rate 15-49,2.9,2.9,1
+1998,Treatment of diarrhea: Either ORS or RHF,82.05,82.05,2
+1998,Under-five mortality rate,58,58,2
+1998,Unmet need for family planning,16.5,16.5,1
+1998,Women with secondary or higher education,68.3,68.3,1
+2016,Children stunted,27.4,27.4,1
+2016,Children underweight,5.9,5.9,1
+2016,Children wasted,2.5,2.5,1
+2016,Demand for family planning satisfied by modern methods,77.8,77.8,1
+2016,Fully vaccinated (8 basic antigens),61.2,61.2,1
+2016,HIV prevalence among general population,21.2,21.2,1
+2016,HIV prevalence among men,14.4,14.4,1
+2016,HIV prevalence among women,27.3,27.3,1
+2016,Households with electricity,90,90,1
+2016,Infant mortality rate,39,39,2
+2016,Married women currently using any method of contraception,54.6,54.6,1
+2016,Married women currently using any modern method of contraception,54,54,1
+2016,Maternal mortality ratio,475,475,1
+2016,Median age at first sexual intercourse [Women]: 25-49,18.1,18.1,1
+2016,Median duration of exclusive breastfeeding,0.8,0.8,1
+2016,Men receiving an HIV test and receiving test results in the last 12 months,44.6,44.6,1
+2016,Physical or sexual violence committed by husband/partner,15.8,15.8,1
+2016,Place of delivery: Health facility,96,96,3
+2016,Pregnancy-related mortality ratio,536,536,1
+2016,Total fertility rate 15-49,2.6,2.6,1
+2016,Treatment of diarrhea: Either ORS or RHF,77.95,77.95,2
+2016,Under-five mortality rate,46.5,46.5,2
+2016,Unmet need for family planning,14.9,14.9,1
+2016,Women receiving an HIV test and receiving test results in the last 12 months,58.5,58.5,1
+2016,Women who are literate,96.3,96.3,1
+2016,Women with secondary or higher education,88.9,88.9,1
+NA,#indicator+name,NA,NA,1

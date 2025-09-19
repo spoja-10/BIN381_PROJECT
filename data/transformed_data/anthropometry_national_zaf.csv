@@ -1,0 +1,39 @@
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
+#indicator+name,NA,NA,NA,#indicator+label
+Children severely stunted,9.8,2016,Total,NA
+Children stunted,27.4,2016,Total,NA
+Mean height for age of children,-1.1,2016,Total,NA
+Children severely wasted,0.6,2016,Total,NA
+Children wasted,2.5,2016,Total,NA
+Children overweight,13.3,2016,Total,NA
+Mean weight for height of children,0.6,2016,Total,NA
+Children severely underweight,1.1,2016,Total,NA
+Children underweight,5.9,2016,Total,NA
+Children overweight for their age,4.5,2016,Total,NA
+Mean weight for age of children,-0.2,2016,Total,NA
+Women with height below 145 cm,1.5,2016,Total,NA
+Number of women,3272,2016,Total,NA
+Number of women (unweighted),3405,2016,Total,NA
+Mean Body Mass Index (BMI) for women,28.3,2016,Total,NA
+Women with normal BMI (18.5-24.9),34.7,2016,Total,NA
+Women who are thin according to BMI (<18.5),3.1,2016,Total,NA
+Women who are mildly thin according to BMI (17.0-18.4),2.6,2016,Total,NA
+Women who are moderately thin according to BMI (<17.0),0.5,2016,Total,NA
+Women who are overweight or obese according to BMI (>=25.0),62.2,2016,Total,NA
+Women who are overweight according to BMI (25.0-29.9),26.3,2016,Total,NA
+Women who are obese according to BMI (>=30.0),35.9,2016,Total,NA
+Number of women,3081,2016,Total,NA
+Number of women (unweighted),3210,2016,Total,NA
+Men with height below 145 cm,0.3,2016,Total 15-49,NA
+Number of men,3202,2016,Total 15-49,NA
+Number of men (unweighted),3179,2016,Total 15-49,NA
+Mean Body Mass Index (BMI) for men,23,2016,Total 15-49,NA
+Men with normal BMI (18.5-24.9),65.2,2016,Total 15-49,NA
+Men who are thin according to BMI (<18.5),9.6,2016,Total 15-49,NA
+Men who are mildly thin according to BMI (17.0-18.4),7.4,2016,Total 15-49,NA
+Men who are moderately thin according to BMI (<17.0),2.2,2016,Total 15-49,NA
+Men who are overweight or obese according to BMI (>=25.0),25.1,2016,Total 15-49,NA
+Men who are overweight according to BMI (25.0-29.9),17.2,2016,Total 15-49,NA
+Men who are obese according to BMI (>=30.0),7.9,2016,Total 15-49,NA
+Number of men,2336,2016,Total 15-49,NA
+Number of men (unweighted),2457,2016,Total 15-49,NA

@@ -1,0 +1,15 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Children with ARI for whom advice or treatment was sought,80.05000000000001,80.05000000000001,2
+1998,Children with symptoms of ARI,20.6,20.6,2
+1998,Number of children born in the last five (or three) years,3826,3826,2
+1998,Number of children born in the last five (or three) years (unweighted),3877.5,3877.5,2
+1998,Number of children with symptoms of ARI born in the last five (or three) years,775,775,2
+1998,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),734.5,734.5,2
+2016,Children with ARI for whom advice or treatment was sought,92.25,92.25,2
+2016,Children with symptoms of ARI,3.25,3.25,2
+2016,Children with symptoms of ARI who received antibiotics,44.35,44.35,2
+2016,Number of children born in the last five (or three) years,2734.5,2734.5,2
+2016,Number of children born in the last five (or three) years (unweighted),2719.5,2719.5,2
+2016,Number of children with symptoms of ARI born in the last five (or three) years,87.5,87.5,2
+2016,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),76.5,76.5,2
+NA,#indicator+name,NA,NA,1
