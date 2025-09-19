@@ -1,6 +1,8 @@
 ---
 title: "06_HIV_Behavior"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 # HIV Behavior - National South Africa
@@ -87,6 +89,11 @@ hiv_df <- hiv_df %>% mutate(across(all_of(logical_cols), ~as.logical(as.integer(
 str(hiv_df)
 
 ```
+- Numeric columns (value, precision, denominator_weighted, denominator_unweighted, ci_low, ci_high, survey_year, indicator_order, characteristic_id, characteristic_order, survey_year_label) were converted to numeric.
+
+- Logical columns (is_total, is_preferred) were converted to boolean values.
+
+- Conversion ensures accurate calculations and proper visualization.
 ## Handle Missing Values
 
 ```{r}
@@ -156,34 +163,96 @@ colSums(is.na(hiv_df))
 
 
 ```
+Handling Missing Values
+
+Strategies applied:
+
+1. Survey Year Label: Filled missing survey_year_label with survey_year.
+
+2. Survey Type: Filled missing survey_type with "Unknown".
+
+3. Denominator columns: Filled with median of available values.
+
+4. Categorical columns: Filled missing values with the mode (most frequent value).
+
+5. Dropped columns that were 100% missing (ByVariableLabel, RegionId, CILow, CIHigh, LevelRank).
+
+6. Outcome: No missing values remain, ensuring the dataset is analysis-ready.
 ## Handle Outliers
 
 ```{r}
 # Winsorize HIV Behavior 'Value' at 1st and 99th percentiles
+
+# First, check the structure and type of Value column
+cat("Structure of Value column:\n")
+str(hiv_df$Value)
+
+cat("\nClass of Value column:", class(hiv_df$Value), "\n")
+cat("First few values:", head(hiv_df$Value), "\n")
+
+# Check for any non-numeric values
+cat("\nNon-numeric values in Value column:\n")
+print(hiv_df$Value[!is.na(hiv_df$Value) & !is.numeric(hiv_df$Value)])
+
+# Convert to numeric if necessary (handling any character values)
+hiv_df$Value <- as.numeric(as.character(hiv_df$Value))
+
+# Check for NAs introduced by conversion
+cat("\nNA values after conversion:", sum(is.na(hiv_df$Value)), "\n")
+
+# Now proceed with winsorization
 lower_val <- quantile(hiv_df$Value, 0.01, na.rm = TRUE)
 upper_val <- quantile(hiv_df$Value, 0.99, na.rm = TRUE)
+
+cat("\n1st percentile (lower bound):", lower_val, "\n")
+cat("99th percentile (upper bound):", upper_val, "\n")
 
 hiv_df <- hiv_df %>%
   mutate(
     Value = pmax(pmin(Value, upper_val), lower_val)
   )
 
+# Create log transformation (using log1p to handle zeros)
 hiv_df <- hiv_df %>%
   mutate(Value_log = log1p(Value))
 
 # Check summary
+cat("\nSummary of Value after winsorization:\n")
+summary(hiv_df$Value)
+
+cat("\nSummary of log-transformed Value:\n")
 summary(hiv_df$Value_log)
 
 # Visualize with boxplot
 ggplot(hiv_df, aes(y = Value)) +
-  geom_boxplot(fill = "steelblue", outlier.color = "red") +
-  labs(title = "Boxplot of HIV Behavior 'Value' After Winsorization")
+  geom_boxplot(fill = "steelblue", outlier.color = "red", alpha = 0.7) +
+  labs(
+    title = "Boxplot of HIV Behavior 'Value' After Winsorization",
+    y = "Value",
+    caption = "Winsorized at 1st and 99th percentiles"
+  ) +
+  theme_minimal()
 
-# Summarize
-summary(hiv_df$Value)
+# Additional visualization for log-transformed values
+ggplot(hiv_df, aes(y = Value_log)) +
+  geom_boxplot(fill = "lightgreen", outlier.color = "red", alpha = 0.7) +
+  labs(
+    title = "Boxplot of Log-Transformed HIV Behavior 'Value'",
+    y = "log(Value + 1)",
+    caption = "log1p transformation applied"
+  ) +
+  theme_minimal()
 
 
 ```
+Handling Outliers
+
+- The numeric column Value was Winsorized at the 1st and 99th percentiles to reduce the influence of extreme values.
+
+- Log transformation (log1p) was applied to Value to normalize distributions and handle zero values.
+
+- Boxplots were created to visualize both the Winsorized and log-transformed values.
+
 
 ```{r}
 

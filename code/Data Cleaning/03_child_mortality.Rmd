@@ -1,6 +1,8 @@
 ---
 title: "03_child_mortality"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 # Data Cleaning: Child Mortality Rates
@@ -15,7 +17,7 @@ library(readr)
 library(here)
 library(purrr)
 library(stringr)
-
+library(knitr)
 
 # Extras for cleaning and exploration
 library(janitor)  # clean column names
@@ -61,6 +63,9 @@ skim(cmr_df)
 vis_miss(cmr_df)
 
 ```
+Purpose: Check structure, summary statistics, and missingness.
+Explanation: This gives an overview of column types, missing values, and potential issues before cleaning.
+
 
 # Handle Duplicates
 
@@ -77,38 +82,33 @@ cat("Dimensions after deduplication:", dim(cmr_df), "\n")
 ## Drop Redundant / Empty Columns
 
 ```{r redundant_empty_columns}
-redundant_cols <- c("iso3", "data_id", "dhs_country_code", "country_name", "survey_id",
-                    "indicator_id", "sdrid", "region_id", "survey_type", "level_rank",
-                    "denominator_weighted", "denominator_unweighted", "by_variable_label")
+redundant_cols <- c(
+  "iso3", "data_id", "dhs_country_code", "country_name", "survey_id",
+  "indicator_id", "sdrid", "region_id", "survey_type", "level_rank",
+  "denominator_weighted", "denominator_unweighted", "by_variable_label"
+)
 
-# Remove safely
 cmr_df <- cmr_df %>% select(-any_of(redundant_cols))
-
 
 cat("Dimensions after removing redundant/empty columns:", dim(cmr_df), "\n")
 
 
 ```
+Columns that were unnecessary or fully empty were dropped:
 
+- Redundant columns included identifiers such as iso3, data_id, dhs_country_code, survey_id, etc.
 ## Convert Column Types
 
 -   Ensure numeric, integer, and logical columns are typed correctly for analysis.
 
 ```{r convert_column_types}
-# Convert columns to appropriate types
-# Define expected columns by type
-# If you use janitor::clean_names(), use lowercase names
-numeric_cols <- c("value", "precision", "ci_low", "ci_high")
-integer_cols <- c("survey_year", "indicator_order", "characteristic_id",
-                  "characteristic_order", "survey_year_label")
-logical_cols <- c("is_total", "is_preferred")
+# Define expected columns by type (snake_case!)
+numeric_cols  <- c("value", "precision", "ci_low", "ci_high")
+integer_cols  <- c("survey_year", "indicator_order", "characteristic_id",
+                   "characteristic_order", "survey_year_label")
+logical_cols  <- c("is_total", "is_preferred")
 
-
-# Standardize column names to match R-safe format
-colnames(cmr_df) <- str_replace_all(colnames(cmr_df), "\\s+", "_")
-colnames(cmr_df) <- str_to_title(colnames(cmr_df)) # optional for uniformity
-
-# Function to safely convert columns if they exist
+# Safe conversion function
 safe_convert <- function(df, cols, fun) {
   existing <- cols[cols %in% colnames(df)]
   if(length(existing) > 0) {
@@ -117,33 +117,54 @@ safe_convert <- function(df, cols, fun) {
   return(df)
 }
 
-# Apply conversions
 cmr_df <- cmr_df %>%
   safe_convert(numeric_cols, as.numeric) %>%
   safe_convert(integer_cols, as.integer) %>%
   safe_convert(logical_cols, ~as.logical(as.integer(.)))
 
-# Check final types
 glimpse(cmr_df)
+
 ```
 
 ## Handle Missing Values
 
-```{r handle_missing_values}
-# Function to get mode
-impute_mode <- function(x){
-  ux <- na.omit(x)
-  if(length(ux)==0) return(x)
-  rep(names(sort(table(ux), decreasing=TRUE))[1], length(x))
-}
-
+```{r handle_missing_values, cache=FALSE}
+# 1. Remove empty columns
 cmr_df <- cmr_df %>%
-  mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
-  mutate(across(where(is.character), ~ifelse(is.na(.), impute_mode(.), .)))
+  select(where(~!all(is.na(.))))
 
-cat("Remaining NAs:", sum(is.na(cmr_df)), "\n")
+# 2. Impute numeric with median
+num_cols <- cmr_df %>% select(where(is.numeric)) %>% names()
+cmr_df <- cmr_df %>%
+  mutate(across(all_of(num_cols), ~ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+# 3. Impute categorical with mode
+cat_cols <- cmr_df %>% select(where(is.character)) %>% names()
+impute_mode <- function(x) {
+  ux <- na.omit(x)
+  if(length(ux) == 0) return(NA_character_)
+  names(sort(table(ux), decreasing = TRUE))[1]
+}
+cmr_df <- cmr_df %>%
+  mutate(across(all_of(cat_cols), ~ifelse(is.na(.), impute_mode(.), .)))
+
+# 4. Summary after handling missing values
+missing_summary <- cmr_df %>%
+  summarise(across(everything(), ~sum(is.na(.)))) %>%
+  tidyr::pivot_longer(cols = everything(), names_to = "Variable", values_to = "Missing_Count")
+
+missing_summary  # this will be rendered in knit
+
+
 
 ```
+
+
+- Completely empty columns were removed.
+
+- Numeric columns: NAs imputed with median.
+
+- Categorical columns: NAs imputed with mode.
 
 ## Handle Outliers
 
@@ -174,14 +195,7 @@ cmr_df <- cmr_df %>%
 
 ```
 
-## Final Validation
-
-```{r}
-cat("=== FINAL CLEANED DATA ===\n")
-cat("Dimensions:", dim(cmr_df), "\n")
-skim(cmr_df)
-
-```
+- Negative numeric values were replaced with the column median.
 
 ## Save the Cleaned Dataset
 

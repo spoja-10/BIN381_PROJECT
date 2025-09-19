@@ -1,6 +1,8 @@
 ---
 title: "10_Maternal_mortality"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 #Loading Libraries
@@ -54,10 +56,25 @@ data.frame(
 ```
 
 ```{r}
+mam_df <- mam_df %>%
+  select(-RegionId, -LevelRank, -CILow, -CIHigh)  # 100% or 85% missing
+
+# 2. Impute numeric columns with missing values
+# Here, only DenominatorWeighted and DenominatorUnweighted
+num_cols <- c("DenominatorWeighted", "DenominatorUnweighted")
+
+mam_df <- mam_df %>%
+  mutate(across(all_of(num_cols), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+# 3. Fill any remaining missing values using last observation carried forward/backward
+mam_df <- mam_df %>%
+  fill(DenominatorWeighted, DenominatorUnweighted, .direction = "downup")
+
+# 4. Check that missing values are gone
 data.frame(
   Column = names(mam_df),
-  Missing_Data = paste0(colSums(is.na(mam_df)))
-  )
+  Missing_Data = colSums(is.na(mam_df))
+)
 ```
 
 #check data types
@@ -106,23 +123,22 @@ summary_tbl
 ```
   
 
-#Drop the countries only one unqiue value: reason, there is no useful information - county is also always za
+# Drop the countries only one unqiue value: reason, there is no useful information - county is also always za
 ```{r}
-mam_df <- mam_df %>%
+# See exact column names
+colnames(mam_df)
 
- select(
-     -ISO3, 
-    -DHS_CountryCode, 
-    -CountryName, 
-    -SurveyId,
-    -ByVariableId, 
-    -ByVariableLabel, 
-    -IsTotal,
-    -RegionId, 
-    -SurveyYearLabel, 
-    -SurveyType,
-    -CharacteristicOrder
-  )
+# Then drop using safe selection
+cols_to_drop <- c("iso3", "dhs_country_code", "country_name", "survey_id",
+                  "by_variable_id", "by_variable_label", "is_total",
+                  "region_id", "survey_year_label", "survey_type", "characteristic_order")
+
+# Only drop columns that exist
+mam_df <- mam_df %>% select(-any_of(cols_to_drop))
+
+# Confirm
+colnames(mam_df)
+
 ```
 
 # Outliers
@@ -142,23 +158,13 @@ outlier_stats <- mam_df %>%
 
 print(outlier_stats)
 
-# Most practical approach: Use winsorizing and proceed
-mam_df_clean <- mam_df %>%
-  mutate(
-    Value_clean = case_when(
-      Value < quantile(Value, 0.05, na.rm = TRUE) ~ quantile(Value, 0.05, na.rm = TRUE),
-      Value > quantile(Value, 0.95, na.rm = TRUE) ~ quantile(Value, 0.95, na.rm = TRUE),
-      TRUE ~ Value
-    )
-  )
+
 
 
 ```
 
+- The data set does not have any outliers so no need to handle
 
-```{r}
-dim(mam_df)
-```
 
 #save cleaned data
 ```{r}

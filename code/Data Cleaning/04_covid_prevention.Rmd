@@ -1,6 +1,9 @@
 ---
 title: "04_covid_prevention"
-output: html_document
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 # Covid 19 Prevention
@@ -35,9 +38,10 @@ cat("COVID-19 prevention dataset loaded successfully.\n")
 cat("Dimensions:", dim(covid_df), "\n")
 
 ```
+
 ## 2. Initial Data Assessment and Column Renaming
 
-- Column names are standardized to lowercase with underscores for readability. The dataset structure, summary statistics, and missingness are explored to identify potential quality issues.
+-   Column names are standardized to lowercase with underscores for readability. The dataset structure, summary statistics, and missingness are explored to identify potential quality issues.
 
 ```{r}
 # Quick glimpse of dataset
@@ -56,8 +60,6 @@ covid_df <- covid_df %>% janitor::clean_names()
 colnames(covid_df)
 
 ```
-
-
 
 ## Handle Duplicates
 
@@ -78,7 +80,9 @@ cat("Dimensions after duplicate removal:", dim(covid_df), "\n")
 ```
 
 ## Convert Data Types
-- Ensures all numeric, integer, and logical columns have correct types for downstream analysis. Prevents calculation errors and improves consistency.
+
+-   Ensures all numeric, integer, and logical columns have correct types for downstream analysis. Prevents calculation errors and improves consistency.
+
 ```{r}
 # Convert numeric columns
 covid_df <- covid_df %>%
@@ -91,6 +95,7 @@ covid_df <- covid_df %>%
 ```
 
 ## Drop Redundant Columns
+
 ```{r}
 
 redundant_cols <- c("iso3", "data_id", "dhs_country_code", "country_name", 
@@ -106,14 +111,17 @@ cat("Redundant and empty columns removed.\n")
 cat("New dimensions:", dim(covid_df), "\n")
 
 ```
+
 ## Handle Missing Values
-- Numeric columns: filled with the median
 
-- Character columns: filled with the most frequent value
+-   Numeric columns: filled with the median
 
-- Logical columns: missing values set to FALSE
+-   Character columns: filled with the most frequent value
 
-- Key metadata (survey_year_label, survey_type) imputed explicitly for clarity
+-   Logical columns: missing values set to FALSE
+
+-   Key metadata (survey_year_label, survey_type) imputed explicitly for clarity
+
 ```{r}
 
 covid_df <- covid_df %>%
@@ -152,10 +160,10 @@ missing_summary %>% arrange(desc(missing_percent))
 
 ```
 
-
-
 ## Handle Outliers
-- Extreme values in value are capped to the IQR boundaries (Winsorization), which reduces their influence while keeping most data intact.
+
+-   Extreme values in value are capped to the IQR boundaries (Winsorization), which reduces their influence while keeping most data intact.
+
 ```{r}
 # Quick check for extreme values in 'value' and denominators
 summary(covid_df$value)
@@ -171,7 +179,8 @@ cat("Potential outlier rows in 'value':", nrow(outliers), "\n")
 
 ```
 
-## Final Validation 
+## Final Validation
+
 ```{r}
 ## Final Dataset Check Before Saving (existing columns only)
 
@@ -199,6 +208,7 @@ missing_summary %>% arrange(desc(missing_percent))
 ```
 
 ## Save Dataset
+
 ```{r save_cleaned_data}
 # Define path to save cleaned CSV
 clean_path <- here("data", "processed", "covid_prevention_cleaned_zaf.csv")

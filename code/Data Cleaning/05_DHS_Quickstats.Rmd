@@ -1,6 +1,8 @@
 ---
 title: "05_DHS_Quickstats"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 # DHS QuickStats (National, South Africa)
@@ -36,6 +38,7 @@ cat("DHS QuickStats dataset loaded successfully.\n")
 cat("Dimensions:", dim(dhs_df), "\n")
 ```
 
+
 ## Initial Data Assessment
 
 ```{r}
@@ -52,6 +55,31 @@ vis_miss(dhs_df)
 dhs_df <- dhs_df %>% janitor::clean_names()
 colnames(dhs_df)
 ```
+
+### Glimpse of the Dataset
+
+A quick look at the first few rows and column types revealed:
+
+- 17 character columns (e.g., ISO3, Indicator, CountryName)
+
+- 10 numeric columns (e.g., Value, Precision)
+
+- 2 logical columns (RegionId, LevelRank)
+
+### Summary of Missing Values
+
+The skimr package summarized missingness:
+
+- Columns such as ByVariableLabel, DenominatorWeighted, CILow, and CIHigh contained missing values.
+
+- These columns would require imputation or handling in later steps.
+
+### Visualization
+
+vis_miss() was used to create a visual map of missing data, which helped identify columns with high missingness at a glance.
+
+Why this step matters: Understanding missing data is crucial for selecting appropriate imputation methods or deciding if columns should be dropped.
+
 
 ## Rename Columns Meaningfully
 
@@ -74,6 +102,21 @@ colnames(dhs_df)
 
 
 ```
+Column names were standardized to snake_case using janitor::clean_names().
+
+Additionally, descriptive names were assigned to generic column names (e.g., col_1, col_2) to improve readability.
+
+Example:
+
+- ISO3 → iso3
+
+- DataId → data_id
+
+- Value → value
+
+- Precision → precision
+
+- Benefit: This ensures consistency across analysis scripts and improves interpretability for readers.
 
 ## Remove Duplicates
 
@@ -110,6 +153,14 @@ if(length(all_na_cols) > 0) {
 
 ```
 
+### Removing Duplicates and Empty Columns
+
+Exact duplicate rows were checked; none were found.
+
+The dataset was then filtered to retain unique combinations of Indicator, Survey Year, Characteristic ID, and Value.
+
+Fully empty columns (region_id and level_rank) were removed.
+
 ## Convert Data Types Safely
 
 ```{r}
@@ -135,6 +186,15 @@ str(dhs_df)
 
 
 ```
+Columns were converted to appropriate types:
+
+- Numeric columns: value, precision, ci_low, ci_high
+
+- Integer columns: survey_year, indicator_order, characteristic_id, etc.
+
+- Logical columns: is_total, is_preferred
+
+- Purpose: Correct data types ensure proper calculations, comparisons, and visualizations
 
 ## Handle Missing Values
 
@@ -179,6 +239,17 @@ missing_summary %>% arrange(desc(missing_percent))
 
 
 ```
+### Handling Missing Values
+
+Strategy:
+
+1. Numeric columns: Imputed using the median
+
+2. Character columns: Imputed using the mode (most frequent value)
+
+3. Logical columns: Missing values set to FALSE
+
+Special handling: survey_year_label was filled with survey_year where missing.
 
 ## Outlier Detection
 
@@ -207,6 +278,9 @@ summary(dhs_df$value)
 
 
 ```
+- Method: Interquartile Range (IQR) to identify extreme values
+
+- Treatment: Values outside 1.5×IQR were flagged, then Winsorized at the 1st and 99th percentiles.
 
 ## Save Cleaned Data
 

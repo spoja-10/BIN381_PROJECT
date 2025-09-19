@@ -1,0 +1,678 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={11\_symptoms},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{11\_symptoms}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Loading Libraries}\label{loading-libraries}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyr)}
+\FunctionTok{library}\NormalTok{(stringr)}
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(here)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## here() starts at C:/Users/morul/School/3rd Year/BIN381/BIN381_PROJECT/BIN381_PROJECT
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\#Load Dataset
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ari\_df }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"raw"}\NormalTok{,}\StringTok{"symptoms{-}of{-}acute{-}respiratory{-}infection{-}ari\_national\_zaf.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 27 Columns: 29
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (17): ISO3, DataId, Indicator, Value, Precision, DHS_CountryCode, Countr...
+## dbl  (8): IndicatorOrder, CharacteristicId, CharacteristicOrder, IsTotal, Is...
+## lgl  (4): RegionId, CILow, CIHigh, LevelRank
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\#Display Dataset content
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(ari\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 29
+##   ISO3   DataId Indicator Value Precision DHS_CountryCode CountryName SurveyYear
+##   <chr>  <chr>  <chr>     <chr> <chr>     <chr>           <chr>       <chr>     
+## 1 #coun~ #meta~ #indicat~ #ind~ #indicat~ <NA>            #country+n~ #date+year
+## 2 ZAF    598577 Children~ 21.9  1         ZA              South Afri~ 1998      
+## 3 ZAF    397915 Children~ 19.3  1         ZA              South Afri~ 1998      
+## 4 ZAF    598578 Number o~ 2912  0         ZA              South Afri~ 1998      
+## 5 ZAF    384931 Number o~ 4740  0         ZA              South Afri~ 1998      
+## 6 ZAF    139860 Number o~ 2958  0         ZA              South Afri~ 1998      
+## # i 21 more variables: SurveyId <chr>, IndicatorId <chr>, IndicatorOrder <dbl>,
+## #   IndicatorType <chr>, CharacteristicId <dbl>, CharacteristicOrder <dbl>,
+## #   CharacteristicCategory <chr>, CharacteristicLabel <chr>,
+## #   ByVariableId <chr>, ByVariableLabel <chr>, IsTotal <dbl>,
+## #   IsPreferred <dbl>, SDRID <chr>, RegionId <lgl>, SurveyYearLabel <dbl>,
+## #   SurveyType <chr>, DenominatorWeighted <dbl>, DenominatorUnweighted <dbl>,
+## #   CILow <lgl>, CIHigh <lgl>, LevelRank <lgl>
+\end{verbatim}
+
+\#Remove the first row(meta data)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ari\_df }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\#dimensions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(ari\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 26 29
+\end{verbatim}
+
+\#Inspect Duplicated rows
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dup\_check }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Indicator, SurveyYear, CharacteristicId, Value) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\FunctionTok{n}\NormalTok{() }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{dup\_check}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 0 x 29
+## # Groups:   Indicator, SurveyYear, CharacteristicId, Value [0]
+## # i 29 variables: ISO3 <chr>, DataId <chr>, Indicator <chr>, Value <chr>,
+## #   Precision <chr>, DHS_CountryCode <chr>, CountryName <chr>,
+## #   SurveyYear <chr>, SurveyId <chr>, IndicatorId <chr>, IndicatorOrder <dbl>,
+## #   IndicatorType <chr>, CharacteristicId <dbl>, CharacteristicOrder <dbl>,
+## #   CharacteristicCategory <chr>, CharacteristicLabel <chr>,
+## #   ByVariableId <chr>, ByVariableLabel <chr>, IsTotal <dbl>,
+## #   IsPreferred <dbl>, SDRID <chr>, RegionId <lgl>, SurveyYearLabel <dbl>, ...
+\end{verbatim}
+
+\#Percentage Missing Values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Column =} \FunctionTok{names}\NormalTok{(ari\_df),}
+  \AttributeTok{Missing\_Percentage =} \FunctionTok{paste0}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{colMeans}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(ari\_df)) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\%"}\NormalTok{)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    Column Missing_Percentage
+## 1                    ISO3                 0%
+## 2                  DataId                 0%
+## 3               Indicator                 0%
+## 4                   Value                 0%
+## 5               Precision                 0%
+## 6         DHS_CountryCode                 0%
+## 7             CountryName                 0%
+## 8              SurveyYear                 0%
+## 9                SurveyId                 0%
+## 10            IndicatorId                 0%
+## 11         IndicatorOrder                 0%
+## 12          IndicatorType                 0%
+## 13       CharacteristicId                 0%
+## 14    CharacteristicOrder                 0%
+## 15 CharacteristicCategory                 0%
+## 16    CharacteristicLabel                 0%
+## 17           ByVariableId                 0%
+## 18        ByVariableLabel                 0%
+## 19                IsTotal                 0%
+## 20            IsPreferred                 0%
+## 21                  SDRID                 0%
+## 22               RegionId               100%
+## 23        SurveyYearLabel                 0%
+## 24             SurveyType                 0%
+## 25    DenominatorWeighted             30.77%
+## 26  DenominatorUnweighted             30.77%
+## 27                  CILow               100%
+## 28                 CIHigh               100%
+## 29              LevelRank               100%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Column =} \FunctionTok{names}\NormalTok{(ari\_df),}
+  \AttributeTok{Missing\_Data =} \FunctionTok{paste0}\NormalTok{(}\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(ari\_df)))}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    Column Missing_Data
+## 1                    ISO3            0
+## 2                  DataId            0
+## 3               Indicator            0
+## 4                   Value            0
+## 5               Precision            0
+## 6         DHS_CountryCode            0
+## 7             CountryName            0
+## 8              SurveyYear            0
+## 9                SurveyId            0
+## 10            IndicatorId            0
+## 11         IndicatorOrder            0
+## 12          IndicatorType            0
+## 13       CharacteristicId            0
+## 14    CharacteristicOrder            0
+## 15 CharacteristicCategory            0
+## 16    CharacteristicLabel            0
+## 17           ByVariableId            0
+## 18        ByVariableLabel            0
+## 19                IsTotal            0
+## 20            IsPreferred            0
+## 21                  SDRID            0
+## 22               RegionId           26
+## 23        SurveyYearLabel            0
+## 24             SurveyType            0
+## 25    DenominatorWeighted            8
+## 26  DenominatorUnweighted            8
+## 27                  CILow           26
+## 28                 CIHigh           26
+## 29              LevelRank           26
+\end{verbatim}
+
+\#check data types
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Column =} \FunctionTok{names}\NormalTok{(ari\_df),}
+  \FunctionTok{paste0}\NormalTok{(}\FunctionTok{sapply}\NormalTok{(ari\_df, typeof))}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    Column paste0.sapply.ari_df..typeof..
+## 1                    ISO3                      character
+## 2                  DataId                      character
+## 3               Indicator                      character
+## 4                   Value                      character
+## 5               Precision                      character
+## 6         DHS_CountryCode                      character
+## 7             CountryName                      character
+## 8              SurveyYear                      character
+## 9                SurveyId                      character
+## 10            IndicatorId                      character
+## 11         IndicatorOrder                         double
+## 12          IndicatorType                      character
+## 13       CharacteristicId                         double
+## 14    CharacteristicOrder                         double
+## 15 CharacteristicCategory                      character
+## 16    CharacteristicLabel                      character
+## 17           ByVariableId                      character
+## 18        ByVariableLabel                      character
+## 19                IsTotal                         double
+## 20            IsPreferred                         double
+## 21                  SDRID                      character
+## 22               RegionId                        logical
+## 23        SurveyYearLabel                         double
+## 24             SurveyType                      character
+## 25    DenominatorWeighted                         double
+## 26  DenominatorUnweighted                         double
+## 27                  CILow                        logical
+## 28                 CIHigh                        logical
+## 29              LevelRank                        logical
+\end{verbatim}
+
+\#Check The structure of the dataset
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(ari\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [26 x 29] (S3: tbl_df/tbl/data.frame)
+##  $ ISO3                  : chr [1:26] "ZAF" "ZAF" "ZAF" "ZAF" ...
+##  $ DataId                : chr [1:26] "598577" "397915" "598578" "384931" ...
+##  $ Indicator             : chr [1:26] "Children with symptoms of ARI" "Children with symptoms of ARI" "Number of children born in the last five (or three) years" "Number of children born in the last five (or three) years" ...
+##  $ Value                 : chr [1:26] "21.9" "19.3" "2912" "4740" ...
+##  $ Precision             : chr [1:26] "1" "1" "0" "0" ...
+##  $ DHS_CountryCode       : chr [1:26] "ZA" "ZA" "ZA" "ZA" ...
+##  $ CountryName           : chr [1:26] "South Africa" "South Africa" "South Africa" "South Africa" ...
+##  $ SurveyYear            : chr [1:26] "1998" "1998" "1998" "1998" ...
+##  $ SurveyId              : chr [1:26] "ZA1998DHS" "ZA1998DHS" "ZA1998DHS" "ZA1998DHS" ...
+##  $ IndicatorId           : chr [1:26] "CH_ARIS_C_ARI" "CH_ARIS_C_ARI" "CH_ARIS_C_NUM" "CH_ARIS_C_NUM" ...
+##  $ IndicatorOrder        : num [1:26] 9.4e+07 9.4e+07 9.4e+07 9.4e+07 9.4e+07 ...
+##  $ IndicatorType         : chr [1:26] "I" "I" "D" "D" ...
+##  $ CharacteristicId      : num [1:26] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...
+##  $ CharacteristicOrder   : num [1:26] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ CharacteristicCategory: chr [1:26] "Total" "Total" "Total" "Total" ...
+##  $ CharacteristicLabel   : chr [1:26] "Total" "Total" "Total" "Total" ...
+##  $ ByVariableId          : chr [1:26] "14000" "14001" "14000" "14001" ...
+##  $ ByVariableLabel       : chr [1:26] "Three years preceding the survey" "Five years preceding the survey" "Three years preceding the survey" "Five years preceding the survey" ...
+##  $ IsTotal               : num [1:26] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ IsPreferred           : num [1:26] 0 1 0 1 0 1 0 1 0 1 ...
+##  $ SDRID                 : chr [1:26] "CHARISCARI" "CHARISCARI" "CHARISCNUM" "CHARISCNUM" ...
+##  $ RegionId              : logi [1:26] NA NA NA NA NA NA ...
+##  $ SurveyYearLabel       : num [1:26] 1998 1998 1998 1998 1998 ...
+##  $ SurveyType            : chr [1:26] "DHS" "DHS" "DHS" "DHS" ...
+##  $ DenominatorWeighted   : num [1:26] 2912 4740 NA NA 2912 ...
+##  $ DenominatorUnweighted : num [1:26] 2958 4797 2958 4797 NA ...
+##  $ CILow                 : logi [1:26] NA NA NA NA NA NA ...
+##  $ CIHigh                : logi [1:26] NA NA NA NA NA NA ...
+##  $ LevelRank             : logi [1:26] NA NA NA NA NA NA ...
+\end{verbatim}
+
+\#Convert Data Types
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ari\_df }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+        \AttributeTok{Value =} \FunctionTok{as.numeric}\NormalTok{(Value),}
+    \AttributeTok{Precision =} \FunctionTok{as.numeric}\NormalTok{(Precision),}
+    \AttributeTok{SurveyYear =} \FunctionTok{as.integer}\NormalTok{(SurveyYear),}
+    \AttributeTok{IndicatorOrder =} \FunctionTok{as.integer}\NormalTok{(IndicatorOrder),}
+    \AttributeTok{CharacteristicId =} \FunctionTok{as.integer}\NormalTok{(CharacteristicId),}
+    \AttributeTok{CharacteristicOrder =} \FunctionTok{as.integer}\NormalTok{(CharacteristicOrder),}
+    \AttributeTok{IsTotal =} \FunctionTok{as.logical}\NormalTok{(}\FunctionTok{as.integer}\NormalTok{(IsTotal)),}
+    \AttributeTok{IsPreferred =} \FunctionTok{as.logical}\NormalTok{(}\FunctionTok{as.integer}\NormalTok{(IsPreferred)),}
+    \AttributeTok{SurveyYearLabel =} \FunctionTok{as.integer}\NormalTok{(SurveyYearLabel),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{as.numeric}\NormalTok{(DenominatorWeighted),}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{as.numeric}\NormalTok{(DenominatorUnweighted),}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\#check for unique values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(purrr)}
+
+\CommentTok{\# Summary table: column name, number of unique values, sample of unique values}
+\NormalTok{n\_sample }\OtherTok{\textless{}{-}} \DecValTok{3}
+
+\NormalTok{summary\_tbl }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map\_df}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{tibble}\NormalTok{(}
+    \AttributeTok{n\_unique =} \FunctionTok{n\_distinct}\NormalTok{(.),}
+    \AttributeTok{sample\_values =} \FunctionTok{paste}\NormalTok{(}\FunctionTok{head}\NormalTok{(}\FunctionTok{unique}\NormalTok{(.), n\_sample), }\AttributeTok{collapse =} \StringTok{", "}\NormalTok{)}
+\NormalTok{  ), }\AttributeTok{.id =} \StringTok{"column"}\NormalTok{)}
+
+
+\NormalTok{summary\_tbl}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 29 x 3
+##    column          n_unique sample_values                                       
+##    <chr>              <int> <chr>                                               
+##  1 ISO3                   1 ZAF                                                 
+##  2 DataId                26 598577, 397915, 598578                              
+##  3 Indicator              7 Children with symptoms of ARI, Number of children b~
+##  4 Value                 26 21.9, 19.3, 2912                                    
+##  5 Precision              2 1, 0                                                
+##  6 DHS_CountryCode        1 ZA                                                  
+##  7 CountryName            1 South Africa                                        
+##  8 SurveyYear             2 1998, 2016                                          
+##  9 SurveyId               2 ZA1998DHS, ZA2016DHS                                
+## 10 IndicatorId            7 CH_ARIS_C_ARI, CH_ARIS_C_NUM, CH_ARIS_C_UNW         
+## # i 19 more rows
+\end{verbatim}
+
+\#Drop the countries only onw unqiue value: reason, there is no useful
+information - county is also always za
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ari\_df }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df }\SpecialCharTok{\%\textgreater{}\%}
+
+ \FunctionTok{select}\NormalTok{(}
+     \SpecialCharTok{{-}}\NormalTok{ISO3, }
+    \SpecialCharTok{{-}}\NormalTok{DHS\_CountryCode, }
+    \SpecialCharTok{{-}}\NormalTok{CountryName, }
+    \SpecialCharTok{{-}}\NormalTok{SurveyId,}
+    \SpecialCharTok{{-}}\NormalTok{ByVariableId, }
+    \SpecialCharTok{{-}}\NormalTok{ByVariableLabel, }
+    \SpecialCharTok{{-}}\NormalTok{IsTotal,}
+    \SpecialCharTok{{-}}\NormalTok{RegionId, }
+    \SpecialCharTok{{-}}\NormalTok{SurveyYearLabel, }
+    \SpecialCharTok{{-}}\NormalTok{SurveyType,}
+    \SpecialCharTok{{-}}\NormalTok{CharacteristicOrder}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\#Missing Values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tidyr)}
+
+
+\NormalTok{ari\_df }\OtherTok{\textless{}{-}}\NormalTok{ ari\_df }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{mutate}\NormalTok{(}
+    \CommentTok{\# 4740 \textless{}{-}\textgreater{} 4797}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{4740}\NormalTok{,}
+      \DecValTok{4797}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{4797}\NormalTok{,}
+      \DecValTok{4740}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 2912 \textless{}{-}\textgreater{} 2958}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{2912}\NormalTok{,}
+      \DecValTok{2958}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{2958}\NormalTok{,}
+      \DecValTok{2912}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 2025 \textless{}{-}\textgreater{} 2026}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{2025}\NormalTok{,}
+      \DecValTok{2026}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{2026}\NormalTok{,}
+      \DecValTok{2025}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 3444 \textless{}{-}\textgreater{} 3413}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{3444}\NormalTok{,}
+      \DecValTok{3413}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{3413}\NormalTok{,}
+      \DecValTok{3444}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 68 \textless{}{-}\textgreater{} 59}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{68}\NormalTok{,}
+      \DecValTok{59}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{59}\NormalTok{,}
+      \DecValTok{68}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 107 \textless{}{-}\textgreater{} 94}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{107}\NormalTok{,}
+      \DecValTok{94}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{94}\NormalTok{,}
+      \DecValTok{107}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 637 \textless{}{-}\textgreater{} 607}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{637}\NormalTok{,}
+      \DecValTok{607}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{607}\NormalTok{,}
+      \DecValTok{637}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    ),}
+
+    \CommentTok{\# 913 \textless{}{-}\textgreater{} 862}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorUnweighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorWeighted }\SpecialCharTok{==} \DecValTok{913}\NormalTok{,}
+      \DecValTok{862}\NormalTok{,}
+\NormalTok{      DenominatorUnweighted}
+\NormalTok{    ),}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{if\_else}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(DenominatorWeighted) }\SpecialCharTok{\&}\NormalTok{ DenominatorUnweighted }\SpecialCharTok{==} \DecValTok{862}\NormalTok{,}
+      \DecValTok{913}\NormalTok{,}
+\NormalTok{      DenominatorWeighted}
+\NormalTok{    )}
+\NormalTok{  )}
+
+
+
+
+\NormalTok{ari\_df[}
+       \FunctionTok{c}\NormalTok{(}\StringTok{"DenominatorWeighted"}\NormalTok{, }\StringTok{"DenominatorUnweighted"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 26 x 2
+##    DenominatorWeighted DenominatorUnweighted
+##                  <dbl>                 <dbl>
+##  1                2912                  2958
+##  2                4740                  4797
+##  3                2912                  2958
+##  4                4740                  4797
+##  5                2912                  2958
+##  6                4740                  4797
+##  7                 637                   607
+##  8                 913                   862
+##  9                 637                   607
+## 10                 913                   862
+## # i 16 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(ari\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ DenominatorWeighted, }\AttributeTok{y =}\NormalTok{ DenominatorUnweighted)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.6}\NormalTok{, }\AttributeTok{color =} \StringTok{"steelblue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Scatterplot for Outlier Detection"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Denominator Weighted"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Denominator Unweighted"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{11_symptoms_files/figure-latex/unnamed-chunk-15-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(ari\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ DenominatorWeighted)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightblue"}\NormalTok{, }\AttributeTok{outlier.color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{outlier.shape =} \DecValTok{16}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Denominator Weighted"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Denominator Weighted"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{11_symptoms_files/figure-latex/unnamed-chunk-15-2.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(ari\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 26 18
+\end{verbatim}
+
+\#save cleaned data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write\_csv}\NormalTok{(ari\_df, }\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{,}\StringTok{"processed"}\NormalTok{, }\StringTok{"symptoms{-}of{-}acute{-}respiratory{-}infection{-}ari\_cleaned.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

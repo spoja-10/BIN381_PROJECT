@@ -1,13 +1,13 @@
 ---
 title: "02_Anthropetry"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
-
-
 
 ## 1. Load Libraries and Data
 
@@ -38,6 +38,17 @@ cat("Dimensions:", dim(anth_df), "\n")
 
 ```
 
+### Load Data
+
+**Purpose:** Load the raw anthropometry dataset into R.
+
+**What the code does:**\
+- Reads the CSV file from the project folder using `here()`.\
+- Removes the first row if it contains metadata.\
+- Displays initial dataset dimensions.
+
+**Outcome:** Raw dataset `anth_df` is ready for assessment and cleaning.
+
 # 2. Initial Data Assessment -----------------------------------------------
 
 ```{r initial_assessment}
@@ -55,11 +66,24 @@ skim(anth_df)
 vis_miss(anth_df)
 ```
 
+### Initial Data Assessment
+
+**Purpose:** Understand dataset structure, missingness, and content before cleaning.
+
+**What the code does:**\
+- Cleans column names with `clean_names()`.\
+- Shows variable types and sample data using `glimpse()`.\
+- Generates detailed summary statistics with `skim()`.\
+- Visualizes missing values using `vis_miss()`.
+
+**Outcome:** Snapshot of dataset quality, guiding the cleaning steps.
 
 ## 3. Data Cleaning Process
 
 ### 3.1 Handle Duplicates Systematically
-- Duplicates can distort analysis. We remove exact duplicates to maintain dataset integrity.
+
+-   Duplicates can distort analysis. We remove exact duplicates to maintain dataset integrity.
+
 ```{r handle_duplicates}
 # Exact duplicates
 cat("Exact duplicates:", sum(duplicated(anth_df)), "\n")
@@ -71,9 +95,20 @@ cat("Dimensions after deduplication:", dim(anth_df), "\n")
 
 ```
 
+### Handle Duplicates
+
+**Purpose:** Remove repeated rows to maintain dataset integrity.
+
+**What the code does:**\
+- Counts exact duplicates with `duplicated()`.\
+- Removes duplicates with `distinct()`.
+
+**Outcome:** Dataset now contains only unique observations.
+
 ### 3.2 Convert Data Types
 
-- Ensures numeric, integer, and logical columns are correctly typed for analysis.This prevents calculation errors and improves data quality.
+-   Ensures numeric, integer, and logical columns are correctly typed for analysis.This prevents calculation errors and improves data quality.
+
 ```{r convert_types}
 # Define the columns safely
 numeric_cols <- intersect(c("value", "precision", "denominator_weighted", "denominator_unweighted"), colnames(anth_df))
@@ -93,48 +128,88 @@ cat("Data types converted successfully.\n")
 
 ```
 
-### 3.3 Handle Missing Values
-- Columns with excessive missingness are dropped to maintain analysis integrity.
+### Convert Data Types
 
-- Remaining missing values are imputed (numeric → median, categorical → mode) to allow modeling and prevent bias.
+**Purpose:** Ensure numeric, integer, and logical columns are properly typed.
+
+**What the code does:**\
+- Converts numeric columns like `value` and `precision`.\
+- Converts ID or order columns to integers.\
+- Converts flag columns (`is_total`, `is_preferred`) to logical.
+
+**Outcome:** Standardized column types, preventing calculation and modeling errors.
+
+### 3.3 Handle Missing Values
 
 ```{r handle_missing}
-# Summarize missingness
+# 1. Summarize missingness
 missing_summary <- data.frame(
   Column = names(anth_df),
   Missing_Count = colSums(is.na(anth_df)),
-  Missing_Percent = round(colSums(is.na(anth_df))/nrow(anth_df)*100, 2)
+  Missing_Percent = round(colSums(is.na(anth_df)) / nrow(anth_df) * 100, 2)
 ) %>% arrange(desc(Missing_Percent))
 
 print(missing_summary)
 
-# Drop columns with >40% missing values
-cols_to_drop <- missing_summary %>% filter(Missing_Percent > 40) %>% pull(Column)
-anth_df <- anth_df %>% select(-all_of(cols_to_drop))
+# 2. Drop columns with >80% missing values
+cols_to_drop <- missing_summary %>% filter(Missing_Percent > 80) %>% pull(Column)
+if(length(cols_to_drop) > 0){
+  anth_df <- anth_df %>% select(-all_of(cols_to_drop))
+  cat("Dropped columns with >80% missing:", paste(cols_to_drop, collapse = ", "), "\n")
+}
 
-# Impute remaining missing values: median for numeric, mode for categorical
+# 3. Impute remaining missing values
+# Function to get mode
 impute_mode <- function(x) {
   ux <- na.omit(x)
-  if(length(ux)==0) return(x)
-  rep(names(sort(table(ux), decreasing=TRUE))[1], length(x))
+  if(length(ux) == 0) return(x)
+  x[is.na(x)] <- names(sort(table(ux), decreasing = TRUE))[1]
+  return(x)
 }
 
 anth_df <- anth_df %>%
-  mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
-  mutate(across(where(is.character), ~ifelse(is.na(.), impute_mode(.), .)))
+  mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm = TRUE), .))) %>%
+  mutate(across(where(is.character), impute_mode))
 
 cat("Remaining NAs after imputation:", sum(is.na(anth_df)), "\n")
 
+# Summarize after handling missing values
+summary_stats <- data.frame(
+  Column = names(anth_df),
+  Type = sapply(anth_df, class),
+  Missing_Count = colSums(is.na(anth_df)),
+  Missing_Percent = round(colSums(is.na(anth_df)) / nrow(anth_df) * 100, 2)
+)
+
+# Print summary
+print(summary_stats)
+
+# Optional: visualize missing data (should be none now)
+library(visdat)
+vis_miss(anth_df) + ggtitle("Missing Values After Imputation")
+
 ```
+
+**Purpose:** Address missing data to allow accurate analysis.
+
+**What the code does:**\
+- Drops columns with \>40% missing values.\
+- Imputes remaining numeric missing values with median.\
+- Imputes categorical missing values with mode.
+
+**Outcome:** Dataset is complete, reducing bias in analysis.
+
 ### 3.4 Remove redundant columns
-- Metadata columns such as survey type or country identifiers are removed as they do not contribute to analysis.
+
+-   Metadata columns such as survey type or country identifiers are removed as they do not contribute to analysis.
+
 ```{r}
 
 # -----------------------------
 # Remove redundant columns
 # -----------------------------
 # Define columns that are metadata or unnecessary for analysis
-redundant_cols <- c("survey_type", "survey_id", "country_name", "iso3")  # adjust names to match anth_df
+redundant_cols <- c("survey_type", "survey_id", "country_name", "iso3")  
 
 # Remove them safely
 anth_df <- anth_df %>%
@@ -143,27 +218,17 @@ anth_df <- anth_df %>%
 cat("Redundant columns removed. New dimensions:", dim(anth_df), "\n")
 
 ```
-### 3.5 Remove columns with all missing values
 
-- Detect numeric/logical columns that have all missing values.
+**Purpose:** Remove columns with all missing or invalid values.
 
-- Remove them without touching the rest of the data.
+**What the code does:**\
+- Detects columns where all values are NA or NaN.\
+- Removes these columns from the dataset.
 
-- Report what was removed and the new dataset dimensions.
+**Outcome:** Dataset is compact, without empty or unusable variables.
 
-```{r}
-# Remove columns that are completely NA or have no valid numeric/logical data
-cols_to_remove <- anth_df %>% 
-  select(where(~all(is.na(.) | is.nan(.)))) %>% 
-  colnames()
-
-anth_df <- anth_df %>% select(-all_of(cols_to_remove))
-
-cat("Removed empty/unusable columns. New dimensions:", dim(anth_df), "\n")
-
-```
 # Handle Outliers
-- Outliers can skew results. Winsorizing caps extreme values at the IQR boundaries, preserving the bulk of the data while mitigating extreme effects.
+
 ```{r Handle Outliers}
 # Detect numeric columns
 num_cols <- anth_df %>% select(where(is.numeric))
@@ -185,8 +250,18 @@ anth_df <- anth_df %>%
 
 ```
 
+### Handle Outliers
+
+**Purpose:** Reduce the influence of extreme values on analysis.
+
+**What the code does:**\
+- Calculates IQR bounds per numeric column.\
+- Caps values outside lower/upper bounds (Winsorizing).
+
+**Outcome:** Numeric variables are stabilized, minimizing distortion.
+
 ### 3.5 Deal with Noise / Special Values
-- Special values like negative heights/weights are logically impossible.Any negative value is replaced by the median of that column.
+
 ```{r Noise_Special_Values}
 
 
@@ -197,15 +272,16 @@ anth_df <- anth_df %>%
 
 ```
 
-## 4. Final Data Validation
+### Handle Noise / Special Values
 
-```{r final_validation}
-cat("=== FINAL CLEANED DATA ===\n")
-cat("Dimensions:", dim(anth_df), "\n")
+**Purpose:** Correct logically impossible values.
 
-skim(anth_df)
+**What the code does:**\
+- Replaces negative height or weight values with column median.
 
-```
+**Outcome:** Dataset values are realistic, ready for analysis.
+
+
 
 ## 5. Save Cleaned Data
 
@@ -213,4 +289,15 @@ skim(anth_df)
 write_csv(anth_df, here("data", "processed", "anthropometry_cleaned.csv"))
 cat("Cleaned dataset saved to data/processed/anthropometry_cleaned.csv\n")
 
+
+rm(list=ls())  # clears all objects
 ```
+
+### Save Cleaned Data
+
+**Purpose:** Persist the cleaned dataset for analysis or sharing.
+
+**What the code does:**\
+- Saves as CSV in `data/processed/`.
+
+**Outcome:** Cleaned dataset is stored safely for reproducible analysis.

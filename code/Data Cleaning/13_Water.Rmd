@@ -1,6 +1,8 @@
 ---
 title: "13_Water"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 #Loading Libraries
@@ -93,25 +95,7 @@ wtr_df <- wtr_df %>%
     DenominatorUnweighted = as.numeric(DenominatorUnweighted),
   )
 ```
-#check for unique values
-```{r}
-library(dplyr)
-library(purrr)
 
-# Summary table: column name, number of unique values, sample of unique values
-n_sample <- 3
-
-summary_tbl <- wtr_df %>%
-  map_df(~ tibble(
-    n_unique = n_distinct(.),
-    sample_values = paste(head(unique(.), n_sample), collapse = ", ")
-  ), .id = "column")
-
-
-summary_tbl
-
-
-```
 
 #Drop the countries only onw unqiue value: reason, there is no useful information - county is also always za
 ```{r}
@@ -133,10 +117,6 @@ wtr_df <- wtr_df %>%
 
 #Assumed pattern, the missing values can be filled with the previous non missing value in the opposite attribute
 ```{r}
-
-
-library(dplyr)
-library(tidyr)
 
 wtr_df <- wtr_df %>%
   fill(DenominatorWeighted, DenominatorUnweighted, .direction = "down")
@@ -175,9 +155,7 @@ unique(wtr_df$Indicator)
 
 ```
 
-```{r}
-dim(wtr_df)
-```
+
 
 #save cleaned data
 ```{r}

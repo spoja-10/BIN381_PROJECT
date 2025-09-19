@@ -1,276 +1,276 @@
 DataId,Indicator,Value,Precision,SurveyYear,IndicatorId,IndicatorOrder,IndicatorType,CharacteristicId,CharacteristicOrder,CharacteristicCategory,CharacteristicLabel,ByVariableId,ByVariableLabel,IsTotal,IsPreferred,SDRID,SurveyYearLabel,DenominatorWeighted,DenominatorUnweighted
-751751,Antenatal Care Provider: Doctor,28.5,1,1998,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwdoc,1998,2871,2903
-567476,Antenatal Care Provider: Doctor,30,1,1998,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwdoc,1998,4122,4148
-205488,Antenatal Care Provider: Doctor,27.3,1,1998,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwdoc,1998,2010,2041
-751748,Antenatal Care Provider: Nurse/Midwife,66.6,1,1998,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnrs,1998,2871,2903
-567472,Antenatal Care Provider: Nurse/Midwife,65,1,1998,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnrs,1998,4122,4148
-205485,Antenatal Care Provider: Nurse/Midwife,68.4,1,1998,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnrs,1998,2010,2041
-751754,Antenatal Care Provider: Traditional Birth Attendant,0.1,1,1998,Rh_ancp_w_tba,83363070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwtba,1998,2871,2903
-567471,Antenatal Care Provider: Traditional Birth Attendant,0.1,1,1998,Rh_ancp_w_tba,83363070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwtba,1998,4122,4148
-205487,Antenatal Care Provider: Traditional Birth Attendant,0.1,1,1998,Rh_ancp_w_tba,83363070,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwtba,1998,2010,2041
-751752,Antenatal Care Provider: Other,0.6,1,1998,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwoth,1998,2871,2903
-567479,Antenatal Care Provider: Other,0.7,1,1998,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwoth,1998,4122,4148
-205489,Antenatal Care Provider: Other,0.7,1,1998,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwoth,1998,2010,2041
-751749,Antenatal Care Provider: Missing,1.2,1,1998,Rh_ancp_w_mis,83363090,S,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwmis,1998,2871,2903
-567473,Antenatal Care Provider: Missing,1.1,1,1998,Rh_ancp_w_mis,83363090,S,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwmis,1998,4122,4148
-205491,Antenatal Care Provider: Missing,0.9,1,1998,Rh_ancp_w_mis,83363090,S,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwmis,1998,2010,2041
-751753,No Antenatal Care,2.9,1,1998,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnon,1998,2871,2903
-567480,No Antenatal Care,3.1,1,1998,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnon,1998,4122,4148
-205490,No Antenatal Care,2.7,1,1998,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnon,1998,2010,2041
-751750,Antenatal Care: Total,100,1,1998,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwtot,1998,2871,2903
-567474,Antenatal Care: Total,100,1,1998,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwtot,1998,4122,4148
-205497,Antenatal Care: Total,100,1,1998,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwtot,1998,2010,2041
-751767,Antenatal Care From A Skilled Provider,95.1,1,1998,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwskp,1998,2871,2903
-567475,Antenatal Care From A Skilled Provider,95,1,1998,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwskp,1998,4122,4148
-205486,Antenatal Care From A Skilled Provider,95.7,1,1998,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwskp,1998,2010,2041
-754459,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnum,1998,2010,2903
-566372,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnum,1998,2010,4148
-205498,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnum,1998,2010,2041
-375163,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwunw,1998,2871,2041
-27571,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwunw,1998,4122,2041
-205492,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwunw,1998,2010,2041
-334590,Place Of Delivery: Public Sector,76.5,1,1998,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcpub,1998,3072,3119
-302266,Place Of Delivery: Public Sector,74.9,1,1998,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcpub,1998,4992,5066
-3816,Place Of Delivery: Public Sector,77.6,1,1998,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcpub,1998,2081,2113
-334592,Place Of Delivery: Private Sector,8,1,1998,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcprv,1998,3072,3119
-302262,Place Of Delivery: Private Sector,8.5,1,1998,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcprv,1998,4992,5066
-3671,Place Of Delivery: Private Sector,7.5,1,1998,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcprv,1998,2081,2113
-334593,Place Of Delivery: At Home,13.8,1,1998,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpchom,1998,3072,3119
-302263,Place Of Delivery: At Home,14.3,1,1998,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpchom,1998,4992,5066
-3672,Place Of Delivery: At Home,13.5,1,1998,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpchom,1998,2081,2113
-334594,Place Of Delivery: Other,0.1,1,1998,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcoth,1998,3072,3119
-302264,Place Of Delivery: Other,0.2,1,1998,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcoth,1998,4992,5066
-3673,Place Of Delivery: Other,0.1,1,1998,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcoth,1998,2081,2113
-334595,Place Of Delivery: Don't Know Or Missing,1.6,1,1998,Rh_delp_c_dkm,83566050,S,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcdkm,1998,3072,3119
-302265,Place Of Delivery: Don't Know Or Missing,2.1,1,1998,Rh_delp_c_dkm,83566050,S,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcdkm,1998,4992,5066
-3674,Place Of Delivery: Don't Know Or Missing,1.2,1,1998,Rh_delp_c_dkm,83566050,S,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcdkm,1998,2081,2113
-334591,Place Of Delivery: Total,100,1,1998,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpctot,1998,3072,3119
-302267,Place Of Delivery: Total,100,1,1998,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpctot,1998,4992,5066
-3817,Place Of Delivery: Total,100,1,1998,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpctot,1998,2081,2113
-334596,Place Of Delivery: Health Facility,84.5,1,1998,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcdhf,1998,3072,3119
-302268,Place Of Delivery: Health Facility,83.4,1,1998,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcdhf,1998,4992,5066
-3675,Place Of Delivery: Health Facility,85.2,1,1998,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcdhf,1998,2081,2113
-205512,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcnum,1998,2010,3119
-387438,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcnum,1998,2010,5066
-15543,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcnum,1998,2010,2113
-334602,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcunw,1998,3072,2041
-31685,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcunw,1998,4992,2041
-399374,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcunw,1998,2081,2041
-508217,Assistance During Delivery: Doctor,29.3,1,1998,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacdoc,1998,3072,3119
-413496,Assistance During Delivery: Doctor,30,1,1998,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacdoc,1998,4992,5066
-15526,Assistance During Delivery: Doctor,28.2,1,1998,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacdoc,1998,2081,2113
-508216,Assistance During Delivery: Nurse/Midwife,56.1,1,1998,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnrs,1998,3072,3119
-413492,Assistance During Delivery: Nurse/Midwife,54.4,1,1998,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnrs,1998,4992,5066
-15523,Assistance During Delivery: Nurse/Midwife,58.1,1,1998,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnrs,1998,2081,2113
-508218,Assistance During Delivery: Traditional Birth Attendant,1.4,1,1998,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelactba,1998,3072,3119
-413498,Assistance During Delivery: Traditional Birth Attendant,1.4,1,1998,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelactba,1998,4992,5066
-15527,Assistance During Delivery: Traditional Birth Attendant,1.2,1,1998,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelactba,1998,2081,2113
-508214,Assistance During Delivery: Relative Or Other,9.9,1,1998,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacrel,1998,3072,3119
-413490,Assistance During Delivery: Relative Or Other,10.5,1,1998,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacrel,1998,4992,5066
-15524,Assistance During Delivery: Relative Or Other,9.7,1,1998,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacrel,1998,2081,2113
-508219,Assistance During Delivery: No One,2.1,1,1998,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnon,1998,3072,3119
-413499,Assistance During Delivery: No One,2.1,1,1998,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnon,1998,4992,5066
-15528,Assistance During Delivery: No One,1.8,1,1998,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnon,1998,2081,2113
-508215,Assistance During Delivery: Don't Know Or Missing,1.2,1,1998,Rh_dela_c_dkm,83606090,S,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacdkm,1998,3072,3119
-413491,Assistance During Delivery: Don't Know Or Missing,1.7,1,1998,Rh_dela_c_dkm,83606090,S,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacdkm,1998,4992,5066
-15525,Assistance During Delivery: Don't Know Or Missing,0.9,1,1998,Rh_dela_c_dkm,83606090,S,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacdkm,1998,2081,2113
-508220,Assistance During Delivery: Total,100,1,1998,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelactot,1998,3072,3119
-413493,Assistance During Delivery: Total,100,1,1998,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelactot,1998,4992,5066
-15520,Assistance During Delivery: Total,100,1,1998,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelactot,1998,2081,2113
-508221,Assistance During Delivery From A Skilled Provider,85.5,1,1998,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacskp,1998,3072,3119
-413494,Assistance During Delivery From A Skilled Provider,84.4,1,1998,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacskp,1998,4992,5066
-15521,Assistance During Delivery From A Skilled Provider,86.4,1,1998,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacskp,1998,2081,2113
-508222,Delivery By Cesarean Section,15.4,1,1998,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelaccsc,1998,3072,3119
-413495,Delivery By Cesarean Section,15.5,1,1998,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelaccsc,1998,4992,5066
-15522,Delivery By Cesarean Section,15.1,1,1998,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelaccsc,1998,2081,2113
-521104,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnum,1998,2010,3119
-387443,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnum,1998,2010,5066
-15519,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,1998,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnum,1998,2010,2113
-395187,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacunw,1998,3072,2041
-25921,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacunw,1998,4992,2041
-205906,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,1998,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacunw,1998,2081,2041
-598577,Children With Symptoms Of Ari,21.9,1,1998,Ch_aris_c_ari,93966010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscari,1998,2912,2958
-397915,Children With Symptoms Of Ari,19.3,1,1998,Ch_aris_c_ari,93966010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscari,1998,4740,4797
-598578,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_aris_c_num,93966020,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscnum,1998,2010,2958
-384931,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_aris_c_num,93966020,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscnum,1998,2010,4797
-139860,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_aris_c_unw,93966030,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscunw,1998,2912,2041
-26068,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_aris_c_unw,93966030,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscunw,1998,4740,2041
-450750,Children With Ari For Whom Advice Or Treatment Was Sought,81.9,1,1998,Ch_aris_c_adv,93966040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscadv,1998,637,607
-665172,Children With Ari For Whom Advice Or Treatment Was Sought,78.2,1,1998,Ch_aris_c_adv,93966040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscadv,1998,913,862
-457030,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_aris_c_nm2,93966060,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscnm2,1998,2010,607
-658945,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_aris_c_nm2,93966060,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscnm2,1998,2010,862
-320333,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_aris_c_un2,93966070,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscun2,1998,637,2041
-32724,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_aris_c_un2,93966070,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscun2,1998,913,2041
-15037,Treatment Of Diarrhea: Advice Or Treatment Was Sought,62.1,1,1998,Ch_diat_c_adv,94096010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcadv,1998,508,523
-607611,Treatment Of Diarrhea: Advice Or Treatment Was Sought,60.6,1,1998,Ch_diat_c_adv,94096010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcadv,1998,627,634
-15031,Treatment Of Diarrhea: Oral Rehydration Solution (Ors),52.7,1,1998,Ch_diat_c_ors,94096020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcors,1998,508,523
-607606,Treatment Of Diarrhea: Oral Rehydration Solution (Ors),51.2,1,1998,Ch_diat_c_ors,94096020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcors,1998,627,634
-15032,Treatment Of Diarrhea: Recommended Home Fluids (Rhf) At Home,70.6,1,1998,Ch_diat_c_rhf,94096030,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcrhf,1998,508,523
-607607,Treatment Of Diarrhea: Recommended Home Fluids (Rhf) At Home,68.6,1,1998,Ch_diat_c_rhf,94096030,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcrhf,1998,627,634
-15033,Treatment Of Diarrhea: Either Ors Or Rhf,83.1,1,1998,Ch_diat_c_ort,94096040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcort,1998,508,523
-607608,Treatment Of Diarrhea: Either Ors Or Rhf,81,1,1998,Ch_diat_c_ort,94096040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcort,1998,627,634
-15034,Treatment Of Diarrhea: Increased Fluids,56.6,1,1998,Ch_diat_c_inc,94096050,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcinc,1998,508,523
-607609,Treatment Of Diarrhea: Increased Fluids,57.1,1,1998,Ch_diat_c_inc,94096050,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcinc,1998,627,634
-15035,Treatment Of Diarrhea: Ort Or Increased Fluids,90.2,1,1998,Ch_diat_c_ori,94096060,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcori,1998,508,523
-607610,Treatment Of Diarrhea: Ort Or Increased Fluids,89.1,1,1998,Ch_diat_c_ori,94096060,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcori,1998,627,634
-15036,"Treatment Of Diarrhea: No Ors, Rhf Or Increased Fluids",9.8,1,1998,Ch_diat_c_non,94096070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnon,1998,508,523
-607614,"Treatment Of Diarrhea: No Ors, Rhf Or Increased Fluids",10.9,1,1998,Ch_diat_c_non,94096070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnon,1998,627,634
-15039,Treatment Of Diarrhea: Intravenous Solution,0.5,1,1998,Ch_diat_c_ivs,94096110,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcivs,1998,508,523
-607615,Treatment Of Diarrhea: Intravenous Solution,0.4,1,1998,Ch_diat_c_ivs,94096110,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcivs,1998,627,634
-15040,Treatment Of Diarrhea: Home Remedy - Other,87.6,1,1998,Ch_diat_c_hom,94096130,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatchom,1998,508,523
-607617,Treatment Of Diarrhea: Home Remedy - Other,86.3,1,1998,Ch_diat_c_hom,94096130,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatchom,1998,627,634
-15041,Treatment Of Diarrhea: No Treatment,0.6,1,1998,Ch_diat_c_not,94096140,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnot,1998,508,523
-607618,Treatment Of Diarrhea: No Treatment,0.5,1,1998,Ch_diat_c_not,94096140,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnot,1998,627,634
-15038,Treatment Of Diarrhea: Don't Know Or Missing,0.9,1,1998,Ch_diat_c_dkm,94096150,S,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcdkm,1998,508,523
-607612,Treatment Of Diarrhea: Don't Know Or Missing,1.7,1,1998,Ch_diat_c_dkm,94096150,S,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcdkm,1998,627,634
-16468,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_diat_c_num,94096160,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnum,1998,2010,523
-604853,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,1998,Ch_diat_c_num,94096160,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnum,1998,2010,634
-280214,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_diat_c_unw,94096170,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcunw,1998,508,2041
-27506,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,1998,Ch_diat_c_unw,94096170,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcunw,1998,627,2041
-157227,Antenatal Care Provider: Doctor,17.1,1,2016,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwdoc,2016,1962,1977
-653702,Antenatal Care Provider: Doctor,17.1,1,2016,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwdoc,2016,3036,3036
-157234,Antenatal Care Provider: Doctor,16.1,1,2016,Rh_ancp_w_doc,83363010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwdoc,2016,1386,1376
-157230,Antenatal Care Provider: Nurse/Midwife,76.8,1,2016,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnrs,2016,1962,1977
-653707,Antenatal Care Provider: Nurse/Midwife,76.6,1,2016,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnrs,2016,3036,3036
-157238,Antenatal Care Provider: Nurse/Midwife,77,1,2016,Rh_ancp_w_nrs,83363020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnrs,2016,1386,1376
-157228,Antenatal Care Provider: Other,0.6,1,2016,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwoth,2016,1962,1977
-653704,Antenatal Care Provider: Other,0.6,1,2016,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwoth,2016,3036,3036
-157235,Antenatal Care Provider: Other,0.5,1,2016,Rh_ancp_w_oth,83363080,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwoth,2016,1386,1376
-157229,No Antenatal Care,5.5,1,2016,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnon,2016,1962,1977
-653705,No Antenatal Care,5.7,1,2016,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnon,2016,3036,3036
-157236,No Antenatal Care,6.5,1,2016,Rh_ancp_w_non,83363100,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnon,2016,1386,1376
-157232,Antenatal Care: Total,100,1,2016,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwtot,2016,1962,1977
-653708,Antenatal Care: Total,100,1,2016,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwtot,2016,3036,3036
-157239,Antenatal Care: Total,100,1,2016,Rh_ancp_w_tot,83363110,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwtot,2016,1386,1376
-157226,Antenatal Care From A Skilled Provider,93.9,1,2016,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwskp,2016,1962,1977
-653706,Antenatal Care From A Skilled Provider,93.7,1,2016,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwskp,2016,3036,3036
-157233,Antenatal Care From A Skilled Provider,93.1,1,2016,Rh_ancp_w_skp,83363120,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwskp,2016,1386,1376
-157244,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwnum,2016,2010,1977
-657480,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwnum,2016,2010,3036
-157237,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_ancp_w_num,83363130,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwnum,2016,2010,1376
-157240,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhancpwunw,2016,1962,2041
-339335,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhancpwunw,2016,3036,2041
-157242,Number Of Women With A Live Birth (Or Stillbirth) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_ancp_w_unw,83363140,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhancpwunw,2016,1386,2041
-157346,Place Of Delivery: Public Sector,88.3,1,2016,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcpub,2016,2091,2105
-157314,Place Of Delivery: Public Sector,87.4,1,2016,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcpub,2016,3572,3548
-463685,Place Of Delivery: Public Sector,88.4,1,2016,Rh_delp_c_pub,83566010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcpub,2016,1414,1406
-157339,Place Of Delivery: Private Sector,7.7,1,2016,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcprv,2016,2091,2105
-157315,Place Of Delivery: Private Sector,8.5,1,2016,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcprv,2016,3572,3548
-463682,Place Of Delivery: Private Sector,7.7,1,2016,Rh_delp_c_prv,83566020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcprv,2016,1414,1406
-157340,Place Of Delivery: At Home,3.6,1,2016,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpchom,2016,2091,2105
-157316,Place Of Delivery: At Home,3.7,1,2016,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpchom,2016,3572,3548
-463683,Place Of Delivery: At Home,3.4,1,2016,Rh_delp_c_hom,83566030,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpchom,2016,1414,1406
-157341,Place Of Delivery: Other,0.3,1,2016,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcoth,2016,2091,2105
-157317,Place Of Delivery: Other,0.4,1,2016,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcoth,2016,3572,3548
-463684,Place Of Delivery: Other,0.5,1,2016,Rh_delp_c_oth,83566040,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcoth,2016,1414,1406
-157347,Place Of Delivery: Total,100,1,2016,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpctot,2016,2091,2105
-157337,Place Of Delivery: Total,100,1,2016,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpctot,2016,3572,3548
-463686,Place Of Delivery: Total,100,1,2016,Rh_delp_c_tot,83566060,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpctot,2016,1414,1406
-157345,Place Of Delivery: Health Facility,96,1,2016,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcdhf,2016,2091,2105
-157336,Place Of Delivery: Health Facility,95.9,1,2016,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcdhf,2016,3572,3548
-463689,Place Of Delivery: Health Facility,96.1,1,2016,Rh_delp_c_dhf,83566070,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcdhf,2016,1414,1406
-157342,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcnum,2016,2010,2105
-157343,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcnum,2016,2010,3548
-473017,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_delp_c_num,83566080,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcnum,2016,2010,1406
-157380,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelpcunw,2016,2091,2041
-157373,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelpcunw,2016,3572,2041
-345160,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_delp_c_unw,83566090,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelpcunw,2016,1414,2041
-663099,Assistance During Delivery: Doctor,29.1,1,2016,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacdoc,2016,2091,2105
-373334,Assistance During Delivery: Doctor,28.7,1,2016,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacdoc,2016,3572,3548
-473060,Assistance During Delivery: Doctor,29.5,1,2016,Rh_dela_c_doc,83606010,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacdoc,2016,1414,1406
-663098,Assistance During Delivery: Nurse/Midwife,67.6,1,2016,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnrs,2016,2091,2105
-373337,Assistance During Delivery: Nurse/Midwife,68,1,2016,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnrs,2016,3572,3548
-473024,Assistance During Delivery: Nurse/Midwife,67.6,1,2016,Rh_dela_c_nrs,83606020,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnrs,2016,1414,1406
-663100,Assistance During Delivery: Traditional Birth Attendant,0.2,1,2016,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelactba,2016,2091,2105
-373335,Assistance During Delivery: Traditional Birth Attendant,0.1,1,2016,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelactba,2016,3572,3548
-473061,Assistance During Delivery: Traditional Birth Attendant,0.2,1,2016,Rh_dela_c_tba,83606060,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelactba,2016,1414,1406
-663097,Assistance During Delivery: Relative Or Other,1.6,1,2016,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacrel,2016,2091,2105
-373332,Assistance During Delivery: Relative Or Other,1.9,1,2016,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacrel,2016,3572,3548
-473025,Assistance During Delivery: Relative Or Other,1.8,1,2016,Rh_dela_c_rel,83606070,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacrel,2016,1414,1406
-663103,Assistance During Delivery: No One,1.5,1,2016,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnon,2016,2091,2105
-373336,Assistance During Delivery: No One,1.2,1,2016,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnon,2016,3572,3548
-473062,Assistance During Delivery: No One,0.9,1,2016,Rh_dela_c_non,83606080,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnon,2016,1414,1406
-663102,Assistance During Delivery: Total,100,1,2016,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelactot,2016,2091,2105
-373328,Assistance During Delivery: Total,100,1,2016,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelactot,2016,3572,3548
-473019,Assistance During Delivery: Total,100,1,2016,Rh_dela_c_tot,83606100,T,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelactot,2016,1414,1406
-663104,Assistance During Delivery From A Skilled Provider,96.7,1,2016,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacskp,2016,2091,2105
-373329,Assistance During Delivery From A Skilled Provider,96.7,1,2016,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacskp,2016,3572,3548
-473020,Assistance During Delivery From A Skilled Provider,97.1,1,2016,Rh_dela_c_skp,83606110,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacskp,2016,1414,1406
-663105,Delivery By Cesarean Section,24.9,1,2016,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelaccsc,2016,2091,2105
-373330,Delivery By Cesarean Section,24.2,1,2016,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelaccsc,2016,3572,3548
-473021,Delivery By Cesarean Section,25.3,1,2016,Rh_dela_c_csc,83606120,I,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelaccsc,2016,1414,1406
-664010,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacnum,2016,2010,2105
-157381,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacnum,2016,2010,3548
-473018,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years,238.60000000000002,1,2016,Rh_dela_c_num,83606130,D,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacnum,2016,2010,1406
-298971,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Rhdelacunw,2016,2091,2041
-373326,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,FALSE,Rhdelacunw,2016,3572,2041
-157399,Number Of Live Births (Or Stillbirths) In The Last Two (Or Three/Five) Years (Unweighted),238.60000000000002,1,2016,Rh_dela_c_unw,83606140,U,1000,0,Total,Total,14002,Two Years Preceding The Survey,TRUE,TRUE,Rhdelacunw,2016,1414,2041
-157405,Provider Of Mothers' First Postnatal Checkup: Doctor/Nurse/Midwife,83.2,1,2016,Rh_pcmp_w_doc,83663010,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwdoc,2016,1386,1376
-157406,Provider Of Mothers' First Postnatal Checkup: Community Health Worker,0.2,1,2016,Rh_pcmp_w_chw,83663030,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwchw,2016,1386,1376
-157407,Provider Of Mothers' First Postnatal Checkup: Traditional Birth Attendant,0.2,1,2016,Rh_pcmp_w_tba,83663050,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwtba,2016,1386,1376
-157408,No Postnatal Checkup For Mother Within First Two Days Of Birth,16.4,1,2016,Rh_pcmp_w_non,83663070,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwnon,2016,1386,1376
-157409,Provider Of Mothers' First Postnatal Checkup: Total,100,1,2016,Rh_pcmp_w_tot,83663080,T,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwtot,2016,1386,1376
-157417,Number Of Mothers,238.60000000000002,1,2016,Rh_pcmp_w_num,83663090,D,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwnum,2016,2010,1376
-157415,Number Of Mothers (Unweighted),238.60000000000002,1,2016,Rh_pcmp_w_unw,83663100,U,1000,0,Total,Total,0,,TRUE,TRUE,Rhpcmpwunw,2016,1386,2041
-157410,Provider Of Newborns' First Postnatal Checkup: Doctor/Nurse/Midwife,86.2,1,2016,Rh_pccp_c_doc,83736010,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpcdoc,2016,1386,1376
-157411,Provider Of Newborns' First Postnatal Checkup: Community Health Worker,0,1,2016,Rh_pccp_c_chw,83736030,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpcchw,2016,1386,1376
-157418,No Postnatal Checkup For Newborn Within First Two Days Of Birth,13.8,1,2016,Rh_pccp_c_non,83736070,I,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpcnon,2016,1386,1376
-157419,Provider Of Newborns' First Postnatal Checkup: Total,100,1,2016,Rh_pccp_c_tot,83736080,T,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpctot,2016,1386,1376
-157434,Number Of Newborns,238.60000000000002,1,2016,Rh_pccp_c_num,83736090,D,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpcnum,2016,2010,1376
-157480,Number Of Newborns (Unweighted),238.60000000000002,1,2016,Rh_pccp_c_unw,83736100,U,1000,0,Total,Total,0,,TRUE,TRUE,Rhpccpcunw,2016,1386,2041
-550039,Children With Symptoms Of Ari,3.4,1,2016,Ch_aris_c_ari,93966010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscari,2016,2025,2026
-520801,Children With Symptoms Of Ari,3.1,1,2016,Ch_aris_c_ari,93966010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscari,2016,3444,3413
-550040,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,2016,Ch_aris_c_num,93966020,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscnum,2016,2010,2026
-528550,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,2016,Ch_aris_c_num,93966020,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscnum,2016,2010,3413
-149150,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,2016,Ch_aris_c_unw,93966030,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscunw,2016,2025,2041
-439924,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,2016,Ch_aris_c_unw,93966030,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscunw,2016,3444,2041
-628408,Children With Ari For Whom Advice Or Treatment Was Sought,96.9,1,2016,Ch_aris_c_adv,93966040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscadv,2016,68,59
-701545,Children With Ari For Whom Advice Or Treatment Was Sought,87.6,1,2016,Ch_aris_c_adv,93966040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscadv,2016,107,94
-628407,Children With Symptoms Of Ari Who Received Antibiotics,46.7,1,2016,Ch_aris_c_abi,93966050,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscabi,2016,68,59
-701543,Children With Symptoms Of Ari Who Received Antibiotics,42,1,2016,Ch_aris_c_abi,93966050,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscabi,2016,107,94
-630188,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years,68,1,2016,Ch_aris_c_nm2,93966060,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscnm2,2016,2010,59
-701544,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years,107,1,2016,Ch_aris_c_nm2,93966060,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscnm2,2016,2010,94
-300159,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years (Unweighted),59,1,2016,Ch_aris_c_un2,93966070,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chariscun2,2016,68,2041
-149151,Number Of Children With Symptoms Of Ari Born In The Last Five (Or Three) Years (Unweighted),94,1,2016,Ch_aris_c_un2,93966070,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chariscun2,2016,107,2041
-149154,Children With Fever For Whom Advice Or Treatment Was Sought,66.8,1,2016,Ch_fevt_c_adv,94036010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chfevtcadv,2016,422,410
-653434,Children With Fever For Whom Advice Or Treatment Was Sought,68.4,1,2016,Ch_fevt_c_adv,94036010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chfevtcadv,2016,679,647
-149153,Child Took Antimalarial Drugs For Fever,0.2,1,2016,Ch_fevt_c_aml,94036020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chfevtcaml,2016,422,410
-653431,Child Took Antimalarial Drugs For Fever,0.5,1,2016,Ch_fevt_c_aml,94036020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chfevtcaml,2016,679,647
-149156,Child Took Antibiotic Drugs For Fever,29.2,1,2016,Ch_fevt_c_abi,94036030,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chfevtcabi,2016,422,410
-653433,Child Took Antibiotic Drugs For Fever,30.3,1,2016,Ch_fevt_c_abi,94036030,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chfevtcabi,2016,679,647
-149157,Number Of Children With Fever In The Last Two Weeks,238.60000000000002,1,2016,Ch_fevt_c_num,94036040,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chfevtcnum,2016,2010,410
-657740,Number Of Children With Fever In The Last Two Weeks,238.60000000000002,1,2016,Ch_fevt_c_num,94036040,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chfevtcnum,2016,2010,647
-149158,Number Of Children With Fever In The Last Two Weeks (Unweighted),238.60000000000002,1,2016,Ch_fevt_c_unw,94036050,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chfevtcunw,2016,422,2041
-339925,Number Of Children With Fever In The Last Two Weeks (Unweighted),238.60000000000002,1,2016,Ch_fevt_c_unw,94036050,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chfevtcunw,2016,679,2041
-707848,Treatment Of Diarrhea: Advice Or Treatment Was Sought,59.2,1,2016,Ch_diat_c_adv,94096010,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcadv,2016,246,256
-545833,Treatment Of Diarrhea: Advice Or Treatment Was Sought,63,1,2016,Ch_diat_c_adv,94096010,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcadv,2016,356,350
-707849,Treatment Of Diarrhea: Oral Rehydration Solution (Ors),46.5,1,2016,Ch_diat_c_ors,94096020,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcors,2016,246,256
-545832,Treatment Of Diarrhea: Oral Rehydration Solution (Ors),51.4,1,2016,Ch_diat_c_ors,94096020,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcors,2016,356,350
-707850,Treatment Of Diarrhea: Recommended Home Fluids (Rhf) At Home,67.2,1,2016,Ch_diat_c_rhf,94096030,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcrhf,2016,246,256
-545838,Treatment Of Diarrhea: Recommended Home Fluids (Rhf) At Home,72.5,1,2016,Ch_diat_c_rhf,94096030,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcrhf,2016,356,350
-707851,Treatment Of Diarrhea: Either Ors Or Rhf,75.4,1,2016,Ch_diat_c_ort,94096040,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcort,2016,246,256
-545839,Treatment Of Diarrhea: Either Ors Or Rhf,80.5,1,2016,Ch_diat_c_ort,94096040,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcort,2016,356,350
-707857,Treatment Of Diarrhea: Zinc Supplements,33.7,1,2016,Ch_diat_c_znc,94096044,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcznc,2016,246,256
-545835,Treatment Of Diarrhea: Zinc Supplements,36.8,1,2016,Ch_diat_c_znc,94096044,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcznc,2016,356,350
-707854,Treatment Of Diarrhea: Increased Fluids,14.6,1,2016,Ch_diat_c_inc,94096050,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcinc,2016,246,256
-545844,Treatment Of Diarrhea: Increased Fluids,15,1,2016,Ch_diat_c_inc,94096050,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcinc,2016,356,350
-707855,Treatment Of Diarrhea: Ort Or Increased Fluids,79.2,1,2016,Ch_diat_c_ori,94096060,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcori,2016,246,256
-545845,Treatment Of Diarrhea: Ort Or Increased Fluids,83.3,1,2016,Ch_diat_c_ori,94096060,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcori,2016,356,350
-707846,"Treatment Of Diarrhea: No Ors, Rhf Or Increased Fluids",20.8,1,2016,Ch_diat_c_non,94096070,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnon,2016,246,256
-545847,"Treatment Of Diarrhea: No Ors, Rhf Or Increased Fluids",16.7,1,2016,Ch_diat_c_non,94096070,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnon,2016,356,350
-707856,Treatment Of Diarrhea: Antibiotics,7.2,1,2016,Ch_diat_c_abi,94096080,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcabi,2016,246,256
-545834,Treatment Of Diarrhea: Antibiotics,10.6,1,2016,Ch_diat_c_abi,94096080,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcabi,2016,356,350
-707847,Treatment Of Diarrhea: Antimotility Drugs,2.4,1,2016,Ch_diat_c_amo,94096090,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcamo,2016,246,256
-545848,Treatment Of Diarrhea: Antimotility Drugs,1.8,1,2016,Ch_diat_c_amo,94096090,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcamo,2016,356,350
-707853,Treatment Of Diarrhea: Intravenous Solution,0.2,1,2016,Ch_diat_c_ivs,94096110,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcivs,2016,246,256
-545836,Treatment Of Diarrhea: Intravenous Solution,0.6,1,2016,Ch_diat_c_ivs,94096110,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcivs,2016,356,350
-707858,Treatment Of Diarrhea: Injection,0.5,1,2016,Ch_diat_c_inj,94096120,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcinj,2016,246,256
-545837,Treatment Of Diarrhea: Injection,1.1,1,2016,Ch_diat_c_inj,94096120,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcinj,2016,356,350
-707859,Treatment Of Diarrhea: Home Remedy - Other,9.1,1,2016,Ch_diat_c_hom,94096130,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatchom,2016,246,256
-545840,Treatment Of Diarrhea: Home Remedy - Other,10.3,1,2016,Ch_diat_c_hom,94096130,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatchom,2016,356,350
-707860,Treatment Of Diarrhea: No Treatment,16.2,1,2016,Ch_diat_c_not,94096140,I,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnot,2016,246,256
-545843,Treatment Of Diarrhea: No Treatment,12.1,1,2016,Ch_diat_c_not,94096140,I,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnot,2016,356,350
-708945,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,2016,Ch_diat_c_num,94096160,D,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcnum,2016,2010,256
-553597,Number Of Children Born In The Last Five (Or Three) Years,238.60000000000002,1,2016,Ch_diat_c_num,94096160,D,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcnum,2016,2010,350
-309448,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,2016,Ch_diat_c_unw,94096170,U,1000,0,Total,Total,14000,Three Years Preceding The Survey,TRUE,FALSE,Chdiatcunw,2016,246,2041
-377936,Number Of Children Born In The Last Five (Or Three) Years (Unweighted),238.60000000000002,1,2016,Ch_diat_c_unw,94096170,U,1000,0,Total,Total,14001,Five Years Preceding The Survey,TRUE,TRUE,Chdiatcunw,2016,356,2041
+751751,Antenatal care provider: Doctor,28.5,1,1998,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWDOC,1998,2871,2903
+567476,Antenatal care provider: Doctor,30,1,1998,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWDOC,1998,4122,4148
+205488,Antenatal care provider: Doctor,27.3,1,1998,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWDOC,1998,2010,2041
+751748,Antenatal care provider: Nurse/midwife,66.6,1,1998,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNRS,1998,2871,2903
+567472,Antenatal care provider: Nurse/midwife,65,1,1998,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNRS,1998,4122,4148
+205485,Antenatal care provider: Nurse/midwife,68.4,1,1998,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNRS,1998,2010,2041
+751754,Antenatal care provider: Traditional birth attendant,0.1,1,1998,RH_ANCP_W_TBA,83363070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWTBA,1998,2871,2903
+567471,Antenatal care provider: Traditional birth attendant,0.1,1,1998,RH_ANCP_W_TBA,83363070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWTBA,1998,4122,4148
+205487,Antenatal care provider: Traditional birth attendant,0.1,1,1998,RH_ANCP_W_TBA,83363070,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWTBA,1998,2010,2041
+751752,Antenatal care provider: Other,0.6,1,1998,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWOTH,1998,2871,2903
+567479,Antenatal care provider: Other,0.7,1,1998,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWOTH,1998,4122,4148
+205489,Antenatal care provider: Other,0.7,1,1998,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWOTH,1998,2010,2041
+751749,Antenatal care provider: Missing,1.2,1,1998,RH_ANCP_W_MIS,83363090,S,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWMIS,1998,2871,2903
+567473,Antenatal care provider: Missing,1.1,1,1998,RH_ANCP_W_MIS,83363090,S,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWMIS,1998,4122,4148
+205491,Antenatal care provider: Missing,0.9,1,1998,RH_ANCP_W_MIS,83363090,S,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWMIS,1998,2010,2041
+751753,No antenatal care,2.9,1,1998,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNON,1998,2871,2903
+567480,No antenatal care,3.1,1,1998,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNON,1998,4122,4148
+205490,No antenatal care,2.7,1,1998,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNON,1998,2010,2041
+751750,Antenatal care: Total,100,1,1998,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWTOT,1998,2871,2903
+567474,Antenatal care: Total,100,1,1998,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWTOT,1998,4122,4148
+205497,Antenatal care: Total,100,1,1998,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWTOT,1998,2010,2041
+751767,Antenatal care from a skilled provider,95.1,1,1998,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWSKP,1998,2871,2903
+567475,Antenatal care from a skilled provider,95,1,1998,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWSKP,1998,4122,4148
+205486,Antenatal care from a skilled provider,95.7,1,1998,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWSKP,1998,2010,2041
+754459,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,1998,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNUM,1998,2010,2903
+566372,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,1998,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNUM,1998,2010,4148
+205498,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,1998,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNUM,1998,2010,2041
+375163,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWUNW,1998,2871,2041
+27571,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWUNW,1998,4122,2041
+205492,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWUNW,1998,2010,2041
+334590,Place of delivery: Public sector,76.5,1,1998,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCPUB,1998,3072,3119
+302266,Place of delivery: Public sector,74.9,1,1998,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCPUB,1998,4992,5066
+3816,Place of delivery: Public sector,77.6,1,1998,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCPUB,1998,2081,2113
+334592,Place of delivery: Private sector,8,1,1998,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCPRV,1998,3072,3119
+302262,Place of delivery: Private sector,8.5,1,1998,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCPRV,1998,4992,5066
+3671,Place of delivery: Private sector,7.5,1,1998,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCPRV,1998,2081,2113
+334593,Place of delivery: At home,13.8,1,1998,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCHOM,1998,3072,3119
+302263,Place of delivery: At home,14.3,1,1998,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCHOM,1998,4992,5066
+3672,Place of delivery: At home,13.5,1,1998,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCHOM,1998,2081,2113
+334594,Place of delivery: Other,0.1,1,1998,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCOTH,1998,3072,3119
+302264,Place of delivery: Other,0.2,1,1998,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCOTH,1998,4992,5066
+3673,Place of delivery: Other,0.1,1,1998,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCOTH,1998,2081,2113
+334595,Place of delivery: don't know or missing,1.6,1,1998,RH_DELP_C_DKM,83566050,S,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCDKM,1998,3072,3119
+302265,Place of delivery: don't know or missing,2.1,1,1998,RH_DELP_C_DKM,83566050,S,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCDKM,1998,4992,5066
+3674,Place of delivery: don't know or missing,1.2,1,1998,RH_DELP_C_DKM,83566050,S,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCDKM,1998,2081,2113
+334591,Place of delivery: Total,100,1,1998,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCTOT,1998,3072,3119
+302267,Place of delivery: Total,100,1,1998,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCTOT,1998,4992,5066
+3817,Place of delivery: Total,100,1,1998,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCTOT,1998,2081,2113
+334596,Place of delivery: Health facility,84.5,1,1998,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCDHF,1998,3072,3119
+302268,Place of delivery: Health facility,83.4,1,1998,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCDHF,1998,4992,5066
+3675,Place of delivery: Health facility,85.2,1,1998,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCDHF,1998,2081,2113
+205512,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCNUM,1998,2010,3119
+387438,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCNUM,1998,2010,5066
+15543,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCNUM,1998,2010,2113
+334602,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCUNW,1998,3072,2041
+31685,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCUNW,1998,4992,2041
+399374,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCUNW,1998,2081,2041
+508217,Assistance during delivery: Doctor,29.3,1,1998,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACDOC,1998,3072,3119
+413496,Assistance during delivery: Doctor,30,1,1998,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACDOC,1998,4992,5066
+15526,Assistance during delivery: Doctor,28.2,1,1998,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACDOC,1998,2081,2113
+508216,Assistance during delivery: Nurse/midwife,56.1,1,1998,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNRS,1998,3072,3119
+413492,Assistance during delivery: Nurse/midwife,54.4,1,1998,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNRS,1998,4992,5066
+15523,Assistance during delivery: Nurse/midwife,58.1,1,1998,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNRS,1998,2081,2113
+508218,Assistance during delivery: Traditional birth attendant,1.4,1,1998,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACTBA,1998,3072,3119
+413498,Assistance during delivery: Traditional birth attendant,1.4,1,1998,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACTBA,1998,4992,5066
+15527,Assistance during delivery: Traditional birth attendant,1.2,1,1998,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACTBA,1998,2081,2113
+508214,Assistance during delivery: Relative or other,9.9,1,1998,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACREL,1998,3072,3119
+413490,Assistance during delivery: Relative or other,10.5,1,1998,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACREL,1998,4992,5066
+15524,Assistance during delivery: Relative or other,9.7,1,1998,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACREL,1998,2081,2113
+508219,Assistance during delivery: No one,2.1,1,1998,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNON,1998,3072,3119
+413499,Assistance during delivery: No one,2.1,1,1998,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNON,1998,4992,5066
+15528,Assistance during delivery: No one,1.8,1,1998,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNON,1998,2081,2113
+508215,Assistance during delivery: don't know or missing,1.2,1,1998,RH_DELA_C_DKM,83606090,S,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACDKM,1998,3072,3119
+413491,Assistance during delivery: don't know or missing,1.7,1,1998,RH_DELA_C_DKM,83606090,S,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACDKM,1998,4992,5066
+15525,Assistance during delivery: don't know or missing,0.9,1,1998,RH_DELA_C_DKM,83606090,S,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACDKM,1998,2081,2113
+508220,Assistance during delivery: Total,100,1,1998,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACTOT,1998,3072,3119
+413493,Assistance during delivery: Total,100,1,1998,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACTOT,1998,4992,5066
+15520,Assistance during delivery: Total,100,1,1998,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACTOT,1998,2081,2113
+508221,Assistance during delivery from a skilled provider,85.5,1,1998,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACSKP,1998,3072,3119
+413494,Assistance during delivery from a skilled provider,84.4,1,1998,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACSKP,1998,4992,5066
+15521,Assistance during delivery from a skilled provider,86.4,1,1998,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACSKP,1998,2081,2113
+508222,Delivery by cesarean section,15.4,1,1998,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACCSC,1998,3072,3119
+413495,Delivery by cesarean section,15.5,1,1998,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACCSC,1998,4992,5066
+15522,Delivery by cesarean section,15.1,1,1998,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACCSC,1998,2081,2113
+521104,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNUM,1998,2010,3119
+387443,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNUM,1998,2010,5066
+15519,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,1998,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNUM,1998,2010,2113
+395187,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACUNW,1998,3072,2041
+25921,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACUNW,1998,4992,2041
+205906,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,1998,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACUNW,1998,2081,2041
+598577,Children with symptoms of ARI,21.9,1,1998,CH_ARIS_C_ARI,93966010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCARI,1998,2912,2958
+397915,Children with symptoms of ARI,19.3,1,1998,CH_ARIS_C_ARI,93966010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCARI,1998,4740,4797
+598578,Number of children born in the last five (or three) years,238.60000000000002,1,1998,CH_ARIS_C_NUM,93966020,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCNUM,1998,2010,2958
+384931,Number of children born in the last five (or three) years,238.60000000000002,1,1998,CH_ARIS_C_NUM,93966020,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCNUM,1998,2010,4797
+139860,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_ARIS_C_UNW,93966030,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCUNW,1998,2912,2041
+26068,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_ARIS_C_UNW,93966030,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCUNW,1998,4740,2041
+450750,Children with ARI for whom advice or treatment was sought,81.9,1,1998,CH_ARIS_C_ADV,93966040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCADV,1998,637,607
+665172,Children with ARI for whom advice or treatment was sought,78.2,1,1998,CH_ARIS_C_ADV,93966040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCADV,1998,913,862
+457030,Number of children with symptoms of ARI born in the last five (or three) years,238.60000000000002,1,1998,CH_ARIS_C_NM2,93966060,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCNM2,1998,2010,607
+658945,Number of children with symptoms of ARI born in the last five (or three) years,238.60000000000002,1,1998,CH_ARIS_C_NM2,93966060,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCNM2,1998,2010,862
+320333,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_ARIS_C_UN2,93966070,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCUN2,1998,637,2041
+32724,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_ARIS_C_UN2,93966070,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCUN2,1998,913,2041
+15037,Treatment of diarrhea: Advice or treatment was sought,62.1,1,1998,CH_DIAT_C_ADV,94096010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCADV,1998,508,523
+607611,Treatment of diarrhea: Advice or treatment was sought,60.6,1,1998,CH_DIAT_C_ADV,94096010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCADV,1998,627,634
+15031,Treatment of diarrhea: Oral rehydration solution (ORS),52.7,1,1998,CH_DIAT_C_ORS,94096020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORS,1998,508,523
+607606,Treatment of diarrhea: Oral rehydration solution (ORS),51.2,1,1998,CH_DIAT_C_ORS,94096020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORS,1998,627,634
+15032,Treatment of diarrhea: Recommended home fluids (RHF) at home,70.6,1,1998,CH_DIAT_C_RHF,94096030,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCRHF,1998,508,523
+607607,Treatment of diarrhea: Recommended home fluids (RHF) at home,68.6,1,1998,CH_DIAT_C_RHF,94096030,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCRHF,1998,627,634
+15033,Treatment of diarrhea: Either ORS or RHF,83.1,1,1998,CH_DIAT_C_ORT,94096040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORT,1998,508,523
+607608,Treatment of diarrhea: Either ORS or RHF,81,1,1998,CH_DIAT_C_ORT,94096040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORT,1998,627,634
+15034,Treatment of diarrhea: Increased fluids,56.6,1,1998,CH_DIAT_C_INC,94096050,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCINC,1998,508,523
+607609,Treatment of diarrhea: Increased fluids,57.1,1,1998,CH_DIAT_C_INC,94096050,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCINC,1998,627,634
+15035,Treatment of diarrhea: ORT or increased fluids,90.2,1,1998,CH_DIAT_C_ORI,94096060,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORI,1998,508,523
+607610,Treatment of diarrhea: ORT or increased fluids,89.1,1,1998,CH_DIAT_C_ORI,94096060,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORI,1998,627,634
+15036,"Treatment of diarrhea: No ORS, RHF or increased fluids",9.8,1,1998,CH_DIAT_C_NON,94096070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNON,1998,508,523
+607614,"Treatment of diarrhea: No ORS, RHF or increased fluids",10.9,1,1998,CH_DIAT_C_NON,94096070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNON,1998,627,634
+15039,Treatment of diarrhea: Intravenous solution,0.5,1,1998,CH_DIAT_C_IVS,94096110,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCIVS,1998,508,523
+607615,Treatment of diarrhea: Intravenous solution,0.4,1,1998,CH_DIAT_C_IVS,94096110,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCIVS,1998,627,634
+15040,Treatment of diarrhea: Home remedy - other,87.6,1,1998,CH_DIAT_C_HOM,94096130,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCHOM,1998,508,523
+607617,Treatment of diarrhea: Home remedy - other,86.3,1,1998,CH_DIAT_C_HOM,94096130,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCHOM,1998,627,634
+15041,Treatment of diarrhea: No treatment,0.6,1,1998,CH_DIAT_C_NOT,94096140,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNOT,1998,508,523
+607618,Treatment of diarrhea: No treatment,0.5,1,1998,CH_DIAT_C_NOT,94096140,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNOT,1998,627,634
+15038,Treatment of diarrhea: don't know or missing,0.9,1,1998,CH_DIAT_C_DKM,94096150,S,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCDKM,1998,508,523
+607612,Treatment of diarrhea: don't know or missing,1.7,1,1998,CH_DIAT_C_DKM,94096150,S,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCDKM,1998,627,634
+16468,Number of children born in the last five (or three) years,238.60000000000002,1,1998,CH_DIAT_C_NUM,94096160,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNUM,1998,2010,523
+604853,Number of children born in the last five (or three) years,238.60000000000002,1,1998,CH_DIAT_C_NUM,94096160,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNUM,1998,2010,634
+280214,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_DIAT_C_UNW,94096170,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCUNW,1998,508,2041
+27506,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,1998,CH_DIAT_C_UNW,94096170,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCUNW,1998,627,2041
+157227,Antenatal care provider: Doctor,17.1,1,2016,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWDOC,2016,1962,1977
+653702,Antenatal care provider: Doctor,17.1,1,2016,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWDOC,2016,3036,3036
+157234,Antenatal care provider: Doctor,16.1,1,2016,RH_ANCP_W_DOC,83363010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWDOC,2016,1386,1376
+157230,Antenatal care provider: Nurse/midwife,76.8,1,2016,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNRS,2016,1962,1977
+653707,Antenatal care provider: Nurse/midwife,76.6,1,2016,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNRS,2016,3036,3036
+157238,Antenatal care provider: Nurse/midwife,77,1,2016,RH_ANCP_W_NRS,83363020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNRS,2016,1386,1376
+157228,Antenatal care provider: Other,0.6,1,2016,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWOTH,2016,1962,1977
+653704,Antenatal care provider: Other,0.6,1,2016,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWOTH,2016,3036,3036
+157235,Antenatal care provider: Other,0.5,1,2016,RH_ANCP_W_OTH,83363080,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWOTH,2016,1386,1376
+157229,No antenatal care,5.5,1,2016,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNON,2016,1962,1977
+653705,No antenatal care,5.7,1,2016,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNON,2016,3036,3036
+157236,No antenatal care,6.5,1,2016,RH_ANCP_W_NON,83363100,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNON,2016,1386,1376
+157232,Antenatal care: Total,100,1,2016,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWTOT,2016,1962,1977
+653708,Antenatal care: Total,100,1,2016,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWTOT,2016,3036,3036
+157239,Antenatal care: Total,100,1,2016,RH_ANCP_W_TOT,83363110,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWTOT,2016,1386,1376
+157226,Antenatal care from a skilled provider,93.9,1,2016,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWSKP,2016,1962,1977
+653706,Antenatal care from a skilled provider,93.7,1,2016,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWSKP,2016,3036,3036
+157233,Antenatal care from a skilled provider,93.1,1,2016,RH_ANCP_W_SKP,83363120,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWSKP,2016,1386,1376
+157244,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,2016,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWNUM,2016,2010,1977
+657480,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,2016,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWNUM,2016,2010,3036
+157237,Number of women with a live birth (or stillbirth) in the last two (or three/five) years,238.60000000000002,1,2016,RH_ANCP_W_NUM,83363130,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWNUM,2016,2010,1376
+157240,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHANCPWUNW,2016,1962,2041
+339335,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHANCPWUNW,2016,3036,2041
+157242,Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_ANCP_W_UNW,83363140,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHANCPWUNW,2016,1386,2041
+157346,Place of delivery: Public sector,88.3,1,2016,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCPUB,2016,2091,2105
+157314,Place of delivery: Public sector,87.4,1,2016,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCPUB,2016,3572,3548
+463685,Place of delivery: Public sector,88.4,1,2016,RH_DELP_C_PUB,83566010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCPUB,2016,1414,1406
+157339,Place of delivery: Private sector,7.7,1,2016,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCPRV,2016,2091,2105
+157315,Place of delivery: Private sector,8.5,1,2016,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCPRV,2016,3572,3548
+463682,Place of delivery: Private sector,7.7,1,2016,RH_DELP_C_PRV,83566020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCPRV,2016,1414,1406
+157340,Place of delivery: At home,3.6,1,2016,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCHOM,2016,2091,2105
+157316,Place of delivery: At home,3.7,1,2016,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCHOM,2016,3572,3548
+463683,Place of delivery: At home,3.4,1,2016,RH_DELP_C_HOM,83566030,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCHOM,2016,1414,1406
+157341,Place of delivery: Other,0.3,1,2016,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCOTH,2016,2091,2105
+157317,Place of delivery: Other,0.4,1,2016,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCOTH,2016,3572,3548
+463684,Place of delivery: Other,0.5,1,2016,RH_DELP_C_OTH,83566040,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCOTH,2016,1414,1406
+157347,Place of delivery: Total,100,1,2016,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCTOT,2016,2091,2105
+157337,Place of delivery: Total,100,1,2016,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCTOT,2016,3572,3548
+463686,Place of delivery: Total,100,1,2016,RH_DELP_C_TOT,83566060,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCTOT,2016,1414,1406
+157345,Place of delivery: Health facility,96,1,2016,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCDHF,2016,2091,2105
+157336,Place of delivery: Health facility,95.9,1,2016,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCDHF,2016,3572,3548
+463689,Place of delivery: Health facility,96.1,1,2016,RH_DELP_C_DHF,83566070,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCDHF,2016,1414,1406
+157342,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCNUM,2016,2010,2105
+157343,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCNUM,2016,2010,3548
+473017,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELP_C_NUM,83566080,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCNUM,2016,2010,1406
+157380,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELPCUNW,2016,2091,2041
+157373,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELPCUNW,2016,3572,2041
+345160,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELP_C_UNW,83566090,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELPCUNW,2016,1414,2041
+663099,Assistance during delivery: Doctor,29.1,1,2016,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACDOC,2016,2091,2105
+373334,Assistance during delivery: Doctor,28.7,1,2016,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACDOC,2016,3572,3548
+473060,Assistance during delivery: Doctor,29.5,1,2016,RH_DELA_C_DOC,83606010,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACDOC,2016,1414,1406
+663098,Assistance during delivery: Nurse/midwife,67.6,1,2016,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNRS,2016,2091,2105
+373337,Assistance during delivery: Nurse/midwife,68,1,2016,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNRS,2016,3572,3548
+473024,Assistance during delivery: Nurse/midwife,67.6,1,2016,RH_DELA_C_NRS,83606020,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNRS,2016,1414,1406
+663100,Assistance during delivery: Traditional birth attendant,0.2,1,2016,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACTBA,2016,2091,2105
+373335,Assistance during delivery: Traditional birth attendant,0.1,1,2016,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACTBA,2016,3572,3548
+473061,Assistance during delivery: Traditional birth attendant,0.2,1,2016,RH_DELA_C_TBA,83606060,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACTBA,2016,1414,1406
+663097,Assistance during delivery: Relative or other,1.6,1,2016,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACREL,2016,2091,2105
+373332,Assistance during delivery: Relative or other,1.9,1,2016,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACREL,2016,3572,3548
+473025,Assistance during delivery: Relative or other,1.8,1,2016,RH_DELA_C_REL,83606070,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACREL,2016,1414,1406
+663103,Assistance during delivery: No one,1.5,1,2016,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNON,2016,2091,2105
+373336,Assistance during delivery: No one,1.2,1,2016,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNON,2016,3572,3548
+473062,Assistance during delivery: No one,0.9,1,2016,RH_DELA_C_NON,83606080,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNON,2016,1414,1406
+663102,Assistance during delivery: Total,100,1,2016,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACTOT,2016,2091,2105
+373328,Assistance during delivery: Total,100,1,2016,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACTOT,2016,3572,3548
+473019,Assistance during delivery: Total,100,1,2016,RH_DELA_C_TOT,83606100,T,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACTOT,2016,1414,1406
+663104,Assistance during delivery from a skilled provider,96.7,1,2016,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACSKP,2016,2091,2105
+373329,Assistance during delivery from a skilled provider,96.7,1,2016,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACSKP,2016,3572,3548
+473020,Assistance during delivery from a skilled provider,97.1,1,2016,RH_DELA_C_SKP,83606110,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACSKP,2016,1414,1406
+663105,Delivery by cesarean section,24.9,1,2016,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACCSC,2016,2091,2105
+373330,Delivery by cesarean section,24.2,1,2016,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACCSC,2016,3572,3548
+473021,Delivery by cesarean section,25.3,1,2016,RH_DELA_C_CSC,83606120,I,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACCSC,2016,1414,1406
+664010,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACNUM,2016,2010,2105
+157381,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACNUM,2016,2010,3548
+473018,Number of live births (or stillbirths) in the last two (or three/five) years,238.60000000000002,1,2016,RH_DELA_C_NUM,83606130,D,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACNUM,2016,2010,1406
+298971,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,RHDELACUNW,2016,2091,2041
+373326,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,FALSE,RHDELACUNW,2016,3572,2041
+157399,Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),238.60000000000002,1,2016,RH_DELA_C_UNW,83606140,U,1000,0,Total,Total,14002,Two years preceding the survey,TRUE,TRUE,RHDELACUNW,2016,1414,2041
+157405,Provider of mothers' first postnatal checkup: Doctor/nurse/midwife,83.2,1,2016,RH_PCMP_W_DOC,83663010,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWDOC,2016,1386,1376
+157406,Provider of mothers' first postnatal checkup: Community health worker,0.2,1,2016,RH_PCMP_W_CHW,83663030,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWCHW,2016,1386,1376
+157407,Provider of mothers' first postnatal checkup: Traditional birth attendant,0.2,1,2016,RH_PCMP_W_TBA,83663050,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWTBA,2016,1386,1376
+157408,No postnatal checkup for mother within first two days of birth,16.4,1,2016,RH_PCMP_W_NON,83663070,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWNON,2016,1386,1376
+157409,Provider of mothers' first postnatal checkup: Total,100,1,2016,RH_PCMP_W_TOT,83663080,T,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWTOT,2016,1386,1376
+157417,Number of mothers,238.60000000000002,1,2016,RH_PCMP_W_NUM,83663090,D,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWNUM,2016,2010,1376
+157415,Number of mothers (unweighted),238.60000000000002,1,2016,RH_PCMP_W_UNW,83663100,U,1000,0,Total,Total,0,,TRUE,TRUE,RHPCMPWUNW,2016,1386,2041
+157410,Provider of newborns' first postnatal checkup: Doctor/nurse/midwife,86.2,1,2016,RH_PCCP_C_DOC,83736010,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCDOC,2016,1386,1376
+157411,Provider of newborns' first postnatal checkup: Community health worker,0,1,2016,RH_PCCP_C_CHW,83736030,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCCHW,2016,1386,1376
+157418,No postnatal checkup for newborn within first two days of birth,13.8,1,2016,RH_PCCP_C_NON,83736070,I,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCNON,2016,1386,1376
+157419,Provider of newborns' first postnatal checkup: Total,100,1,2016,RH_PCCP_C_TOT,83736080,T,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCTOT,2016,1386,1376
+157434,Number of newborns,238.60000000000002,1,2016,RH_PCCP_C_NUM,83736090,D,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCNUM,2016,2010,1376
+157480,Number of newborns (unweighted),238.60000000000002,1,2016,RH_PCCP_C_UNW,83736100,U,1000,0,Total,Total,0,,TRUE,TRUE,RHPCCPCUNW,2016,1386,2041
+550039,Children with symptoms of ARI,3.4,1,2016,CH_ARIS_C_ARI,93966010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCARI,2016,2025,2026
+520801,Children with symptoms of ARI,3.1,1,2016,CH_ARIS_C_ARI,93966010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCARI,2016,3444,3413
+550040,Number of children born in the last five (or three) years,238.60000000000002,1,2016,CH_ARIS_C_NUM,93966020,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCNUM,2016,2010,2026
+528550,Number of children born in the last five (or three) years,238.60000000000002,1,2016,CH_ARIS_C_NUM,93966020,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCNUM,2016,2010,3413
+149150,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,2016,CH_ARIS_C_UNW,93966030,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCUNW,2016,2025,2041
+439924,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,2016,CH_ARIS_C_UNW,93966030,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCUNW,2016,3444,2041
+628408,Children with ARI for whom advice or treatment was sought,96.9,1,2016,CH_ARIS_C_ADV,93966040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCADV,2016,68,59
+701545,Children with ARI for whom advice or treatment was sought,87.6,1,2016,CH_ARIS_C_ADV,93966040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCADV,2016,107,94
+628407,Children with symptoms of ARI who received antibiotics,46.7,1,2016,CH_ARIS_C_ABI,93966050,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCABI,2016,68,59
+701543,Children with symptoms of ARI who received antibiotics,42,1,2016,CH_ARIS_C_ABI,93966050,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCABI,2016,107,94
+630188,Number of children with symptoms of ARI born in the last five (or three) years,68,1,2016,CH_ARIS_C_NM2,93966060,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCNM2,2016,2010,59
+701544,Number of children with symptoms of ARI born in the last five (or three) years,107,1,2016,CH_ARIS_C_NM2,93966060,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCNM2,2016,2010,94
+300159,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),59,1,2016,CH_ARIS_C_UN2,93966070,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHARISCUN2,2016,68,2041
+149151,Number of children with symptoms of ARI born in the last five (or three) years (unweighted),94,1,2016,CH_ARIS_C_UN2,93966070,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHARISCUN2,2016,107,2041
+149154,Children with fever for whom advice or treatment was sought,66.8,1,2016,CH_FEVT_C_ADV,94036010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHFEVTCADV,2016,422,410
+653434,Children with fever for whom advice or treatment was sought,68.4,1,2016,CH_FEVT_C_ADV,94036010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHFEVTCADV,2016,679,647
+149153,Child took antimalarial drugs for fever,0.2,1,2016,CH_FEVT_C_AML,94036020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHFEVTCAML,2016,422,410
+653431,Child took antimalarial drugs for fever,0.5,1,2016,CH_FEVT_C_AML,94036020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHFEVTCAML,2016,679,647
+149156,Child took antibiotic drugs for fever,29.2,1,2016,CH_FEVT_C_ABI,94036030,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHFEVTCABI,2016,422,410
+653433,Child took antibiotic drugs for fever,30.3,1,2016,CH_FEVT_C_ABI,94036030,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHFEVTCABI,2016,679,647
+149157,Number of children with fever in the last two weeks,238.60000000000002,1,2016,CH_FEVT_C_NUM,94036040,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHFEVTCNUM,2016,2010,410
+657740,Number of children with fever in the last two weeks,238.60000000000002,1,2016,CH_FEVT_C_NUM,94036040,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHFEVTCNUM,2016,2010,647
+149158,Number of children with fever in the last two weeks (unweighted),238.60000000000002,1,2016,CH_FEVT_C_UNW,94036050,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHFEVTCUNW,2016,422,2041
+339925,Number of children with fever in the last two weeks (unweighted),238.60000000000002,1,2016,CH_FEVT_C_UNW,94036050,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHFEVTCUNW,2016,679,2041
+707848,Treatment of diarrhea: Advice or treatment was sought,59.2,1,2016,CH_DIAT_C_ADV,94096010,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCADV,2016,246,256
+545833,Treatment of diarrhea: Advice or treatment was sought,63,1,2016,CH_DIAT_C_ADV,94096010,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCADV,2016,356,350
+707849,Treatment of diarrhea: Oral rehydration solution (ORS),46.5,1,2016,CH_DIAT_C_ORS,94096020,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORS,2016,246,256
+545832,Treatment of diarrhea: Oral rehydration solution (ORS),51.4,1,2016,CH_DIAT_C_ORS,94096020,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORS,2016,356,350
+707850,Treatment of diarrhea: Recommended home fluids (RHF) at home,67.2,1,2016,CH_DIAT_C_RHF,94096030,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCRHF,2016,246,256
+545838,Treatment of diarrhea: Recommended home fluids (RHF) at home,72.5,1,2016,CH_DIAT_C_RHF,94096030,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCRHF,2016,356,350
+707851,Treatment of diarrhea: Either ORS or RHF,75.4,1,2016,CH_DIAT_C_ORT,94096040,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORT,2016,246,256
+545839,Treatment of diarrhea: Either ORS or RHF,80.5,1,2016,CH_DIAT_C_ORT,94096040,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORT,2016,356,350
+707857,Treatment of diarrhea: Zinc supplements,33.7,1,2016,CH_DIAT_C_ZNC,94096044,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCZNC,2016,246,256
+545835,Treatment of diarrhea: Zinc supplements,36.8,1,2016,CH_DIAT_C_ZNC,94096044,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCZNC,2016,356,350
+707854,Treatment of diarrhea: Increased fluids,14.6,1,2016,CH_DIAT_C_INC,94096050,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCINC,2016,246,256
+545844,Treatment of diarrhea: Increased fluids,15,1,2016,CH_DIAT_C_INC,94096050,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCINC,2016,356,350
+707855,Treatment of diarrhea: ORT or increased fluids,79.2,1,2016,CH_DIAT_C_ORI,94096060,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCORI,2016,246,256
+545845,Treatment of diarrhea: ORT or increased fluids,83.3,1,2016,CH_DIAT_C_ORI,94096060,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCORI,2016,356,350
+707846,"Treatment of diarrhea: No ORS, RHF or increased fluids",20.8,1,2016,CH_DIAT_C_NON,94096070,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNON,2016,246,256
+545847,"Treatment of diarrhea: No ORS, RHF or increased fluids",16.7,1,2016,CH_DIAT_C_NON,94096070,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNON,2016,356,350
+707856,Treatment of diarrhea: Antibiotics,7.2,1,2016,CH_DIAT_C_ABI,94096080,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCABI,2016,246,256
+545834,Treatment of diarrhea: Antibiotics,10.6,1,2016,CH_DIAT_C_ABI,94096080,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCABI,2016,356,350
+707847,Treatment of diarrhea: Antimotility drugs,2.4,1,2016,CH_DIAT_C_AMO,94096090,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCAMO,2016,246,256
+545848,Treatment of diarrhea: Antimotility drugs,1.8,1,2016,CH_DIAT_C_AMO,94096090,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCAMO,2016,356,350
+707853,Treatment of diarrhea: Intravenous solution,0.2,1,2016,CH_DIAT_C_IVS,94096110,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCIVS,2016,246,256
+545836,Treatment of diarrhea: Intravenous solution,0.6,1,2016,CH_DIAT_C_IVS,94096110,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCIVS,2016,356,350
+707858,Treatment of diarrhea: Injection,0.5,1,2016,CH_DIAT_C_INJ,94096120,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCINJ,2016,246,256
+545837,Treatment of diarrhea: Injection,1.1,1,2016,CH_DIAT_C_INJ,94096120,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCINJ,2016,356,350
+707859,Treatment of diarrhea: Home remedy - other,9.1,1,2016,CH_DIAT_C_HOM,94096130,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCHOM,2016,246,256
+545840,Treatment of diarrhea: Home remedy - other,10.3,1,2016,CH_DIAT_C_HOM,94096130,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCHOM,2016,356,350
+707860,Treatment of diarrhea: No treatment,16.2,1,2016,CH_DIAT_C_NOT,94096140,I,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNOT,2016,246,256
+545843,Treatment of diarrhea: No treatment,12.1,1,2016,CH_DIAT_C_NOT,94096140,I,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNOT,2016,356,350
+708945,Number of children born in the last five (or three) years,238.60000000000002,1,2016,CH_DIAT_C_NUM,94096160,D,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCNUM,2016,2010,256
+553597,Number of children born in the last five (or three) years,238.60000000000002,1,2016,CH_DIAT_C_NUM,94096160,D,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCNUM,2016,2010,350
+309448,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,2016,CH_DIAT_C_UNW,94096170,U,1000,0,Total,Total,14000,Three years preceding the survey,TRUE,FALSE,CHDIATCUNW,2016,246,2041
+377936,Number of children born in the last five (or three) years (unweighted),238.60000000000002,1,2016,CH_DIAT_C_UNW,94096170,U,1000,0,Total,Total,14001,Five years preceding the survey,TRUE,TRUE,CHDIATCUNW,2016,356,2041

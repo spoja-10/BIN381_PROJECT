@@ -1,6 +1,8 @@
 ---
 title: "12_Toilet_Facilities_National"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 

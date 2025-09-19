@@ -1,9 +1,11 @@
 ---
 title: "09_Literacy"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
-#Loading Libraries
+# Loading Libraries
 ```{r}
 library(dplyr)
 library(tidyr)
@@ -14,26 +16,26 @@ library(purrr)
 library(ggplot2)
 
 ```
-#Load Dataset 
+# Load Dataset 
 ```{r}
 lit_df <- read_csv(here("data","raw", "literacy_national_zaf.csv"))
 ```
 
-#Disdplay Dataset content
+# Disdplay Dataset content
 ```{r}
 head(lit_df)
 ```
 
-#Remove the first row(meta data)
+# Remove the first row(meta data)
 ```{r}
 lit_df <- lit_df[-1, ]
 ```
-#dimensions 
+# dimensions 
 ```{r}
 dim(lit_df)
 ```
 
-#Inspect Duplicated rows
+# Inspect Duplicated rows
 ```{r}
 dup_check <- lit_df %>%
   group_by(Indicator, SurveyYear, CharacteristicId, Value) %>%
@@ -42,8 +44,11 @@ dup_check <- lit_df %>%
 dup_check
 
 ```
+- Checked for duplicates using Indicator, SurveyYear, CharacteristicId, and Value → none found
 
-#perc na values
+
+
+# perc na values
 ```{r}
 
 data.frame(
@@ -60,7 +65,12 @@ data.frame(
   )
 ```
 
-#check data types
+Approach for missing values:
+
+- Columns like ByVariableLabel, RegionId, CILow, CIHigh, and LevelRank were dropped as they contained no usable information.
+
+- DenominatorWeighted and DenominatorUnweighted were imputed using fill(direction = "downup").
+# check data types
 ```{r}
 data.frame(
   Column = names(lit_df),
@@ -68,11 +78,7 @@ data.frame(
 )
 
 ```
-#Check The structure of the dataset 
-```{r}
-str(lit_df)
 
-```
 
 #Convert Data Types
 ```{r}
@@ -107,7 +113,7 @@ summary_tbl
 ```
 
 
-#Drop the countries only onw unqiue value: reason, there is no useful information - county is also always za
+#Drop redundant columns
 ```{r}
 lit_df <- lit_df %>%
   
@@ -268,8 +274,8 @@ if(length(winsorized_cols) > 0) {
   }
 }
 ```
-
-#save cleaned data
+- After winsorization, extreme values were capped, reducing the mean of Value to ~78.19 while retaining denominators as-is.
+# save cleaned data
 ```{r}
 write_csv(lit_df, here("data","processed", "literacy_cleaned.csv"))
 ```

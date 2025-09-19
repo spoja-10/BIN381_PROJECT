@@ -1,6 +1,8 @@
 ---
 title: "07_immunization"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 #Loading Libraries
 ```{r}
@@ -12,13 +14,13 @@ library(here)
 library(ggplot2)
 
 ```
-#Load Dataset
+# Load Dataset
 
 ```{r}
 imm_df <- read_csv(here("data", "raw", "immunization_national_zaf.csv"))
 ```
 
-#Display Dataset content
+# Display Dataset content
 ```{r}
 # Make sure the file exists
 
@@ -26,15 +28,15 @@ imm_df <- read_csv(here("data", "raw", "immunization_national_zaf.csv"))
 head(imm_df)
 ```
 
-#Remove the first row(meta data)
+# Remove the first row(meta data)
 ```{r}
 imm_df <- imm_df[-1, ]
 ```
-#dimensions 
+# dimensions 
 ```{r}
 dim(imm_df)
 ```
-#Inspect Duplicated rows
+# Inspect Duplicated rows
 ```{r}
 dup_check <- imm_df %>%
   group_by(Indicator, SurveyYear, CharacteristicId, Value) %>%
@@ -44,98 +46,124 @@ dup_check
 
 ```
 
-#Percentage Missing Values
-```{r}
+# Missing Values
+```{r handle_missing_imm, cache=FALSE}
 
-data.frame(
+# 1. Remove completely empty columns
+imm_df <- imm_df %>% select(where(~!all(is.na(.))))
+
+# 2. Impute numeric columns with median
+num_cols <- imm_df %>% select(where(is.numeric)) %>% names()
+imm_df <- imm_df %>%
+  mutate(across(all_of(num_cols), ~ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+# 3. Impute categorical/character columns with mode
+cat_cols <- imm_df %>% select(where(is.character)) %>% names()
+get_mode <- function(x) {
+  ux <- na.omit(x)
+  if(length(ux) == 0) return(NA_character_)
+  names(sort(table(ux), decreasing = TRUE))[1]
+}
+imm_df <- imm_df %>%
+  mutate(across(all_of(cat_cols), ~ifelse(is.na(.), get_mode(.), .)))
+
+# 4. Summary after handling missing values
+missing_summary <- data.frame(
   Column = names(imm_df),
-  Missing_Percentage = paste0(round(colMeans(is.na(imm_df)) * 100, 2), "%")
-  )
-
-```
-
-```{r}
-data.frame(
-  Column = names(imm_df),
-  Missing_Data = paste0(colSums(is.na(imm_df)))
-  )
-```
-
-#check data types
-```{r}
-data.frame(
-  Column = names(imm_df),
-  paste0(sapply(imm_df, typeof))
+  Missing_Count = colSums(is.na(imm_df)),
+  Missing_Percent = round(colMeans(is.na(imm_df)) * 100, 2)
 )
 
+cat("Total remaining NAs:", sum(is.na(imm_df)), "\n")
+cat("Missing value summary per column:\n")
+print(missing_summary)
+
+
 ```
-#Check The structure of the dataset 
+Handling Missing Values
+
+Strategies applied:
+
+1. Remove empty columns – columns entirely missing were removed.
+
+2. Numeric columns – missing values imputed with the median of available values.
+
+3. Categorical/character columns – missing values imputed with the mode (most frequent value).
+
+4. Denominators – missing values in DenominatorWeighted and DenominatorUnweighted were forward-filled using fill().
+
+Outcome: All columns have complete values, making calculations and analyses reliable.
+- Missing denominators are filled using the previous non-missing value (fill()).
+
+- Ensures numeric calculations work correctly.
+
+
+#Convert Data Types
 ```{r}
+# Define columns to convert, only if they exist
+cols_to_numeric <- c("Value", "Precision", "DenominatorWeighted", "DenominatorUnweighted")
+cols_to_integer <- c("SurveyYear", "IndicatorOrder", "CharacteristicId")
+cols_to_logical <- c("IsPreferred")
+
+cols_to_numeric <- cols_to_numeric[cols_to_numeric %in% names(imm_df)]
+cols_to_integer <- cols_to_integer[cols_to_integer %in% names(imm_df)]
+cols_to_logical <- cols_to_logical[cols_to_logical %in% names(imm_df)]
+
+# Convert
+imm_df <- imm_df %>%
+  mutate(
+    across(all_of(cols_to_numeric), as.numeric),
+    across(all_of(cols_to_integer), as.integer),
+    across(all_of(cols_to_logical), ~as.logical(as.integer(.)))
+  )
+
+# Check structure
 str(imm_df)
 
 ```
-#Convert Data Types
-```{r}
-imm_df <- imm_df %>%
-  mutate(
-        Value = as.numeric(Value),
-    Precision = as.numeric(Precision),
-    SurveyYear = as.integer(SurveyYear),
-    IndicatorOrder = as.integer(IndicatorOrder),
-    CharacteristicId = as.integer(CharacteristicId),
-    CharacteristicOrder = as.integer(CharacteristicOrder),
-    IsTotal = as.logical(as.integer(IsTotal)),
-    IsPreferred = as.logical(as.integer(IsPreferred)),
-    SurveyYearLabel = as.integer(SurveyYearLabel),
-    DenominatorWeighted = as.numeric(DenominatorWeighted),
-    DenominatorUnweighted = as.numeric(DenominatorUnweighted),
-  )
-```
-#check for unique values
-```{r}
-library(dplyr)
-library(purrr)
 
-# Summary table: column name, number of unique values, sample of unique values
-n_sample <- 3
+- Numeric: Value, Precision, DenominatorWeighted, DenominatorUnweighted
 
-summary_tbl <- imm_df %>%
-  map_df(~ tibble(
-    n_unique = n_distinct(.),
-    sample_values = paste(head(unique(.), n_sample), collapse = ", ")
-  ), .id = "column")
+- Integer: SurveyYear, IndicatorOrder, CharacteristicId
 
-
-summary_tbl
-
-
-```
+- Logical: IsPreferred
 
 #Drop the countries only onw unqiue value: reason, there is no useful information - county is also always za
 ```{r}
-imm_df <- imm_df %>%
+# Columns to remove and rationale
+cols_to_remove <- c(
+  "ISO3",              # Only one value "ZAF" → provides no useful variation
+  "DHS_CountryCode",    # Only one value "ZA" → redundant
+  "CountryName",        # Always "South Africa" → redundant
+  "SurveyId",           # Encodes survey metadata, not needed for analysis
+  "ByVariableId",       # IDs for subgroup variables; not used in analysis
+  "ByVariableLabel",    # Labels for subgroup variables; not needed
+  "IsTotal",            # Logical flag that is either 0/1 for all → redundant
+  "RegionId",           # Missing or NA → no information
+  "SurveyYearLabel",    # Duplicate of SurveyYear → redundant
+  "SurveyType",         # Always "DHS" → no variation
+  "CharacteristicOrder" # IDs for order only; not analytically useful
+)
 
- select(
-     -ISO3, 
-    -DHS_CountryCode, 
-    -CountryName, 
-    -SurveyId,
-    -ByVariableId, 
-    -ByVariableLabel, 
-    -IsTotal,
-    -RegionId, 
-    -SurveyYearLabel, 
-    -SurveyType,
-    -CharacteristicOrder
-  )
+# Remove only columns that exist to avoid errors
+imm_df <- imm_df %>% select(-any_of(cols_to_remove))
+
+# Documenting action
+cat("Removed columns that were either redundant, constant, or not analytically useful:\n")
+cat(paste(cols_to_remove, collapse = ", "), "\n")
+
 ```
+Columns removed because they were constant, redundant, or not analytically useful:
 
-#Assumed pattern, the missing values can be filled with the previous non missing value in the opposite attribute
+ISO3, DHS_CountryCode, CountryName, SurveyId, ByVariableId, ByVariableLabel, IsTotal, RegionId, SurveyYearLabel, SurveyType, CharacteristicOrder
+
+These columns either contained a single value or metadata that does not impact analysis.
+
+
+#the missing values can be filled with the previous non missing value in the opposite attribute
 ```{r}
 
 
-library(dplyr)
-library(tidyr)
 
 imm_df <- imm_df %>%
   fill(DenominatorWeighted, DenominatorUnweighted, .direction = "down")
@@ -167,28 +195,61 @@ dim(imm_df)
 
 #Outlier Handling
 ```{r}
-# Calculate IQR boundaries
-Q1_w <- quantile(imm_df$DenominatorWeighted, 0.25, na.rm = TRUE)
-Q3_w <- quantile(imm_df$DenominatorWeighted, 0.75, na.rm = TRUE)
-IQR_w <- Q3_w - Q1_w
-lower_w <- Q1_w - 1.5 * IQR_w
-upper_w <- Q3_w + 1.5 * IQR_w
 
-Q1_uw <- quantile(imm_df$DenominatorUnweighted, 0.25, na.rm = TRUE)
-Q3_uw <- quantile(imm_df$DenominatorUnweighted, 0.75, na.rm = TRUE)
-IQR_uw <- Q3_uw - Q1_uw
-lower_uw <- Q1_uw - 1.5 * IQR_uw
-upper_uw <- Q3_uw + 1.5 * IQR_uw
+# Winsorize at 1st and 99th percentiles
+lower_w <- quantile(imm_df$DenominatorWeighted, 0.01, na.rm = TRUE)
+upper_w <- quantile(imm_df$DenominatorWeighted, 0.99, na.rm = TRUE)
 
-# Cap values to the IQR limits
+lower_uw <- quantile(imm_df$DenominatorUnweighted, 0.01, na.rm = TRUE)
+upper_uw <- quantile(imm_df$DenominatorUnweighted, 0.99, na.rm = TRUE)
+
 imm_df <- imm_df %>%
   mutate(
-    DenominatorWeighted = pmin(pmax(DenominatorWeighted, lower_w), upper_w),
-    DenominatorUnweighted = pmin(pmax(DenominatorUnweighted, lower_uw), upper_uw)
+    DenominatorWeighted = pmax(pmin(DenominatorWeighted, upper_w), lower_w),
+    DenominatorUnweighted = pmax(pmin(DenominatorUnweighted, upper_uw), lower_uw)
   )
 
+ggplot(imm_df, aes(y = DenominatorWeighted)) +
+  geom_boxplot(fill = "lightblue", outlier.color = "red") +
+  labs(title = "Boxplot of Denominator Weighted After Robust Handling")
+
+summary(imm_df$DenominatorWeighted)
+summary(imm_df$DenominatorUnweighted)
 
 ```
+## Robust Outlier Handling via Winsorization
+
+**Purpose:**  
+The dataset contains extreme values in `DenominatorWeighted` and `DenominatorUnweighted` that skew the distribution. Instead of removing rows, we Winsorize the data to limit extreme values while keeping all observations intact.
+
+**Steps:**
+
+1. **Calculate bounds:**  
+   - 1st percentile (`0.01`) → lower bound  
+   - 99th percentile (`0.99`) → upper bound  
+   This ensures the extreme 1% of values on either side are capped.
+
+2. **Apply Winsorization:**  
+   - Values below the lower bound are set to the lower bound.  
+   - Values above the upper bound are set to the upper bound.
+
+3. **Visual Check:**  
+   - A boxplot is created to verify the effect of Winsorization on `DenominatorWeighted`.
+
+4. **Summary Statistics:**  
+   - `summary()` is used to compare min, max, mean, and quartiles after capping, confirming that extreme outliers have been mitigated.
+
+**Code Explanation:**  
+
+- `quantile(..., 0.01, na.rm = TRUE)` → computes the 1st percentile ignoring missing values.  
+- `pmin()` and `pmax()` → ensure values stay within the specified bounds.  
+- `geom_boxplot(outlier.color = "red")` → visualizes remaining extreme points (if any).  
+
+**Outcome:**  
+The extreme skew in denominator columns is reduced, improving stability for subsequent analyses, while retaining all rows in the dataset.
+
+
+## Final check and Save Dataset
 #save cleaned data
 ```{r}
 write_csv(imm_df, here("data","processed", "immunization_cleaned.csv"))

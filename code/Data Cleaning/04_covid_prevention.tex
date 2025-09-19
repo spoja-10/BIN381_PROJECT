@@ -1,0 +1,816 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={04\_covid\_prevention},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{04\_covid\_prevention}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Covid 19 Prevention}\label{covid-19-prevention}
+
+\subsection{1. Load Libraries \& data}\label{load-libraries-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data manipulation}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyr)}
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(here)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## here() starts at C:/Users/morul/School/3rd Year/BIN381/BIN381_PROJECT/BIN381_PROJECT
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(purrr)}
+
+\CommentTok{\# Visualization and summaries}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(skimr)}
+\FunctionTok{library}\NormalTok{(visdat)}
+
+\CommentTok{\# Load the COVID{-}19 prevention dataset}
+\CommentTok{\# Load the COVID{-}19 prevention dataset, skipping first row if it contains metadata}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"raw"}\NormalTok{, }\StringTok{"covid{-}19{-}prevention\_national\_zaf.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 35 Columns: 29
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (17): ISO3, DataId, Indicator, Value, Precision, DHS_CountryCode, Countr...
+## dbl  (8): IndicatorOrder, CharacteristicId, CharacteristicOrder, IsTotal, Is...
+## lgl  (4): RegionId, CILow, CIHigh, LevelRank
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Step 2: Remove first row (metadata)}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, ]}
+
+\CommentTok{\# Step 3: Reset row names}
+\FunctionTok{rownames}\NormalTok{(covid\_df) }\OtherTok{\textless{}{-}} \ConstantTok{NULL}
+
+\CommentTok{\# Step 4: Optional: in}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"COVID{-}19 prevention dataset loaded successfully.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## COVID-19 prevention dataset loaded successfully.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Dimensions:"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(covid\_df), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Dimensions: 34 29
+\end{verbatim}
+
+\subsection{2. Initial Data Assessment and Column
+Renaming}\label{initial-data-assessment-and-column-renaming}
+
+\begin{itemize}
+\tightlist
+\item
+  Column names are standardized to lowercase with underscores for
+  readability. The dataset structure, summary statistics, and
+  missingness are explored to identify potential quality issues.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Quick glimpse of dataset}
+\FunctionTok{glimpse}\NormalTok{(covid\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 34
+## Columns: 29
+## $ ISO3                   <chr> "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF"~
+## $ DataId                 <chr> "795844", "795750", "795755", "795740", "795744~
+## $ Indicator              <chr> "Population using an improved water source", "P~
+## $ Value                  <chr> "83.5", "36", "23.1", "19.3", "60.3", "80.2", "~
+## $ Precision              <chr> "1", "1", "1", "1", "1", "1", "1", "1", "1", "1~
+## $ DHS_CountryCode        <chr> "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA",~
+## $ CountryName            <chr> "South Africa", "South Africa", "South Africa",~
+## $ SurveyYear             <chr> "1998", "1998", "1998", "1998", "1998", "1998",~
+## $ SurveyId               <chr> "ZA1998DHS", "ZA1998DHS", "ZA1998DHS", "ZA1998D~
+## $ IndicatorId            <chr> "WS_SRCE_P_IMP", "WS_SRCE_P_PIP", "WS_SRCE_P_PY~
+## $ IndicatorOrder         <dbl> 250162010, 250162020, 250162025, 250162030, 250~
+## $ IndicatorType          <chr> "I", "I", "I", "I", "I", "I", "I", "I", "I", "I~
+## $ CharacteristicId       <dbl> 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,~
+## $ CharacteristicOrder    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ CharacteristicCategory <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ CharacteristicLabel    <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ ByVariableId           <chr> "0", "0", "0", "0", "0", "0", "0", "0", "0", "0~
+## $ ByVariableLabel        <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ IsTotal                <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
+## $ IsPreferred            <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
+## $ SDRID                  <chr> "WSSRCEPIMP", "WSSRCEPPIP", "WSSRCEPPYD", "WSSR~
+## $ RegionId               <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ SurveyYearLabel        <dbl> 1998, 1998, 1998, 1998, 1998, 1998, 1998, 1998,~
+## $ SurveyType             <chr> "DHS", "DHS", "DHS", "DHS", "DHS", "DHS", "DHS"~
+## $ DenominatorWeighted    <dbl> 52007, 52007, 52007, 52007, 52007, 52007, 52007~
+## $ DenominatorUnweighted  <dbl> 52465, 52465, 52465, 52465, 52465, 52465, 52465~
+## $ CILow                  <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ CIHigh                 <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ LevelRank              <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Summary of missingness}
+\FunctionTok{skim}\NormalTok{(covid\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule\noalign{}
+\endfirsthead
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Name & covid\_df \\
+Number of rows & 34 \\
+Number of columns & 29 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+character & 17 \\
+logical & 4 \\
+numeric & 8 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\end{longtable}
+
+\textbf{Variable type: character}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2840}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1235}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1728}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0494}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0494}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0741}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1358}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+max
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+empty
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_unique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+whitespace
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+ISO3 & 0 & 1 & 3 & 3 & 0 & 1 & 0 \\
+DataId & 0 & 1 & 5 & 6 & 0 & 34 & 0 \\
+Indicator & 0 & 1 & 32 & 75 & 0 & 20 & 0 \\
+Value & 0 & 1 & 2 & 4 & 0 & 34 & 0 \\
+Precision & 0 & 1 & 1 & 1 & 0 & 2 & 0 \\
+DHS\_CountryCode & 0 & 1 & 2 & 2 & 0 & 1 & 0 \\
+CountryName & 0 & 1 & 12 & 12 & 0 & 1 & 0 \\
+SurveyYear & 0 & 1 & 4 & 4 & 0 & 2 & 0 \\
+SurveyId & 0 & 1 & 9 & 9 & 0 & 2 & 0 \\
+IndicatorId & 0 & 1 & 13 & 13 & 0 & 20 & 0 \\
+IndicatorType & 0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+CharacteristicCategory & 0 & 1 & 5 & 5 & 0 & 1 & 0 \\
+CharacteristicLabel & 0 & 1 & 5 & 5 & 0 & 1 & 0 \\
+ByVariableId & 0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+ByVariableLabel & 34 & 0 & NA & NA & 0 & 0 & 0 \\
+SDRID & 0 & 1 & 10 & 10 & 0 & 20 & 0 \\
+SurveyType & 0 & 1 & 3 & 3 & 0 & 1 & 0 \\
+\end{longtable}
+
+\textbf{Variable type: logical}
+
+\begin{longtable}[]{@{}lrrrl@{}}
+\toprule\noalign{}
+skim\_variable & n\_missing & complete\_rate & mean & count \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+RegionId & 34 & 0 & NaN & : \\
+CILow & 34 & 0 & NaN & : \\
+CIHigh & 34 & 0 & NaN & : \\
+LevelRank & 34 & 0 & NaN & : \\
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1746}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1032}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0873}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0794}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0476}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+sd
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p25
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p50
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p75
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+hist
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+IndicatorOrder & 0 & 1.00 & 252040162.06 & 4011155.25 & 250162010 &
+250162190 & 250252010 & 250292085 & 260831120 & ▇▁▁▁▂ \\
+CharacteristicId & 0 & 1.00 & 1000.00 & 0.00 & 1000 & 1000 & 1000 & 1000
+& 1000 & ▁▁▇▁▁ \\
+CharacteristicOrder & 0 & 1.00 & 0.00 & 0.00 & 0 & 0 & 0 & 0 & 0 &
+▁▁▇▁▁ \\
+IsTotal & 0 & 1.00 & 1.00 & 0.00 & 1 & 1 & 1 & 1 & 1 & ▁▁▇▁▁ \\
+IsPreferred & 0 & 1.00 & 1.00 & 0.00 & 1 & 1 & 1 & 1 & 1 & ▁▁▇▁▁ \\
+SurveyYearLabel & 0 & 1.00 & 2008.59 & 8.99 & 1998 & 1998 & 2016 & 2016
+& 2016 & ▆▁▁▁▇ \\
+DenominatorWeighted & 2 & 0.94 & 38815.16 & 12658.90 & 11066 & 37205 &
+37205 & 52007 & 52007 & ▂▁▂▇▆ \\
+DenominatorUnweighted & 2 & 0.94 & 39352.88 & 12765.80 & 11066 & 37925 &
+37925 & 52465 & 52465 & ▂▁▂▇▆ \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# visualize missing values}
+\FunctionTok{vis\_miss}\NormalTok{(covid\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{04_covid_prevention_files/figure-latex/unnamed-chunk-2-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Clean column names to lowercase with underscores}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ janitor}\SpecialCharTok{::}\FunctionTok{clean\_names}\NormalTok{()}
+
+\CommentTok{\# Check new names}
+\FunctionTok{colnames}\NormalTok{(covid\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "iso3"                    "data_id"                
+##  [3] "indicator"               "value"                  
+##  [5] "precision"               "dhs_country_code"       
+##  [7] "country_name"            "survey_year"            
+##  [9] "survey_id"               "indicator_id"           
+## [11] "indicator_order"         "indicator_type"         
+## [13] "characteristic_id"       "characteristic_order"   
+## [15] "characteristic_category" "characteristic_label"   
+## [17] "by_variable_id"          "by_variable_label"      
+## [19] "is_total"                "is_preferred"           
+## [21] "sdrid"                   "region_id"              
+## [23] "survey_year_label"       "survey_type"            
+## [25] "denominator_weighted"    "denominator_unweighted" 
+## [27] "ci_low"                  "ci_high"                
+## [29] "level_rank"
+\end{verbatim}
+
+\subsection{Handle Duplicates}\label{handle-duplicates}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check for exact duplicates}
+\NormalTok{exact\_dups }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(covid\_df))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Exact duplicate rows:"}\NormalTok{, exact\_dups, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Exact duplicate rows: 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Remove all duplicates, keeping first occurrence}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{distinct}\NormalTok{(indicator, survey\_year, characteristic\_id, value, }\AttributeTok{.keep\_all =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Dimensions after duplicate removal:"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(covid\_df), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Dimensions after duplicate removal: 34 29
+\end{verbatim}
+
+\subsection{Convert Data Types}\label{convert-data-types}
+
+\begin{itemize}
+\tightlist
+\item
+  Ensures all numeric, integer, and logical columns have correct types
+  for downstream analysis. Prevents calculation errors and improves
+  consistency.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert numeric columns}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{c}\NormalTok{(value, precision, denominator\_weighted, denominator\_unweighted, ci\_low, ci\_high), as.numeric),}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{c}\NormalTok{(survey\_year, indicator\_order, characteristic\_id, characteristic\_order, survey\_year\_label, by\_variable\_id), as.integer),}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{c}\NormalTok{(is\_total, is\_preferred), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{as.logical}\NormalTok{(}\FunctionTok{as.integer}\NormalTok{(.)))}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Drop Redundant Columns}\label{drop-redundant-columns}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{redundant\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"iso3"}\NormalTok{, }\StringTok{"data\_id"}\NormalTok{, }\StringTok{"dhs\_country\_code"}\NormalTok{, }\StringTok{"country\_name"}\NormalTok{, }
+                    \StringTok{"survey\_id"}\NormalTok{, }\StringTok{"indicator\_id"}\NormalTok{, }\StringTok{"sdrid"}\NormalTok{, }\StringTok{"region\_id"}\NormalTok{, }
+                    \StringTok{"survey\_type"}\NormalTok{, }\StringTok{"level\_rank"}\NormalTok{, }\StringTok{"denominator\_weighted"}\NormalTok{, }\StringTok{"denominator\_unweighted"}\NormalTok{)}
+
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{any\_of}\NormalTok{(redundant\_cols))}
+
+\CommentTok{\# Remove columns that are entirely NA}
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(}\SpecialCharTok{\textasciitilde{}!}\FunctionTok{all}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.))))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Redundant and empty columns removed.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Redundant and empty columns removed.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"New dimensions:"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(covid\_df), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## New dimensions: 34 14
+\end{verbatim}
+
+\subsection{Handle Missing Values}\label{handle-missing-values}
+
+\begin{itemize}
+\item
+  Numeric columns: filled with the median
+\item
+  Character columns: filled with the most frequent value
+\item
+  Logical columns: missing values set to FALSE
+\item
+  Key metadata (survey\_year\_label, survey\_type) imputed explicitly
+  for clarity
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(}\SpecialCharTok{\textasciitilde{}!}\FunctionTok{all}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.))))}
+
+
+\NormalTok{impute\_mode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  ux }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(x)}
+  \ControlFlowTok{if}\NormalTok{(}\FunctionTok{length}\NormalTok{(ux) }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\FunctionTok{return}\NormalTok{(x)}
+  \FunctionTok{rep}\NormalTok{(}\FunctionTok{names}\NormalTok{(}\FunctionTok{sort}\NormalTok{(}\FunctionTok{table}\NormalTok{(ux), }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{))[}\DecValTok{1}\NormalTok{], }\FunctionTok{length}\NormalTok{(x))}
+\NormalTok{\}}
+
+
+\NormalTok{covid\_df }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \CommentTok{\# Numeric columns → median}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\FunctionTok{median}\NormalTok{(., }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), .)),}
+    
+    \CommentTok{\# Character columns → mode}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.character), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\FunctionTok{impute\_mode}\NormalTok{(.), .)),}
+    
+    \CommentTok{\# Logical columns → set missing to FALSE (or TRUE if appropriate)}
+    \FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.logical), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.), }\ConstantTok{FALSE}\NormalTok{, .))}
+\NormalTok{  )}
+
+
+\NormalTok{missing\_summary }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Column =} \FunctionTok{colnames}\NormalTok{(covid\_df),}
+  \AttributeTok{n\_missing =} \FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(covid\_df)),}
+  \AttributeTok{total\_rows =} \FunctionTok{nrow}\NormalTok{(covid\_df),}
+  \AttributeTok{missing\_percent =} \FunctionTok{round}\NormalTok{(}\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(covid\_df)) }\SpecialCharTok{/} \FunctionTok{nrow}\NormalTok{(covid\_df) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{)}
+
+\NormalTok{missing\_summary }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(missing\_percent))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                          Column n_missing total_rows
+## indicator                             indicator         0         34
+## value                                     value         0         34
+## precision                             precision         0         34
+## survey_year                         survey_year         0         34
+## indicator_order                 indicator_order         0         34
+## indicator_type                   indicator_type         0         34
+## characteristic_id             characteristic_id         0         34
+## characteristic_order       characteristic_order         0         34
+## characteristic_category characteristic_category         0         34
+## characteristic_label       characteristic_label         0         34
+## by_variable_id                   by_variable_id         0         34
+## is_total                               is_total         0         34
+## is_preferred                       is_preferred         0         34
+## survey_year_label             survey_year_label         0         34
+##                         missing_percent
+## indicator                             0
+## value                                 0
+## precision                             0
+## survey_year                           0
+## indicator_order                       0
+## indicator_type                        0
+## characteristic_id                     0
+## characteristic_order                  0
+## characteristic_category               0
+## characteristic_label                  0
+## by_variable_id                        0
+## is_total                              0
+## is_preferred                          0
+## survey_year_label                     0
+\end{verbatim}
+
+\subsection{Handle Outliers}\label{handle-outliers}
+
+\begin{itemize}
+\tightlist
+\item
+  Extreme values in value are capped to the IQR boundaries
+  (Winsorization), which reduces their influence while keeping most data
+  intact.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Quick check for extreme values in \textquotesingle{}value\textquotesingle{} and denominators}
+\FunctionTok{summary}\NormalTok{(covid\_df}\SpecialCharTok{$}\NormalTok{value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1.50    6.45   31.20   36.74   56.85   96.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(covid\_df}\SpecialCharTok{$}\NormalTok{denominator\_weighted)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Unknown or uninitialised column: `denominator_weighted`.
+\end{verbatim}
+
+\begin{verbatim}
+## Length  Class   Mode 
+##      0   NULL   NULL
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(covid\_df}\SpecialCharTok{$}\NormalTok{denominator\_unweighted)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Unknown or uninitialised column: `denominator_unweighted`.
+\end{verbatim}
+
+\begin{verbatim}
+## Length  Class   Mode 
+##      0   NULL   NULL
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Identify potential outliers using IQR method}
+\NormalTok{outliers }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(value }\SpecialCharTok{\textgreater{}} \FunctionTok{quantile}\NormalTok{(value, }\FloatTok{0.75}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*} \FunctionTok{IQR}\NormalTok{(value, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{|}
+\NormalTok{         value }\SpecialCharTok{\textless{}} \FunctionTok{quantile}\NormalTok{(value, }\FloatTok{0.25}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*} \FunctionTok{IQR}\NormalTok{(value, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Potential outlier rows in \textquotesingle{}value\textquotesingle{}:"}\NormalTok{, }\FunctionTok{nrow}\NormalTok{(outliers), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Potential outlier rows in 'value': 0
+\end{verbatim}
+
+\subsection{Final Validation}\label{final-validation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Final Dataset Check Before Saving (existing columns only)}
+
+\CommentTok{\# Check dataset dimensions and structure}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Final dataset dimensions:"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(covid\_df), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Final dataset dimensions: 34 14
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(covid\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [34 x 14] (S3: tbl_df/tbl/data.frame)
+##  $ indicator              : chr [1:34] "Population using an improved water source" "Population using water piped into dwelling" "Population using water piped into yard/plot" "Population using a public tap/standpipe" ...
+##  $ value                  : num [1:34] 83.5 36 23.1 19.3 60.3 80.2 3.3 8.4 46.4 40.8 ...
+##  $ precision              : num [1:34] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ survey_year            : int [1:34] 1998 1998 1998 1998 1998 1998 1998 1998 1998 1998 ...
+##  $ indicator_order        : int [1:34] 250162010 250162020 250162025 250162030 250162190 250162200 250162210 250202030 250262010 250262150 ...
+##  $ indicator_type         : chr [1:34] "I" "I" "I" "I" ...
+##  $ characteristic_id      : int [1:34] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...
+##  $ characteristic_order   : int [1:34] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ characteristic_category: chr [1:34] "Total" "Total" "Total" "Total" ...
+##  $ characteristic_label   : chr [1:34] "Total" "Total" "Total" "Total" ...
+##  $ by_variable_id         : int [1:34] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ is_total               : logi [1:34] TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  $ is_preferred           : logi [1:34] TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  $ survey_year_label      : int [1:34] 1998 1998 1998 1998 1998 1998 1998 1998 1998 1998 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Identify numeric columns that exist}
+\NormalTok{numeric\_cols }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{colnames}\NormalTok{()}
+
+\CommentTok{\# Summarize numeric columns for final inspection}
+\FunctionTok{summary}\NormalTok{(}\FunctionTok{select}\NormalTok{(covid\_df, }\FunctionTok{all\_of}\NormalTok{(numeric\_cols)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      value         precision       survey_year   indicator_order    
+##  Min.   : 1.50   Min.   :0.0000   Min.   :1998   Min.   :250162010  
+##  1st Qu.: 6.45   1st Qu.:1.0000   1st Qu.:1998   1st Qu.:250162190  
+##  Median :31.20   Median :1.0000   Median :2016   Median :250252010  
+##  Mean   :36.74   Mean   :0.9706   Mean   :2009   Mean   :252040162  
+##  3rd Qu.:56.85   3rd Qu.:1.0000   3rd Qu.:2016   3rd Qu.:250292085  
+##  Max.   :96.00   Max.   :1.0000   Max.   :2016   Max.   :260831120  
+##  characteristic_id characteristic_order by_variable_id survey_year_label
+##  Min.   :1000      Min.   :0            Min.   :0      Min.   :1998     
+##  1st Qu.:1000      1st Qu.:0            1st Qu.:0      1st Qu.:1998     
+##  Median :1000      Median :0            Median :0      Median :2016     
+##  Mean   :1000      Mean   :0            Mean   :0      Mean   :2009     
+##  3rd Qu.:1000      3rd Qu.:0            3rd Qu.:0      3rd Qu.:2016     
+##  Max.   :1000      Max.   :0            Max.   :0      Max.   :2016
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Confirm no remaining missing values in all columns}
+\NormalTok{missing\_summary }\OtherTok{\textless{}{-}}\NormalTok{ covid\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{everything}\NormalTok{(), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.)))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{everything}\NormalTok{(), }\AttributeTok{names\_to =} \StringTok{"column"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"n\_missing"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{total\_rows =} \FunctionTok{nrow}\NormalTok{(covid\_df),}
+    \AttributeTok{missing\_percent =} \FunctionTok{round}\NormalTok{(n\_missing }\SpecialCharTok{/}\NormalTok{ total\_rows }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{  )}
+
+\NormalTok{missing\_summary }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(missing\_percent))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 14 x 4
+##    column                  n_missing total_rows missing_percent
+##    <chr>                       <int>      <int>           <dbl>
+##  1 indicator                       0         34               0
+##  2 value                           0         34               0
+##  3 precision                       0         34               0
+##  4 survey_year                     0         34               0
+##  5 indicator_order                 0         34               0
+##  6 indicator_type                  0         34               0
+##  7 characteristic_id               0         34               0
+##  8 characteristic_order            0         34               0
+##  9 characteristic_category         0         34               0
+## 10 characteristic_label            0         34               0
+## 11 by_variable_id                  0         34               0
+## 12 is_total                        0         34               0
+## 13 is_preferred                    0         34               0
+## 14 survey_year_label               0         34               0
+\end{verbatim}
+
+\subsection{Save Dataset}\label{save-dataset}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define path to save cleaned CSV}
+\NormalTok{clean\_path }\OtherTok{\textless{}{-}} \FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{, }\StringTok{"covid\_prevention\_cleaned\_zaf.csv"}\NormalTok{)}
+
+\CommentTok{\# Create folder if it doesn\textquotesingle{}t exist}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{dir.exists}\NormalTok{(}\FunctionTok{dirname}\NormalTok{(clean\_path))) }\FunctionTok{dir.create}\NormalTok{(}\FunctionTok{dirname}\NormalTok{(clean\_path), }\AttributeTok{recursive =} \ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# Write cleaned dataset}
+\FunctionTok{write\_csv}\NormalTok{(covid\_df, clean\_path)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Cleaned COVID{-}19 prevention dataset saved successfully at:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, clean\_path, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Cleaned COVID-19 prevention dataset saved successfully at:
+##  C:/Users/morul/School/3rd Year/BIN381/BIN381_PROJECT/BIN381_PROJECT/data/processed/covid_prevention_cleaned_zaf.csv
+\end{verbatim}
+
+\end{document}

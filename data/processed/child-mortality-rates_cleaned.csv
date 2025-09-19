@@ -1,41 +1,41 @@
-Indicator,Value,Precision,Survey_year,Indicator_order,Indicator_type,Characteristic_id,Characteristic_order,Characteristic_category,Characteristic_label,By_variable_id,Is_total,Is_preferred,Survey_year_label,Ci_low,Ci_high
-Neonatal mortality rate (5 year periods),20,0,1998,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Postneonatal mortality (5 year periods),26,0,1998,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Infant mortality rate (5 year periods),45,0,1998,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Child mortality (5 year periods),15,0,1998,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Under-five mortality rate (5 year periods),59,0,1998,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Neonatal mortality rate,20,0,1998,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Neonatal mortality rate,19,0,1998,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Postneonatal mortality rate,26,0,1998,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Postneonatal mortality rate,23,0,1998,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Infant mortality rate,45,0,1998,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Infant mortality rate,42,0,1998,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Child mortality rate,15,0,1998,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Child mortality rate,15,0,1998,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Under-five mortality rate,59,0,1998,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Under-five mortality rate,57,0,1998,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Stillbirths,127,0,1998,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Early neonatal deaths,66,0,1998,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Perinatal mortality rate (5 years),38,0,1998,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Number of pregnancies of 7+ months duration,5119,0,1998,NA,D,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Number of pregnancies of 7+ months duration (unweighted),5183,0,1998,NA,U,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Neonatal mortality rate (5 year periods),21,0,2016,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Postneonatal mortality (5 year periods),14,0,2016,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Infant mortality rate (5 year periods),35,0,2016,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Child mortality (5 year periods),7,0,2016,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Under-five mortality rate (5 year periods),42,0,2016,NA,I,NA,NA,Five year periods,0-4,0,NA,NA,NA,NA,NA
-Neonatal mortality rate,21,0,2016,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Neonatal mortality rate,25,0,2016,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Postneonatal mortality rate,14,0,2016,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Postneonatal mortality rate,18,0,2016,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Infant mortality rate,35,0,2016,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Infant mortality rate,43,0,2016,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Child mortality rate,7,0,2016,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Child mortality rate,8,0,2016,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Under-five mortality rate,42,0,2016,NA,I,NA,NA,Total,Total,14001,NA,NA,NA,NA,NA
-Under-five mortality rate,51,0,2016,NA,I,NA,NA,Total,Total,14003,NA,NA,NA,NA,NA
-Stillbirths,37,0,2016,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Early neonatal deaths,66,0,2016,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Perinatal mortality rate (5 years),29,0,2016,NA,I,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Number of pregnancies of 7+ months duration,3577,0,2016,NA,D,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
-Number of pregnancies of 7+ months duration (unweighted),3563,0,2016,NA,U,NA,NA,Total 15-49,Total 15-49,0,NA,NA,NA,NA,NA
+indicator,value,precision,survey_year,indicator_order,indicator_type,characteristic_id,characteristic_order,characteristic_category,characteristic_label,by_variable_id,is_total,is_preferred,survey_year_label,ci_low,ci_high
+Neonatal mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Postneonatal mortality (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Infant mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Child mortality (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Under-five mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Neonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Neonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Postneonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Postneonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Infant mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Infant mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Child mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Child mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Under-five mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Under-five mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Stillbirths,NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Early neonatal deaths,NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Perinatal mortality rate (5 years),NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Number of pregnancies of 7+ months duration,NA,NA,NA,NA,D,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Number of pregnancies of 7+ months duration (unweighted),NA,NA,NA,NA,U,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Neonatal mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Postneonatal mortality (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Infant mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Child mortality (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Under-five mortality rate (5 year periods),NA,NA,NA,NA,I,NA,NA,Five year periods,0-4,0,TRUE,TRUE,NA,NA,NA
+Neonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Neonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Postneonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Postneonatal mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Infant mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Infant mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Child mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Child mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Under-five mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14001,TRUE,TRUE,NA,NA,NA
+Under-five mortality rate,NA,NA,NA,NA,I,NA,NA,Total,Total,14003,TRUE,FALSE,NA,NA,NA
+Stillbirths,NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Early neonatal deaths,NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Perinatal mortality rate (5 years),NA,NA,NA,NA,I,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Number of pregnancies of 7+ months duration,NA,NA,NA,NA,D,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA
+Number of pregnancies of 7+ months duration (unweighted),NA,NA,NA,NA,U,NA,NA,Total 15-49,Total 15-49,0,TRUE,TRUE,NA,NA,NA

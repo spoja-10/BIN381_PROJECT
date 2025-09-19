@@ -1,6 +1,8 @@
 ---
 title: "08_IYCF"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 #Loading Libraries
@@ -33,7 +35,7 @@ icy_df <- icy_df[-1, ]
 ```{r}
 dim(icy_df)
 ```
-#Inspect Duplicated rows
+# Inspect Duplicated rows
 ```{r}
 dup_check <- icy_df %>%
   group_by(Indicator, SurveyYear, CharacteristicId, Value) %>%
@@ -48,13 +50,37 @@ icy_df <- icy_df %>%
   distinct(Indicator, SurveyYear, CharacteristicId, Value, .keep_all = TRUE)
 
 ```
-#Percentage Missing Values
-```{r}
+# Missing Values
+```{r handle_missing_icy, cache=FALSE}
+# 1. Remove completely empty columns
+icy_df <- icy_df %>% select(where(~!all(is.na(.))))
 
-data.frame(
+# 2. Impute numeric columns with median
+num_cols <- icy_df %>% select(where(is.numeric)) %>% names()
+icy_df <- icy_df %>%
+  mutate(across(all_of(num_cols), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+# 3. Impute character/categorical columns with mode
+cat_cols <- icy_df %>% select(where(is.character)) %>% names()
+get_mode <- function(x) {
+  ux <- na.omit(x)
+  if(length(ux) == 0) return(NA_character_)
+  names(sort(table(ux), decreasing = TRUE))[1]
+}
+icy_df <- icy_df %>%
+  mutate(across(all_of(cat_cols), ~ ifelse(is.na(.), get_mode(.), .)))
+
+# 4. Summary after handling missing values
+missing_summary <- data.frame(
   Column = names(icy_df),
-  Missing_Percentage = paste0(round(colMeans(is.na(icy_df)) * 100, 2), "%")
-  )
+  Missing_Percentage = paste0(round(colMeans(is.na(icy_df)) * 100, 2), "%"),
+  Missing_Count = colSums(is.na(icy_df))
+)
+
+cat("Total remaining NAs:", sum(is.na(icy_df)), "\n")
+cat("Missing value summary per column:\n")
+print(missing_summary)
+
 
 ```
 
@@ -115,7 +141,7 @@ summary_tbl
 
 ```
 
-#Drop the countries only onw unqiue value: reason, there is no useful information - county is also always za
+# Drop the Redundant Columns
 ```{r}
 icy_df <- icy_df %>%
   select(
@@ -124,17 +150,21 @@ icy_df <- icy_df %>%
     -CountryName, 
     -SurveyId,
     -ByVariableId, 
-    -ByVariableLabel, 
+    
     -IsTotal,
-    -RegionId, 
+    
     -SurveyYearLabel, 
     -SurveyType,
     -CharacteristicOrder
     
   )
 ```
+- Columns removed because they were constant, redundant, or not analytically useful:
 
-#Assumed pattern, the missing values can be filled with the previous non missing value in the opposite attribute
+- ISO3, DHS_CountryCode, CountryName, SurveyId, ByVariableId, IsTotal, SurveyYearLabel, SurveyType, CharacteristicOrder
+
+- These columns either contained a single value, duplicated information, or survey metadata that does not impact analysis.
+# Assumed pattern, the missing values can be filled with the previous non missing value in the opposite attribute
 ```{r}
 
 
@@ -192,6 +222,25 @@ icy_df <- icy_df %>%
 
 
 ```
+
+Problem: DenominatorWeighted and DenominatorUnweighted contained extreme values that could skew analyses.
+
+Solution: IQR-based capping:
+
+Calculate bounds:
+
+- Lower bound = Q1 – 1.5 × IQR
+- Upper bound = Q3 + 1.5 × IQR
+
+- Cap extreme values:
+
+- Values below lower bound → set to lower bound
+
+- Values above upper bound → set to upper bound
+
+- Visualize: Scatterplots and boxplots were used to confirm the effect of outlier capping.
+
+- Outcome: Extreme values were mitigated while retaining all rows, improving robustness for analysis.
 #save cleaned data
 ```{r}
 write_csv(icy_df, here("data","processed", "iycf_cleaned.csv"))

@@ -1,22 +1,22 @@
-DataId,Indicator,Value,Precision,SurveyYear,IndicatorId,IndicatorOrder,IndicatorType,CharacteristicId,CharacteristicCategory,CharacteristicLabel,IsPreferred,SDRID,DenominatorWeighted,DenominatorUnweighted,CILow,CIHigh,LevelRank
-91409,Female deaths that are pregnancy-related,5.5,1,1998,MM_MMRT_W_FDP,77003010,I,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWFDP,NA,NA,NA,NA,NA
-91377,Number of pregnancy-related deaths,19,0,1998,MM_MMRT_W_PDT,77003020,N,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWPDT,NA,NA,NA,NA,NA
-768646,Years of exposure to the risk of mortality for women,122701,0,1998,MM_MMRT_W_EXP,77003030,D,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWEXP,NA,123738,NA,NA,NA
-768647,Years of exposure to the risk of mortality for women (unweighted),123738,0,1998,MM_MMRT_W_EXU,77003040,U,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWEXU,NA,123738,NA,NA,NA
-535566,Pregnancy-related mortality rate,0.15,2,1998,MM_MMRT_W_PRT,77003050,I,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWPRT,122701,123738,NA,NA,NA
-796695,General fertility rate,97,0,1998,MM_MMRO_W_GFR,77033010,I,1000,Total,Total,TRUE,MMMMROWGFR,NA,NA,NA,NA,NA
-713103,Pregnancy-related mortality ratio,150,0,1998,MM_MMRO_W_PMR,77033020,I,1000,Total,Total,TRUE,MMMMROWPMR,NA,NA,77,223,NA
-796696,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),77,0,1998,MM_MMRO_W_PIL,77033030,C,1000,Total,Total,TRUE,MMMMROWPIL,NA,NA,NA,NA,NA
-796698,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),223,0,1998,MM_MMRO_W_PIH,77033040,C,1000,Total,Total,TRUE,MMMMROWPIH,NA,NA,NA,NA,NA
-796697,Lifetime risk of pregnancy-related death,0.005,3,1998,MM_MMRO_W_LTP,77033050,I,1000,Total,Total,TRUE,MMMMROWLTP,NA,NA,NA,NA,NA
-169721,Female deaths that are pregnancy-related,7.8,1,2016,MM_MMRT_W_FDP,77003010,I,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWFDP,NA,NA,NA,NA,NA
-169709,Number of pregnancy-related deaths,31,0,2016,MM_MMRT_W_PDT,77003020,N,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWPDT,NA,NA,NA,NA,NA
-169751,Years of exposure to the risk of mortality for women,62768,0,2016,MM_MMRT_W_EXP,77003030,D,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWEXP,NA,63523,NA,NA,NA
-169752,Years of exposure to the risk of mortality for women (unweighted),63523,0,2016,MM_MMRT_W_EXU,77003040,U,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWEXU,NA,63523,NA,NA,NA
-530323,Pregnancy-related mortality rate,0.47,2,2016,MM_MMRT_W_PRT,77003050,I,10000,Total 15-49,Total 15-49,TRUE,MMMMRTWPRT,62768,63523,NA,NA,NA
-169698,General fertility rate,88,0,2016,MM_MMRO_W_GFR,77033010,I,1000,Total,Total,TRUE,MMMMROWGFR,NA,NA,NA,NA,NA
-171595,Pregnancy-related mortality ratio,536,0,2016,MM_MMRO_W_PMR,77033020,I,1000,Total,Total,TRUE,MMMMROWPMR,NA,NA,270,802,NA
-169715,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),270,0,2016,MM_MMRO_W_PIL,77033030,C,1000,Total,Total,TRUE,MMMMROWPIL,NA,NA,NA,NA,NA
-169705,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),802,0,2016,MM_MMRO_W_PIH,77033040,C,1000,Total,Total,TRUE,MMMMROWPIH,NA,NA,NA,NA,NA
-169716,Lifetime risk of pregnancy-related death,0.015,3,2016,MM_MMRO_W_LTP,77033050,I,1000,Total,Total,TRUE,MMMMROWLTP,NA,NA,NA,NA,NA
-773982,Maternal mortality ratio,475,0,2016,MM_MMRO_W_MMR,77033060,I,1000,Total,Total,TRUE,MMMMROWMMR,NA,NA,234,715,NA
+ISO3,DataId,Indicator,Value,Precision,DHS_CountryCode,CountryName,SurveyYear,SurveyId,IndicatorId,IndicatorOrder,IndicatorType,CharacteristicId,CharacteristicOrder,CharacteristicCategory,CharacteristicLabel,ByVariableId,ByVariableLabel,IsTotal,IsPreferred,SDRID,SurveyYearLabel,SurveyType,DenominatorWeighted,DenominatorUnweighted
+ZAF,91409,Female deaths that are pregnancy-related,5.5,1,ZA,South Africa,1998,ZA1998DHS,MM_MMRT_W_FDP,77003010,I,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWFDP,1998,DHS,92734.5,93630.5
+ZAF,91377,Number of pregnancy-related deaths,19,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRT_W_PDT,77003020,N,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWPDT,1998,DHS,92734.5,93630.5
+ZAF,768646,Years of exposure to the risk of mortality for women,122701,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRT_W_EXP,77003030,D,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWEXP,1998,DHS,92734.5,123738
+ZAF,768647,Years of exposure to the risk of mortality for women (unweighted),123738,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRT_W_EXU,77003040,U,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWEXU,1998,DHS,92734.5,123738
+ZAF,535566,Pregnancy-related mortality rate,0.15,2,ZA,South Africa,1998,ZA1998DHS,MM_MMRT_W_PRT,77003050,I,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWPRT,1998,DHS,122701,123738
+ZAF,796695,General fertility rate,97,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRO_W_GFR,77033010,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWGFR,1998,DHS,92734.5,93630.5
+ZAF,713103,Pregnancy-related mortality ratio,150,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRO_W_PMR,77033020,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPMR,1998,DHS,92734.5,93630.5
+ZAF,796696,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),77,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRO_W_PIL,77033030,C,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPIL,1998,DHS,92734.5,93630.5
+ZAF,796698,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),223,0,ZA,South Africa,1998,ZA1998DHS,MM_MMRO_W_PIH,77033040,C,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPIH,1998,DHS,92734.5,93630.5
+ZAF,796697,Lifetime risk of pregnancy-related death,0.005,3,ZA,South Africa,1998,ZA1998DHS,MM_MMRO_W_LTP,77033050,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWLTP,1998,DHS,92734.5,93630.5
+ZAF,169721,Female deaths that are pregnancy-related,7.8,1,ZA,South Africa,2016,ZA2016DHS,MM_MMRT_W_FDP,77003010,I,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWFDP,2016,DHS,92734.5,93630.5
+ZAF,169709,Number of pregnancy-related deaths,31,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRT_W_PDT,77003020,N,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWPDT,2016,DHS,92734.5,93630.5
+ZAF,169751,Years of exposure to the risk of mortality for women,62768,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRT_W_EXP,77003030,D,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWEXP,2016,DHS,92734.5,63523
+ZAF,169752,Years of exposure to the risk of mortality for women (unweighted),63523,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRT_W_EXU,77003040,U,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWEXU,2016,DHS,92734.5,63523
+ZAF,530323,Pregnancy-related mortality rate,0.47,2,ZA,South Africa,2016,ZA2016DHS,MM_MMRT_W_PRT,77003050,I,10000,10000,Total 15-49,Total 15-49,0,NA,TRUE,TRUE,MMMMRTWPRT,2016,DHS,62768,63523
+ZAF,169698,General fertility rate,88,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_GFR,77033010,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWGFR,2016,DHS,92734.5,93630.5
+ZAF,171595,Pregnancy-related mortality ratio,536,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_PMR,77033020,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPMR,2016,DHS,92734.5,93630.5
+ZAF,169715,Pregnancy-related mortality ratio CI lower bound (PRMR-2SE),270,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_PIL,77033030,C,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPIL,2016,DHS,92734.5,93630.5
+ZAF,169705,Pregnancy-related mortality ratio CI upper bound (PRMR+2SE),802,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_PIH,77033040,C,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWPIH,2016,DHS,92734.5,93630.5
+ZAF,169716,Lifetime risk of pregnancy-related death,0.015,3,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_LTP,77033050,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWLTP,2016,DHS,92734.5,93630.5
+ZAF,773982,Maternal mortality ratio,475,0,ZA,South Africa,2016,ZA2016DHS,MM_MMRO_W_MMR,77033060,I,1000,0,Total,Total,0,NA,TRUE,TRUE,MMMMROWMMR,2016,DHS,92734.5,93630.5

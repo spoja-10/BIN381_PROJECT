@@ -1,0 +1,1013 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={01\_Access\_To\_Healthcare},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{01\_Access\_To\_Healthcare}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Data Preparation Report: Access to Healthcare
+Dataset}\label{data-preparation-report-access-to-healthcare-dataset}
+
+\subsection{Executive Summary}\label{executive-summary}
+
+This report documents the comprehensive data cleaning and preparation
+process performed on the Access to Healthcare dataset from the
+Demographic and Health Surveys (DHS) for South Africa. The dataset
+underwent rigorous quality checks, transformation, and validation to
+ensure its readiness for analysis. \#\# 1. Load Libraries and Data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data manipulation and cleaning}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyr)}
+\FunctionTok{library}\NormalTok{(stringr)}
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(here)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## here() starts at C:/Users/morul/School/3rd Year/BIN381/BIN381_PROJECT/BIN381_PROJECT
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data visualization}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(visdat) }\CommentTok{\# For missing data visualization}
+\FunctionTok{library}\NormalTok{(skimr)  }\CommentTok{\# For detailed summaries}
+\FunctionTok{library}\NormalTok{(naniar)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'naniar'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:skimr':
+## 
+##     n_complete
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DT)}
+\FunctionTok{library}\NormalTok{(knitr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{,}\StringTok{"raw"}\NormalTok{,}\StringTok{"access{-}to{-}health{-}care\_national\_zaf.csv"}\NormalTok{))}
+
+\CommentTok{\# Remove metadata row if present}
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, ]}
+\FunctionTok{rownames}\NormalTok{(acc\_df) }\OtherTok{\textless{}{-}} \ConstantTok{NULL}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Dataset loaded successfully.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Dataset loaded successfully.
+\end{verbatim}
+
+\textbf{Explanation}: We load the dataset and remove the first row,
+which contains metadata rather than actual observations.
+
+\subsection{2. Initial Data Assessment}\label{initial-data-assessment}
+
+\subsubsection{2.1 First Look}\label{first-look}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Display first few rows and structure}
+\FunctionTok{head}\NormalTok{(acc\_df, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   ISO3 DataId                              Indicator Value Precision
+## 1  ZAF 751751        Antenatal care provider: Doctor  28.5         1
+## 2  ZAF 567476        Antenatal care provider: Doctor    30         1
+## 3  ZAF 205488        Antenatal care provider: Doctor  27.3         1
+## 4  ZAF 751748 Antenatal care provider: Nurse/midwife  66.6         1
+## 5  ZAF 567472 Antenatal care provider: Nurse/midwife    65         1
+##   DHS_CountryCode  CountryName SurveyYear  SurveyId   IndicatorId
+## 1              ZA South Africa       1998 ZA1998DHS RH_ANCP_W_DOC
+## 2              ZA South Africa       1998 ZA1998DHS RH_ANCP_W_DOC
+## 3              ZA South Africa       1998 ZA1998DHS RH_ANCP_W_DOC
+## 4              ZA South Africa       1998 ZA1998DHS RH_ANCP_W_NRS
+## 5              ZA South Africa       1998 ZA1998DHS RH_ANCP_W_NRS
+##   IndicatorOrder IndicatorType CharacteristicId CharacteristicOrder
+## 1       83363010             I             1000                   0
+## 2       83363010             I             1000                   0
+## 3       83363010             I             1000                   0
+## 4       83363020             I             1000                   0
+## 5       83363020             I             1000                   0
+##   CharacteristicCategory CharacteristicLabel ByVariableId
+## 1                  Total               Total        14000
+## 2                  Total               Total        14001
+## 3                  Total               Total        14002
+## 4                  Total               Total        14000
+## 5                  Total               Total        14001
+##                    ByVariableLabel IsTotal IsPreferred      SDRID RegionId
+## 1 Three years preceding the survey       1           0 RHANCPWDOC       NA
+## 2  Five years preceding the survey       1           0 RHANCPWDOC       NA
+## 3   Two years preceding the survey       1           1 RHANCPWDOC       NA
+## 4 Three years preceding the survey       1           0 RHANCPWNRS       NA
+## 5  Five years preceding the survey       1           0 RHANCPWNRS       NA
+##   SurveyYearLabel SurveyType DenominatorWeighted DenominatorUnweighted CILow
+## 1            1998        DHS                2871                  2903    NA
+## 2            1998        DHS                4122                  4148    NA
+## 3            1998        DHS                2010                  2041    NA
+## 4            1998        DHS                2871                  2903    NA
+## 5            1998        DHS                4122                  4148    NA
+##   CIHigh LevelRank
+## 1     NA        NA
+## 2     NA        NA
+## 3     NA        NA
+## 4     NA        NA
+## 5     NA        NA
+\end{verbatim}
+
+\subsubsection{2.2 Data Structure}\label{data-structure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{skim}\NormalTok{(acc\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule\noalign{}
+\endfirsthead
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Name & acc\_df \\
+Number of rows & 275 \\
+Number of columns & 29 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+character & 17 \\
+logical & 4 \\
+numeric & 8 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\end{longtable}
+
+\textbf{Variable type: character}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2840}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1235}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1728}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0494}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0494}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0741}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1358}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+max
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+empty
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_unique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+whitespace
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+ISO3 & 0 & 1 & 3 & 3 & 0 & 1 & 0 \\
+DataId & 0 & 1 & 4 & 6 & 0 & 275 & 0 \\
+Indicator & 0 & 1 & 17 & 100 & 0 & 68 & 0 \\
+Value & 0 & 1 & 1 & 4 & 0 & 190 & 0 \\
+Precision & 0 & 1 & 1 & 1 & 0 & 2 & 0 \\
+DHS\_CountryCode & 0 & 1 & 2 & 2 & 0 & 1 & 0 \\
+CountryName & 0 & 1 & 12 & 12 & 0 & 1 & 0 \\
+SurveyYear & 0 & 1 & 4 & 4 & 0 & 2 & 0 \\
+SurveyId & 0 & 1 & 9 & 9 & 0 & 2 & 0 \\
+IndicatorId & 0 & 1 & 13 & 13 & 0 & 72 & 0 \\
+IndicatorType & 0 & 1 & 1 & 1 & 0 & 5 & 0 \\
+CharacteristicCategory & 0 & 1 & 5 & 5 & 0 & 1 & 0 \\
+CharacteristicLabel & 0 & 1 & 5 & 5 & 0 & 1 & 0 \\
+ByVariableId & 0 & 1 & 1 & 5 & 0 & 4 & 0 \\
+ByVariableLabel & 0 & 1 & 0 & 32 & 13 & 4 & 0 \\
+SDRID & 0 & 1 & 10 & 10 & 0 & 72 & 0 \\
+SurveyType & 0 & 1 & 3 & 3 & 0 & 1 & 0 \\
+\end{longtable}
+
+\textbf{Variable type: logical}
+
+\begin{longtable}[]{@{}lrrrl@{}}
+\toprule\noalign{}
+skim\_variable & n\_missing & complete\_rate & mean & count \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+RegionId & 275 & 0 & NaN & : \\
+CILow & 275 & 0 & NaN & : \\
+CIHigh & 275 & 0 & NaN & : \\
+LevelRank & 275 & 0 & NaN & : \\
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1167}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.1000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0917}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0750}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0750}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0750}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0750}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0750}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 20\tabcolsep) * \real{0.0500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+sd
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p25
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p50
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p75
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+hist
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+IndicatorOrder & 0 & 1.00 & 87126424.21 & 5002220.64 & 83363010 &
+83566030 & 83606090 & 93966070 & 94096170 & ▇▁▁▁▅ \\
+CharacteristicId & 0 & 1.00 & 1000.00 & 0.00 & 1000 & 1000 & 1000 & 1000
+& 1000 & ▁▁▇▁▁ \\
+CharacteristicOrder & 0 & 1.00 & 0.00 & 0.00 & 0 & 0 & 0 & 0 & 0 &
+▁▁▇▁▁ \\
+IsTotal & 0 & 1.00 & 1.00 & 0.00 & 1 & 1 & 1 & 1 & 1 & ▁▁▇▁▁ \\
+IsPreferred & 0 & 1.00 & 0.42 & 0.49 & 0 & 0 & 0 & 1 & 1 & ▇▁▁▁▆ \\
+SurveyYearLabel & 0 & 1.00 & 2007.62 & 8.99 & 1998 & 1998 & 2016 & 2016
+& 2016 & ▇▁▁▁▇ \\
+DenominatorWeighted & 34 & 0.88 & 2048.65 & 1428.93 & 68 & 627 & 2010 &
+3072 & 4992 & ▇▆▅▅▃ \\
+DenominatorUnweighted & 34 & 0.88 & 2062.17 & 1445.14 & 59 & 634 & 2041
+& 3119 & 5066 & ▇▆▆▃▃ \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(acc\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 275
+## Columns: 29
+## $ ISO3                   <chr> "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF"~
+## $ DataId                 <chr> "751751", "567476", "205488", "751748", "567472~
+## $ Indicator              <chr> "Antenatal care provider: Doctor", "Antenatal c~
+## $ Value                  <chr> "28.5", "30", "27.3", "66.6", "65", "68.4", "0.~
+## $ Precision              <chr> "1", "1", "1", "1", "1", "1", "1", "1", "1", "1~
+## $ DHS_CountryCode        <chr> "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA",~
+## $ CountryName            <chr> "South Africa", "South Africa", "South Africa",~
+## $ SurveyYear             <chr> "1998", "1998", "1998", "1998", "1998", "1998",~
+## $ SurveyId               <chr> "ZA1998DHS", "ZA1998DHS", "ZA1998DHS", "ZA1998D~
+## $ IndicatorId            <chr> "RH_ANCP_W_DOC", "RH_ANCP_W_DOC", "RH_ANCP_W_DO~
+## $ IndicatorOrder         <int> 83363010, 83363010, 83363010, 83363020, 8336302~
+## $ IndicatorType          <chr> "I", "I", "I", "I", "I", "I", "I", "I", "I", "I~
+## $ CharacteristicId       <int> 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,~
+## $ CharacteristicOrder    <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ CharacteristicCategory <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ CharacteristicLabel    <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ ByVariableId           <chr> "14000", "14001", "14002", "14000", "14001", "1~
+## $ ByVariableLabel        <chr> "Three years preceding the survey", "Five years~
+## $ IsTotal                <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
+## $ IsPreferred            <int> 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,~
+## $ SDRID                  <chr> "RHANCPWDOC", "RHANCPWDOC", "RHANCPWDOC", "RHAN~
+## $ RegionId               <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ SurveyYearLabel        <int> 1998, 1998, 1998, 1998, 1998, 1998, 1998, 1998,~
+## $ SurveyType             <chr> "DHS", "DHS", "DHS", "DHS", "DHS", "DHS", "DHS"~
+## $ DenominatorWeighted    <int> 2871, 4122, 2010, 2871, 4122, 2010, 2871, 4122,~
+## $ DenominatorUnweighted  <int> 2903, 4148, 2041, 2903, 4148, 2041, 2903, 4148,~
+## $ CILow                  <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ CIHigh                 <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ LevelRank              <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+\end{verbatim}
+
+\subsubsection{2.3 Visualize Missing Data}\label{visualize-missing-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{gg\_miss\_var}\NormalTok{(acc\_df) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Missing Values per Column"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{01_Access_To_Healthcare_files/figure-latex/missing_visualization-1.pdf}}
+
+\textbf{Purpose:}\\
+Understand the dataset's structure, content, and initial quality.
+
+\textbf{What the Code Does:}\\
+- Displays the first few rows with \texttt{head()}.\\
+- Uses \texttt{skim()} for comprehensive summary statistics and data
+quality indicators.\\
+- Visualizes missing values with \texttt{gg\_miss\_var()} to spot
+columns needing attention.
+
+\textbf{Result:}\\
+- Provides a snapshot of the data structure, missingness, and variable
+types.\\
+- Helps plan cleaning steps such as type conversion and missing value
+treatment.
+
+\textbf{Why it matters:}\\
+- Early insight prevents errors later in cleaning and ensures informed
+preprocessing decisions.
+
+\subsection{3. Data Cleaning Process}\label{data-cleaning-process}
+
+\subsubsection{3.1 Handle Duplicates}\label{handle-duplicates}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check for exact duplicates}
+\NormalTok{duplicate\_count }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(acc\_df))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Number of exact duplicate rows:"}\NormalTok{, duplicate\_count, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Number of exact duplicate rows: 0
+\end{verbatim}
+
+\textbf{Purpose:}\\
+Eliminate repeated rows that could distort calculations or summaries.
+
+\textbf{Method / What the Code Does:}\\
+- Counts exact duplicate rows with \texttt{duplicated()}.\\
+- Removes duplicates using \texttt{distinct()}.
+
+\textbf{Outcome / Result:}\\
+- Dataset contains only unique records.
+
+\textbf{Relevance / Why it matters:}\\
+- Prevents overcounting or bias in statistics and visualizations
+
+\subsubsection{3.2 Convert Data Types}\label{convert-data-types}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Explicitly only select columns that exist}
+\NormalTok{numeric\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Value"}\NormalTok{, }\StringTok{"Precision"}\NormalTok{, }\StringTok{"DenominatorWeighted"}\NormalTok{, }\StringTok{"DenominatorUnweighted"}\NormalTok{)}
+\NormalTok{integer\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"SurveyYear"}\NormalTok{, }\StringTok{"IndicatorOrder"}\NormalTok{, }\StringTok{"CharacteristicOrder"}\NormalTok{, }\StringTok{"SurveyYearLabel"}\NormalTok{, }\StringTok{"RegionId"}\NormalTok{)}
+\NormalTok{id\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"CharacteristicId"}\NormalTok{, }\StringTok{"ByVariableId"}\NormalTok{)}
+\NormalTok{logical\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"IsTotal"}\NormalTok{, }\StringTok{"IsPreferred"}\NormalTok{)}
+
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{any\_of}\NormalTok{(numeric\_cols), as.numeric)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{any\_of}\NormalTok{(integer\_cols), as.integer)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{any\_of}\NormalTok{(id\_cols), as.character)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{any\_of}\NormalTok{(logical\_cols), }\SpecialCharTok{\textasciitilde{}}\FunctionTok{as.logical}\NormalTok{(}\FunctionTok{as.integer}\NormalTok{(.)))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.character), str\_trim))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Data types converted successfully.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data types converted successfully.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(acc\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 275
+## Columns: 29
+## $ ISO3                   <chr> "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF", "ZAF"~
+## $ DataId                 <chr> "751751", "567476", "205488", "751748", "567472~
+## $ Indicator              <chr> "Antenatal care provider: Doctor", "Antenatal c~
+## $ Value                  <dbl> 28.5, 30.0, 27.3, 66.6, 65.0, 68.4, 0.1, 0.1, 0~
+## $ Precision              <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
+## $ DHS_CountryCode        <chr> "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA", "ZA",~
+## $ CountryName            <chr> "South Africa", "South Africa", "South Africa",~
+## $ SurveyYear             <int> 1998, 1998, 1998, 1998, 1998, 1998, 1998, 1998,~
+## $ SurveyId               <chr> "ZA1998DHS", "ZA1998DHS", "ZA1998DHS", "ZA1998D~
+## $ IndicatorId            <chr> "RH_ANCP_W_DOC", "RH_ANCP_W_DOC", "RH_ANCP_W_DO~
+## $ IndicatorOrder         <int> 83363010, 83363010, 83363010, 83363020, 8336302~
+## $ IndicatorType          <chr> "I", "I", "I", "I", "I", "I", "I", "I", "I", "I~
+## $ CharacteristicId       <chr> "1000", "1000", "1000", "1000", "1000", "1000",~
+## $ CharacteristicOrder    <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ CharacteristicCategory <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ CharacteristicLabel    <chr> "Total", "Total", "Total", "Total", "Total", "T~
+## $ ByVariableId           <chr> "14000", "14001", "14002", "14000", "14001", "1~
+## $ ByVariableLabel        <chr> "Three years preceding the survey", "Five years~
+## $ IsTotal                <lgl> TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE,~
+## $ IsPreferred            <lgl> FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, ~
+## $ SDRID                  <chr> "RHANCPWDOC", "RHANCPWDOC", "RHANCPWDOC", "RHAN~
+## $ RegionId               <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ SurveyYearLabel        <int> 1998, 1998, 1998, 1998, 1998, 1998, 1998, 1998,~
+## $ SurveyType             <chr> "DHS", "DHS", "DHS", "DHS", "DHS", "DHS", "DHS"~
+## $ DenominatorWeighted    <dbl> 2871, 4122, 2010, 2871, 4122, 2010, 2871, 4122,~
+## $ DenominatorUnweighted  <dbl> 2903, 4148, 2041, 2903, 4148, 2041, 2903, 4148,~
+## $ CILow                  <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ CIHigh                 <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+## $ LevelRank              <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Purpose:} Ensure that each column in the dataset has the
+\textbf{correct data type} so that subsequent analysis and calculations
+work as expected. Wrong data types (e.g., numbers stored as text) can
+lead to errors or incorrect results.
+
+\textbf{What the code does:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Define column groups}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{numeric\_cols} → Columns that store measurements or
+    continuous values (e.g., \texttt{Value}, \texttt{Precision}).
+  \item
+    \texttt{integer\_cols} → Columns representing whole numbers, IDs, or
+    survey codes.
+  \item
+    \texttt{id\_cols} → Identifier columns stored as text (character) to
+    avoid accidental math operations.
+  \item
+    \texttt{logical\_cols} → Columns representing true/false flags
+    (\texttt{IsTotal}, \texttt{IsPreferred}).
+  \end{itemize}
+\item
+  \textbf{Convert columns using \texttt{mutate(across(...))}}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{as.numeric} → Converts to numeric type for calculations.
+  \item
+    \texttt{as.integer} → Converts to integers.
+  \item
+    \texttt{as.character} → Converts IDs to text.
+  \item
+    \texttt{as.logical(as.integer(.))} → Converts numeric 0/1 flags to
+    TRUE/FALSE.
+  \end{itemize}
+\item
+  \textbf{Trim extra spaces in character columns}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{str\_trim} removes leading/trailing whitespace from text
+    fields, preventing errors in grouping or filtering.
+  \end{itemize}
+\item
+  \textbf{Preview changes}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{glimpse(acc\_df)} shows updated column types and a quick
+    snapshot of the data.
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Outcome:}
+
+\begin{itemize}
+\tightlist
+\item
+  All columns now have \textbf{consistent and correct data types}.
+\item
+  Prevents errors in calculations, filtering, grouping, and plotting.
+\item
+  Makes the dataset \textbf{analysis-ready}.
+\end{itemize}
+
+\textbf{Why it matters:}
+
+\begin{itemize}
+\tightlist
+\item
+  Clean, standardized data types are \textbf{foundational} before
+  handling missing values, outliers, or doing any statistical modeling.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{3.3 Handle Missing Values}\label{handle-missing-values}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create missing value summary before treatment}
+\NormalTok{missing\_before }\OtherTok{\textless{}{-}} \FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(acc\_df))}
+
+\CommentTok{\# Strategy 1: Remove columns with excessive missingness (\textgreater{}80\%)}
+\NormalTok{high\_missing\_cols }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(missing\_before[missing\_before }\SpecialCharTok{\textgreater{}} \FunctionTok{nrow}\NormalTok{(acc\_df) }\SpecialCharTok{*} \FloatTok{0.8}\NormalTok{])}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Columns with \textgreater{}80\% missing values:"}\NormalTok{, }\FunctionTok{paste}\NormalTok{(high\_missing\_cols, }\AttributeTok{collapse =} \StringTok{", "}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Columns with >80% missing values: RegionId, CILow, CIHigh, LevelRank
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Strategy 2: Targeted imputation for specific columns}
+
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(SurveyYear, CharacteristicId) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Indicator, CharacteristicId) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{fill}\NormalTok{(DenominatorWeighted, DenominatorUnweighted, }\AttributeTok{.direction =} \StringTok{"downup"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ungroup}\NormalTok{()}
+
+\CommentTok{\# Strategy 3: Remove rows with missing critical values}
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(Value), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(Indicator))}
+
+\NormalTok{missing\_after }\OtherTok{\textless{}{-}} \FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(acc\_df))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Missing values reduced significantly.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Missing values reduced significantly.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{DenominatorWeighted =} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(DenominatorWeighted), }\FunctionTok{median}\NormalTok{(DenominatorWeighted, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), DenominatorWeighted),}
+    \AttributeTok{DenominatorUnweighted =} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(DenominatorUnweighted), }\FunctionTok{median}\NormalTok{(DenominatorUnweighted, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), DenominatorUnweighted)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Identify missing data:} Count NAs in all columns to understand
+  the scope of missingness.
+\item
+  \textbf{Remove unhelpful columns:} Drop columns with more than 80\%
+  missing values.
+\item
+  \textbf{Impute key numeric values:} Fill missing denominators using
+  nearby values within groups (\texttt{down} and \texttt{up}) and
+  replace remaining NAs with the median.
+\item
+  \textbf{Remove incomplete rows:} Delete rows missing critical
+  information (\texttt{Value} or \texttt{Indicator}).
+\end{itemize}
+
+\textbf{Result:} The dataset is \textbf{more complete, consistent, and
+ready for analysis}, with minimal risk of missing-value errors affecting
+results.
+
+\subsubsection{3.4 Remove Redundant
+Columns}\label{remove-redundant-columns}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define redundant columns explicitly}
+\NormalTok{redundant\_cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"ISO3"}\NormalTok{, }\StringTok{"DHS\_CountryCode"}\NormalTok{, }\StringTok{"CountryName"}\NormalTok{, }
+                    \StringTok{"SurveyId"}\NormalTok{, }\StringTok{"SurveyType"}\NormalTok{)}
+
+\CommentTok{\# Combine with high{-}missing columns (if any)}
+\NormalTok{cols\_to\_drop }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(redundant\_cols, high\_missing\_cols)}
+
+\CommentTok{\# Remove them safely}
+\NormalTok{acc\_df }\OtherTok{\textless{}{-}}\NormalTok{ acc\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{any\_of}\NormalTok{(cols\_to\_drop))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Redundant columns removed. New dimensions:"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(acc\_df), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Redundant columns removed. New dimensions: 275 20
+\end{verbatim}
+
+\paragraph{Remove Redundant Columns --
+Summary}\label{remove-redundant-columns-summary}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Purpose:} Remove columns that are \textbf{not useful} for
+  analysis or mostly empty.
+\item
+  \textbf{What's removed:} Metadata columns (like \texttt{ISO3},
+  \texttt{CountryName}, \texttt{SurveyId}) and any column with
+  \textgreater80\% missing values.
+\item
+  \textbf{Result:} Dataset is \textbf{cleaner, smaller, and easier to
+  work with}, containing only relevant and populated columns.
+\end{itemize}
+
+\paragraph{Why Certain Columns Were
+Removed}\label{why-certain-columns-were-removed}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Metadata columns (e.g., \texttt{ISO3}, \texttt{CountryName},
+  \texttt{SurveyId}, \texttt{SurveyType}, \texttt{DHS\_CountryCode})}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    These columns \textbf{don't provide new information} for analysis.
+  \item
+    For example, \texttt{ISO3} and \texttt{CountryName} just identify
+    the country---if all data is already for South Africa, they are
+    redundant.
+  \item
+    \texttt{SurveyId} and \texttt{SurveyType} are identifiers for
+    surveys, not variables we analyze. Keeping them would
+    \textbf{clutter the dataset}.
+  \end{itemize}
+\item
+  \textbf{Columns with \textgreater80\% missing values}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Columns that are mostly empty \textbf{cannot be reliably analyzed}.
+  \item
+    Imputing or filling them would introduce \textbf{too much
+    uncertainty}.
+  \item
+    Removing them keeps the dataset \textbf{focused on meaningful,
+    populated data}.
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Bottom line:} These columns were removed to make the dataset
+\textbf{leaner, more focused, and analysis-ready}, preventing confusion
+or wasted effort on irrelevant or unreliable data.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#\#\# 3.5 Handle Outliers and Anomalies \\
+``` r \#\#\# 3.5 Handle Outliers and Anomalies library(dplyr) \\
+\# 1. Identify numeric columns numeric\_cols \textless- acc\_df
+\%\textgreater\% select(where(is.numeric)) \%\textgreater\% names()
+cat(``Numeric columns identified:'', paste(numeric\_cols, collapse =
+``,''), ``\n\n'') ``` \\
+\texttt{\#\#\ Numeric\ columns\ identified:\ Value,\ Precision,\ SurveyYear,\ IndicatorOrder,\ CharacteristicOrder,\ SurveyYearLabel,\ DenominatorWeighted,\ DenominatorUnweighted} \\
+``` r \# 2. Function to cap outliers cap\_outliers \textless-
+function(x, col\_name) \{ if(!is.numeric(x)) return(x) \\
+qnt \textless- quantile(x, probs = c(0.25, 0.75), na.rm = TRUE) iqr
+\textless- IQR(x, na.rm = TRUE) lower \textless- qnt{[}1{]} - 1.5 * iqr
+upper \textless- qnt{[}2{]} + 1.5 * iqr \\
+outlier\_count \textless- sum(x \textless{} lower \textbar{} x
+\textgreater{} upper, na.rm = TRUE) \\
+if(outlier\_count \textgreater{} 0) \{ cat(``\nColumn:'', col\_name,
+``\n'') cat(``Number of outliers:'', outlier\_count, ``\n'')
+cat(``Bounds: lower ='', round(lower, 2), ``, upper ='', round(upper,
+2), ``\n'') cat(``Summary before capping:\n'') print(summary(x)) \} \\
+x{[}x \textless{} lower{]} \textless- lower x{[}x \textgreater{}
+upper{]} \textless- upper \\
+if(outlier\_count \textgreater{} 0) \{ cat(``Summary after capping:\n'')
+print(summary(x)) cat(``---\n'') \} \\
+return(x) \} \\
+\# 3. Apply to all numeric columns for(col in numeric\_cols) \{
+acc\_df{[}{[}col{]}{]} \textless- cap\_outliers(acc\_df{[}{[}col{]}{]},
+col) \} ``` \\
+\texttt{\#\#\ \#\#\ Column:\ Value\ \#\#\ Number\ of\ outliers:\ 64\ \#\#\ Bounds:\ lower\ =\ -131\ ,\ upper\ =\ 238.6\ \#\#\ Summary\ before\ capping:\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ 0.0\ \ \ \ \ 7.6\ \ \ \ 67.6\ \ \ 542.7\ \ \ 100.0\ \ 5066.0\ \#\#\ Summary\ after\ capping:\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ 0.00\ \ \ \ 7.60\ \ \ 67.60\ \ \ 87.13\ \ 100.00\ \ 238.60\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ Precision\ \#\#\ Number\ of\ outliers:\ 68\ \#\#\ Bounds:\ lower\ =\ 1\ ,\ upper\ =\ 1\ \#\#\ Summary\ before\ capping:\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ 0.0000\ \ 1.0000\ \ 1.0000\ \ 0.7527\ \ 1.0000\ \ 1.0000\ \#\#\ Summary\ after\ capping:\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \#\#\ -\/-\/-} \\
+\texttt{r\ \#\ 4.\ Final\ summary\ cat("\textbackslash{}n===\ Final\ summary\ of\ numeric\ columns\ ===\textbackslash{}n")} \\
+\texttt{\#\#\ \#\#\ ===\ Final\ summary\ of\ numeric\ columns\ ===} \\
+\texttt{r\ for(col\ in\ numeric\_cols)\ \{\ cat("\textbackslash{}nColumn:",\ col,\ "\textbackslash{}n")\ print(summary(acc\_df{[}{[}col{]}{]}))\ cat("-\/-\/-\textbackslash{}n")\ \}} \\
+\texttt{\#\#\ \#\#\ Column:\ Value\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ 0.00\ \ \ \ 7.60\ \ \ 67.60\ \ \ 87.13\ \ 100.00\ \ 238.60\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ Precision\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ 1\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ SurveyYear\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ 1998\ \ \ \ 1998\ \ \ \ 2016\ \ \ \ 2008\ \ \ \ 2016\ \ \ \ 2016\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ IndicatorOrder\ \#\#\ \ \ \ \ Min.\ \ 1st\ Qu.\ \ \ Median\ \ \ \ \ Mean\ \ 3rd\ Qu.\ \ \ \ \ Max.\ \#\#\ 83363010\ 83566030\ 83606090\ 87126424\ 93966070\ 94096170\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ CharacteristicOrder\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ 0\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ SurveyYearLabel\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ 1998\ \ \ \ 1998\ \ \ \ 2016\ \ \ \ 2008\ \ \ \ 2016\ \ \ \ 2016\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ DenominatorWeighted\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ \ 68\ \ \ \ \ 679\ \ \ \ 2010\ \ \ \ 2044\ \ \ \ 3036\ \ \ \ 4992\ \#\#\ -\/-\/-\ \#\#\ \#\#\ Column:\ DenominatorUnweighted\ \#\#\ \ \ \ Min.\ 1st\ Qu.\ \ Median\ \ \ \ Mean\ 3rd\ Qu.\ \ \ \ Max.\ \#\#\ \ \ \ \ \ 59\ \ \ \ \ 647\ \ \ \ 2041\ \ \ \ 2060\ \ \ \ 3036\ \ \ \ 5066\ \#\#\ -\/-\/-} \\
+\#\# 4. Final Data Validation \\
+\texttt{r\ \#\ Final\ dimensions\ dim\_df\ \textless{}-\ data.frame(\ Rows\ =\ nrow(acc\_df),\ Columns\ =\ ncol(acc\_df)\ )\ kable(dim\_df,\ caption\ =\ "Final\ Dataset\ Dimensions")} \\
+Table: Final Dataset Dimensions \\
+\textbar{} Rows\textbar{} Columns\textbar{}
+\textbar----:\textbar-------:\textbar{} \textbar{} 275\textbar{}
+20\textbar{} \\
+``` r \# Missing values summary missing\_summary \textless- acc\_df
+\%\textgreater\% summarise(across(everything(),
+\textasciitilde sum(is.na(.)))) \%\textgreater\%
+pivot\_longer(everything(), names\_to = ``Variable'', values\_to =
+``Missing\_Count'') \\
+kable(missing\_summary, caption = ``Missing Values per Column'') ``` \\
+Table: Missing Values per Column \\
+\textbar Variable \textbar{} Missing\_Count\textbar{}
+\textbar:----------------------\textbar-------------:\textbar{}
+\textbar DataId \textbar{} 0\textbar{} \textbar Indicator \textbar{}
+0\textbar{} \textbar Value \textbar{} 0\textbar{} \textbar Precision
+\textbar{} 0\textbar{} \textbar SurveyYear \textbar{} 0\textbar{}
+\textbar IndicatorId \textbar{} 0\textbar{} \textbar IndicatorOrder
+\textbar{} 0\textbar{} \textbar IndicatorType \textbar{} 0\textbar{}
+\textbar CharacteristicId \textbar{} 0\textbar{}
+\textbar CharacteristicOrder \textbar{} 0\textbar{}
+\textbar CharacteristicCategory \textbar{} 0\textbar{}
+\textbar CharacteristicLabel \textbar{} 0\textbar{}
+\textbar ByVariableId \textbar{} 0\textbar{} \textbar ByVariableLabel
+\textbar{} 0\textbar{} \textbar IsTotal \textbar{} 0\textbar{}
+\textbar IsPreferred \textbar{} 0\textbar{} \textbar SDRID \textbar{}
+0\textbar{} \textbar SurveyYearLabel \textbar{} 0\textbar{}
+\textbar DenominatorWeighted \textbar{} 0\textbar{}
+\textbar DenominatorUnweighted \textbar{} 0\textbar{} \\
+\texttt{r\ \#\ Data\ types\ data\_types\ \textless{}-\ data.frame(\ Variable\ =\ names(acc\_df),\ Type\ =\ sapply(acc\_df,\ class)\ )\ kable(data\_types,\ caption\ =\ "Data\ Types\ of\ Each\ Column")} \\
+Table: Data Types of Each Column \\
+\textbar{} \textbar Variable \textbar Type \textbar{}
+\textbar:----------------------\textbar:----------------------\textbar:---------\textbar{}
+\textbar DataId \textbar DataId \textbar character \textbar{}
+\textbar Indicator \textbar Indicator \textbar character \textbar{}
+\textbar Value \textbar Value \textbar numeric \textbar{}
+\textbar Precision \textbar Precision \textbar numeric \textbar{}
+\textbar SurveyYear \textbar SurveyYear \textbar numeric \textbar{}
+\textbar IndicatorId \textbar IndicatorId \textbar character \textbar{}
+\textbar IndicatorOrder \textbar IndicatorOrder \textbar numeric
+\textbar{} \textbar IndicatorType \textbar IndicatorType
+\textbar character \textbar{} \textbar CharacteristicId
+\textbar CharacteristicId \textbar character \textbar{}
+\textbar CharacteristicOrder \textbar CharacteristicOrder
+\textbar numeric \textbar{} \textbar CharacteristicCategory
+\textbar CharacteristicCategory \textbar character \textbar{}
+\textbar CharacteristicLabel \textbar CharacteristicLabel
+\textbar character \textbar{} \textbar ByVariableId
+\textbar ByVariableId \textbar character \textbar{}
+\textbar ByVariableLabel \textbar ByVariableLabel \textbar character
+\textbar{} \textbar IsTotal \textbar IsTotal \textbar logical \textbar{}
+\textbar IsPreferred \textbar IsPreferred \textbar logical \textbar{}
+\textbar SDRID \textbar SDRID \textbar character \textbar{}
+\textbar SurveyYearLabel \textbar SurveyYearLabel \textbar numeric
+\textbar{} \textbar DenominatorWeighted \textbar DenominatorWeighted
+\textbar numeric \textbar{} \textbar DenominatorUnweighted
+\textbar DenominatorUnweighted \textbar numeric \textbar{} \\
+\texttt{r\ \#\ Sample\ of\ final\ data\ head(acc\_df,\ 5)\ \%\textgreater{}\%\ kable(caption\ =\ "Sample\ of\ Final\ Cleaned\ Data")} \\
+Table: Sample of Final Cleaned Data \\
+\textbar DataId \textbar Indicator \textbar{} Value\textbar{}
+Precision\textbar{} SurveyYear\textbar IndicatorId \textbar{}
+IndicatorOrder\textbar IndicatorType \textbar CharacteristicId
+\textbar{} CharacteristicOrder\textbar CharacteristicCategory
+\textbar CharacteristicLabel \textbar ByVariableId
+\textbar ByVariableLabel \textbar IsTotal \textbar IsPreferred
+\textbar SDRID \textbar{} SurveyYearLabel\textbar{}
+DenominatorWeighted\textbar{} DenominatorUnweighted\textbar{}
+\textbar:------\textbar:--------------------------------------\textbar-----:\textbar---------:\textbar----------:\textbar:-------------\textbar--------------:\textbar:-------------\textbar:----------------\textbar-------------------:\textbar:----------------------\textbar:-------------------\textbar:------------\textbar:--------------------------------\textbar:-------\textbar:-----------\textbar:----------\textbar---------------:\textbar-------------------:\textbar---------------------:\textbar{}
+\textbar751751 \textbar Antenatal care provider: Doctor \textbar{}
+28.5\textbar{} 1\textbar{} 1998\textbar RH\_ANCP\_W\_DOC \textbar{}
+83363010\textbar I \textbar1000 \textbar{} 0\textbar Total
+\textbar Total \textbar14000 \textbar Three years preceding the survey
+\textbar TRUE \textbar FALSE \textbar RHANCPWDOC \textbar{}
+1998\textbar{} 2871\textbar{} 2903\textbar{} \textbar567476
+\textbar Antenatal care provider: Doctor \textbar{} 30.0\textbar{}
+1\textbar{} 1998\textbar RH\_ANCP\_W\_DOC \textbar{} 83363010\textbar I
+\textbar1000 \textbar{} 0\textbar Total \textbar Total \textbar14001
+\textbar Five years preceding the survey \textbar TRUE \textbar FALSE
+\textbar RHANCPWDOC \textbar{} 1998\textbar{} 4122\textbar{}
+4148\textbar{} \textbar205488 \textbar Antenatal care provider: Doctor
+\textbar{} 27.3\textbar{} 1\textbar{} 1998\textbar RH\_ANCP\_W\_DOC
+\textbar{} 83363010\textbar I \textbar1000 \textbar{} 0\textbar Total
+\textbar Total \textbar14002 \textbar Two years preceding the survey
+\textbar TRUE \textbar TRUE \textbar RHANCPWDOC \textbar{}
+1998\textbar{} 2010\textbar{} 2041\textbar{} \textbar751748
+\textbar Antenatal care provider: Nurse/midwife \textbar{}
+66.6\textbar{} 1\textbar{} 1998\textbar RH\_ANCP\_W\_NRS \textbar{}
+83363020\textbar I \textbar1000 \textbar{} 0\textbar Total
+\textbar Total \textbar14000 \textbar Three years preceding the survey
+\textbar TRUE \textbar FALSE \textbar RHANCPWNRS \textbar{}
+1998\textbar{} 2871\textbar{} 2903\textbar{} \textbar567472
+\textbar Antenatal care provider: Nurse/midwife \textbar{}
+65.0\textbar{} 1\textbar{} 1998\textbar RH\_ANCP\_W\_NRS \textbar{}
+83363020\textbar I \textbar1000 \textbar{} 0\textbar Total
+\textbar Total \textbar14001 \textbar Five years preceding the survey
+\textbar TRUE \textbar FALSE \textbar RHANCPWNRS \textbar{}
+1998\textbar{} 4122\textbar{} 4148\textbar{} \\
+\textbf{Purpose:} Confirm dataset is clean, complete, and ready for
+analysis. \\
+\textbf{Method / What the Code Does:} - Displays final dimensions. -
+Summarizes remaining missing values. - Shows data types and a sample of
+cleaned data. \\
+\textbf{Outcome / Result:} - Provides assurance of dataset quality
+before saving. \\
+\textbf{Relevance / Why it matters:} - Verifies that all cleaning steps
+were successful and dataset is analysis-ready. \\
+\end{longtable}
+
+\subsection{5. Save Cleaned Data}\label{save-cleaned-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ensure directory exists}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{dir.exists}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{))) \{}
+  \FunctionTok{dir.create}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{), }\AttributeTok{recursive =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{\}}
+
+\CommentTok{\# Save cleaned dataset}
+\FunctionTok{write\_csv}\NormalTok{(acc\_df, }\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{, }\StringTok{"healthcare\_access\_cleaned.csv"}\NormalTok{))}
+\FunctionTok{saveRDS}\NormalTok{(acc\_df, }\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{, }\StringTok{"healthcare\_access\_cleaned.rds"}\NormalTok{))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Cleaned data saved to data/processed/ directory.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Cleaned data saved to data/processed/ directory.
+\end{verbatim}
+
+\textbf{Purpose:}\\
+Persist the cleaned dataset for reproducibility and later use.
+
+\textbf{Method / What the Code Does:}\\
+- Saves as CSV and RDS in a \texttt{processed} folder.
+
+\textbf{Outcome / Result:}\\
+- Cleaned dataset is safely stored for analysis or sharing.
+
+\textbf{Relevance / Why it matters:}\\
+- Ensures reproducibility and prevents accidental data loss.
+
+\end{document}

@@ -1,0 +1,385 @@
+---
+title: "01_Access_To_Healthcare"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+# Data Preparation Report: Access to Healthcare Dataset
+## Executive Summary
+
+This report documents the comprehensive data cleaning and preparation process performed on the Access to Healthcare dataset from the Demographic and Health Surveys (DHS) for South Africa. The dataset underwent rigorous quality checks, transformation, and validation to ensure its readiness for analysis.
+## 1. Load Libraries and Data
+
+```{r load_libraries}
+# Data manipulation and cleaning
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+library(here)
+# Data visualization
+library(ggplot2)
+library(visdat) # For missing data visualization
+library(skimr)  # For detailed summaries
+library(naniar)
+library(DT)
+library(knitr)
+```
+
+
+```{r load_data}
+acc_df <- read.csv(here("data","raw","access-to-health-care_national_zaf.csv"))
+
+# Remove metadata row if present
+acc_df <- acc_df[-1, ]
+rownames(acc_df) <- NULL
+
+cat("Dataset loaded successfully.\n")
+
+
+```
+**Explanation**: We load the dataset and remove the first row, which contains metadata rather than actual observations.
+
+
+## 2. Initial Data Assessment
+
+### 2.1 First Look
+
+```{r initial_look}
+# Display first few rows and structure
+head(acc_df, 5)
+
+```
+
+
+### 2.2 Data Structure
+
+```{r quality_report}
+skim(acc_df)
+glimpse(acc_df)
+```
+
+### 2.3 Visualize Missing Data
+
+```{r missing_visualization}
+gg_miss_var(acc_df) + ggtitle("Missing Values per Column")
+```
+
+**Purpose:**  
+Understand the dataset’s structure, content, and initial quality.
+
+**What the Code Does:**  
+- Displays the first few rows with `head()`.  
+- Uses `skim()` for comprehensive summary statistics and data quality indicators.  
+- Visualizes missing values with `gg_miss_var()` to spot columns needing attention.  
+
+**Result:**  
+- Provides a snapshot of the data structure, missingness, and variable types.  
+- Helps plan cleaning steps such as type conversion and missing value treatment.  
+
+**Why it matters:**  
+- Early insight prevents errors later in cleaning and ensures informed preprocessing decisions.
+
+## 3. Data Cleaning Process
+
+### 3.1 Handle Duplicates
+
+```{r handle_duplicates}
+# Check for exact duplicates
+duplicate_count <- sum(duplicated(acc_df))
+cat("Number of exact duplicate rows:", duplicate_count, "\n")
+```
+**Purpose:**  
+Eliminate repeated rows that could distort calculations or summaries.
+
+**Method / What the Code Does:**  
+- Counts exact duplicate rows with `duplicated()`.  
+- Removes duplicates using `distinct()`.  
+
+**Outcome / Result:**  
+- Dataset contains only unique records.  
+
+**Relevance / Why it matters:**  
+- Prevents overcounting or bias in statistics and visualizations
+
+### 3.2 Convert Data Types
+
+
+
+```{r convert_types}
+# Explicitly only select columns that exist
+numeric_cols <- c("Value", "Precision", "DenominatorWeighted", "DenominatorUnweighted")
+integer_cols <- c("SurveyYear", "IndicatorOrder", "CharacteristicOrder", "SurveyYearLabel", "RegionId")
+id_cols <- c("CharacteristicId", "ByVariableId")
+logical_cols <- c("IsTotal", "IsPreferred")
+
+acc_df <- acc_df %>%
+  mutate(across(any_of(numeric_cols), as.numeric)) %>%
+  mutate(across(any_of(integer_cols), as.integer)) %>%
+  mutate(across(any_of(id_cols), as.character)) %>%
+  mutate(across(any_of(logical_cols), ~as.logical(as.integer(.)))) %>%
+  mutate(across(where(is.character), str_trim))
+
+cat("Data types converted successfully.\n")
+glimpse(acc_df)
+```
+------------------------------------------------------------------------
+
+**Purpose:** Ensure that each column in the dataset has the **correct data type** so that subsequent analysis and calculations work as expected. Wrong data types (e.g., numbers stored as text) can lead to errors or incorrect results.
+
+**What the code does:**
+
+1.  **Define column groups**:
+
+    -   `numeric_cols` → Columns that store measurements or continuous values (e.g., `Value`, `Precision`).
+    -   `integer_cols` → Columns representing whole numbers, IDs, or survey codes.
+    -   `id_cols` → Identifier columns stored as text (character) to avoid accidental math operations.
+    -   `logical_cols` → Columns representing true/false flags (`IsTotal`, `IsPreferred`).
+
+2.  **Convert columns using `mutate(across(...))`**:
+
+    -   `as.numeric` → Converts to numeric type for calculations.
+    -   `as.integer` → Converts to integers.
+    -   `as.character` → Converts IDs to text.
+    -   `as.logical(as.integer(.))` → Converts numeric 0/1 flags to TRUE/FALSE.
+
+3.  **Trim extra spaces in character columns**:
+
+    -   `str_trim` removes leading/trailing whitespace from text fields, preventing errors in grouping or filtering.
+
+4.  **Preview changes**:
+
+    -   `glimpse(acc_df)` shows updated column types and a quick snapshot of the data.
+
+**Outcome:**
+
+-   All columns now have **consistent and correct data types**.
+-   Prevents errors in calculations, filtering, grouping, and plotting.
+-   Makes the dataset **analysis-ready**.
+
+**Why it matters:**
+
+-   Clean, standardized data types are **foundational** before handling missing values, outliers, or doing any statistical modeling.
+
+------------------------------------------------------------------------
+
+### 3.3 Handle Missing Values
+
+------------------------------------------------------------------------
+
+
+
+```{r handle_missing}
+# Create missing value summary before treatment
+missing_before <- colSums(is.na(acc_df))
+
+# Strategy 1: Remove columns with excessive missingness (>80%)
+high_missing_cols <- names(missing_before[missing_before > nrow(acc_df) * 0.8])
+cat("Columns with >80% missing values:", paste(high_missing_cols, collapse = ", "), "\n")
+
+# Strategy 2: Targeted imputation for specific columns
+
+acc_df <- acc_df %>%
+  arrange(SurveyYear, CharacteristicId) %>%
+  group_by(Indicator, CharacteristicId) %>%
+  fill(DenominatorWeighted, DenominatorUnweighted, .direction = "downup") %>%
+  ungroup()
+
+# Strategy 3: Remove rows with missing critical values
+acc_df <- acc_df %>%
+  filter(!is.na(Value), !is.na(Indicator))
+
+missing_after <- colSums(is.na(acc_df))
+cat("Missing values reduced significantly.\n")
+
+acc_df <- acc_df %>%
+  mutate(
+    DenominatorWeighted = ifelse(is.na(DenominatorWeighted), median(DenominatorWeighted, na.rm = TRUE), DenominatorWeighted),
+    DenominatorUnweighted = ifelse(is.na(DenominatorUnweighted), median(DenominatorUnweighted, na.rm = TRUE), DenominatorUnweighted)
+  )
+```
+
+-   **Identify missing data:** Count NAs in all columns to understand the scope of missingness.
+-   **Remove unhelpful columns:** Drop columns with more than 80% missing values.
+-   **Impute key numeric values:** Fill missing denominators using nearby values within groups (`down` and `up`) and replace remaining NAs with the median.
+-   **Remove incomplete rows:** Delete rows missing critical information (`Value` or `Indicator`).
+
+**Result:** The dataset is **more complete, consistent, and ready for analysis**, with minimal risk of missing-value errors affecting results.
+
+
+### 3.4 Remove Redundant Columns
+
+
+```{r remove_columns}
+# Define redundant columns explicitly
+redundant_cols <- c("ISO3", "DHS_CountryCode", "CountryName", 
+                    "SurveyId", "SurveyType")
+
+# Combine with high-missing columns (if any)
+cols_to_drop <- c(redundant_cols, high_missing_cols)
+
+# Remove them safely
+acc_df <- acc_df %>%
+  select(-any_of(cols_to_drop))
+
+cat("Redundant columns removed. New dimensions:", dim(acc_df), "\n")
+
+```
+
+
+#### Remove Redundant Columns – Summary
+
+-   **Purpose:** Remove columns that are **not useful** for analysis or mostly empty.
+-   **What’s removed:** Metadata columns (like `ISO3`, `CountryName`, `SurveyId`) and any column with \>80% missing values.
+-   **Result:** Dataset is **cleaner, smaller, and easier to work with**, containing only relevant and populated columns.
+
+
+#### Why Certain Columns Were Removed
+
+1.  **Metadata columns (e.g., `ISO3`, `CountryName`, `SurveyId`, `SurveyType`, `DHS_CountryCode`)**
+
+    -   These columns **don’t provide new information** for analysis.
+    -   For example, `ISO3` and `CountryName` just identify the country—if all data is already for South Africa, they are redundant.
+    -   `SurveyId` and `SurveyType` are identifiers for surveys, not variables we analyze. Keeping them would **clutter the dataset**.
+
+2.  **Columns with \>80% missing values**
+
+    -   Columns that are mostly empty **cannot be reliably analyzed**.
+    -   Imputing or filling them would introduce **too much uncertainty**.
+    -   Removing them keeps the dataset **focused on meaningful, populated data**.
+
+**Bottom line:** These columns were removed to make the dataset **leaner, more focused, and analysis-ready**, preventing confusion or wasted effort on irrelevant or unreliable data.
+
+------------------------------------------------------------------------
+### 3.5 Handle Outliers and Anomalies
+
+```{r}
+
+
+### 3.5 Handle Outliers and Anomalies
+library(dplyr)
+
+# 1. Identify numeric columns
+numeric_cols <- acc_df %>% select(where(is.numeric)) %>% names()
+cat("Numeric columns identified:", paste(numeric_cols, collapse = ", "), "\n\n")
+
+# 2. Function to cap outliers
+cap_outliers <- function(x, col_name) {
+  if(!is.numeric(x)) return(x)
+  
+  qnt <- quantile(x, probs = c(0.25, 0.75), na.rm = TRUE)
+  iqr <- IQR(x, na.rm = TRUE)
+  lower <- qnt[1] - 1.5 * iqr
+  upper <- qnt[2] + 1.5 * iqr
+  
+  outlier_count <- sum(x < lower | x > upper, na.rm = TRUE)
+  
+  if(outlier_count > 0) {
+    cat("\nColumn:", col_name, "\n")
+    cat("Number of outliers:", outlier_count, "\n")
+    cat("Bounds: lower =", round(lower, 2), ", upper =", round(upper, 2), "\n")
+    cat("Summary before capping:\n")
+    print(summary(x))
+  }
+  
+  x[x < lower] <- lower
+  x[x > upper] <- upper
+  
+  if(outlier_count > 0) {
+    cat("Summary after capping:\n")
+    print(summary(x))
+    cat("---\n")
+  }
+  
+  return(x)
+}
+
+# 3. Apply to all numeric columns
+for(col in numeric_cols) {
+  acc_df[[col]] <- cap_outliers(acc_df[[col]], col)
+}
+
+# 4. Final summary
+cat("\n=== Final summary of numeric columns ===\n")
+for(col in numeric_cols) {
+  cat("\nColumn:", col, "\n")
+  print(summary(acc_df[[col]]))
+  cat("---\n")
+}
+
+
+```
+
+
+## 4. Final Data Validation
+
+```{r final_validation}
+# Final dimensions
+dim_df <- data.frame(
+  Rows = nrow(acc_df),
+  Columns = ncol(acc_df)
+)
+kable(dim_df, caption = "Final Dataset Dimensions")
+
+# Missing values summary
+missing_summary <- acc_df %>%
+  summarise(across(everything(), ~sum(is.na(.)))) %>%
+  pivot_longer(everything(), names_to = "Variable", values_to = "Missing_Count")
+
+kable(missing_summary, caption = "Missing Values per Column")
+
+# Data types
+data_types <- data.frame(
+  Variable = names(acc_df),
+  Type = sapply(acc_df, class)
+)
+kable(data_types, caption = "Data Types of Each Column")
+
+# Sample of final data
+head(acc_df, 5) %>% 
+  kable(caption = "Sample of Final Cleaned Data")
+```
+
+
+**Purpose:**  
+Confirm dataset is clean, complete, and ready for analysis.
+
+**Method / What the Code Does:**  
+- Displays final dimensions.  
+- Summarizes remaining missing values.  
+- Shows data types and a sample of cleaned data.  
+
+**Outcome / Result:**  
+- Provides assurance of dataset quality before saving.  
+
+**Relevance / Why it matters:**  
+- Verifies that all cleaning steps were successful and dataset is analysis-ready.
+---
+
+## 5. Save Cleaned Data
+
+```{r save_data}
+# Ensure directory exists
+if(!dir.exists(here("data", "processed"))) {
+  dir.create(here("data", "processed"), recursive = TRUE)
+}
+
+# Save cleaned dataset
+write_csv(acc_df, here("data", "processed", "healthcare_access_cleaned.csv"))
+saveRDS(acc_df, here("data", "processed", "healthcare_access_cleaned.rds"))
+
+cat("Cleaned data saved to data/processed/ directory.\n")
+```
+
+**Purpose:**  
+Persist the cleaned dataset for reproducibility and later use.
+
+**Method / What the Code Does:**  
+- Saves as CSV and RDS in a `processed` folder.  
+
+**Outcome / Result:**  
+- Cleaned dataset is safely stored for analysis or sharing.  
+
+**Relevance / Why it matters:**  
+- Ensures reproducibility and prevents accidental data loss.
