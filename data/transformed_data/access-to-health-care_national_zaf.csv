@@ -1,0 +1,265 @@
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
+#indicator+name,NA,NA,NA,#indicator+label
+Antenatal care provider: Doctor,28.5,1998,Total,Three years preceding the survey
+Antenatal care provider: Doctor,30,1998,Total,Five years preceding the survey
+Antenatal care provider: Doctor,27.3,1998,Total,Two years preceding the survey
+Antenatal care provider: Nurse/midwife,66.6,1998,Total,Three years preceding the survey
+Antenatal care provider: Nurse/midwife,65,1998,Total,Five years preceding the survey
+Antenatal care provider: Nurse/midwife,68.4,1998,Total,Two years preceding the survey
+Antenatal care provider: Traditional birth attendant,0.1,1998,Total,Three years preceding the survey
+Antenatal care provider: Traditional birth attendant,0.1,1998,Total,Five years preceding the survey
+Antenatal care provider: Traditional birth attendant,0.1,1998,Total,Two years preceding the survey
+Antenatal care provider: Other,0.6,1998,Total,Three years preceding the survey
+Antenatal care provider: Other,0.7,1998,Total,Five years preceding the survey
+Antenatal care provider: Other,0.7,1998,Total,Two years preceding the survey
+Antenatal care provider: Missing,1.2,1998,Total,Three years preceding the survey
+Antenatal care provider: Missing,1.1,1998,Total,Five years preceding the survey
+Antenatal care provider: Missing,0.9,1998,Total,Two years preceding the survey
+No antenatal care,2.9,1998,Total,Three years preceding the survey
+No antenatal care,3.1,1998,Total,Five years preceding the survey
+No antenatal care,2.7,1998,Total,Two years preceding the survey
+Antenatal care: Total,100,1998,Total,Three years preceding the survey
+Antenatal care: Total,100,1998,Total,Five years preceding the survey
+Antenatal care: Total,100,1998,Total,Two years preceding the survey
+Antenatal care from a skilled provider,95.1,1998,Total,Three years preceding the survey
+Antenatal care from a skilled provider,95,1998,Total,Five years preceding the survey
+Antenatal care from a skilled provider,95.7,1998,Total,Two years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,2871,1998,Total,Three years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,4122,1998,Total,Five years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,2010,1998,Total,Two years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),2903,1998,Total,Three years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),4148,1998,Total,Five years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),2041,1998,Total,Two years preceding the survey
+Place of delivery: Public sector,76.5,1998,Total,Three years preceding the survey
+Place of delivery: Public sector,74.9,1998,Total,Five years preceding the survey
+Place of delivery: Public sector,77.6,1998,Total,Two years preceding the survey
+Place of delivery: Private sector,8,1998,Total,Three years preceding the survey
+Place of delivery: Private sector,8.5,1998,Total,Five years preceding the survey
+Place of delivery: Private sector,7.5,1998,Total,Two years preceding the survey
+Place of delivery: At home,13.8,1998,Total,Three years preceding the survey
+Place of delivery: At home,14.3,1998,Total,Five years preceding the survey
+Place of delivery: At home,13.5,1998,Total,Two years preceding the survey
+Place of delivery: Other,0.1,1998,Total,Three years preceding the survey
+Place of delivery: Other,0.2,1998,Total,Five years preceding the survey
+Place of delivery: Other,0.1,1998,Total,Two years preceding the survey
+Place of delivery: don't know or missing,1.6,1998,Total,Three years preceding the survey
+Place of delivery: don't know or missing,2.1,1998,Total,Five years preceding the survey
+Place of delivery: don't know or missing,1.2,1998,Total,Two years preceding the survey
+Place of delivery: Total,100,1998,Total,Three years preceding the survey
+Place of delivery: Total,100,1998,Total,Five years preceding the survey
+Place of delivery: Total,100,1998,Total,Two years preceding the survey
+Place of delivery: Health facility,84.5,1998,Total,Three years preceding the survey
+Place of delivery: Health facility,83.4,1998,Total,Five years preceding the survey
+Place of delivery: Health facility,85.2,1998,Total,Two years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,3072,1998,Total,Three years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,4992,1998,Total,Five years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,2081,1998,Total,Two years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),3119,1998,Total,Three years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),5066,1998,Total,Five years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),2113,1998,Total,Two years preceding the survey
+Assistance during delivery: Doctor,29.3,1998,Total,Three years preceding the survey
+Assistance during delivery: Doctor,30,1998,Total,Five years preceding the survey
+Assistance during delivery: Doctor,28.2,1998,Total,Two years preceding the survey
+Assistance during delivery: Nurse/midwife,56.1,1998,Total,Three years preceding the survey
+Assistance during delivery: Nurse/midwife,54.4,1998,Total,Five years preceding the survey
+Assistance during delivery: Nurse/midwife,58.1,1998,Total,Two years preceding the survey
+Assistance during delivery: Traditional birth attendant,1.4,1998,Total,Three years preceding the survey
+Assistance during delivery: Traditional birth attendant,1.4,1998,Total,Five years preceding the survey
+Assistance during delivery: Traditional birth attendant,1.2,1998,Total,Two years preceding the survey
+Assistance during delivery: Relative or other,9.9,1998,Total,Three years preceding the survey
+Assistance during delivery: Relative or other,10.5,1998,Total,Five years preceding the survey
+Assistance during delivery: Relative or other,9.7,1998,Total,Two years preceding the survey
+Assistance during delivery: No one,2.1,1998,Total,Three years preceding the survey
+Assistance during delivery: No one,2.1,1998,Total,Five years preceding the survey
+Assistance during delivery: No one,1.8,1998,Total,Two years preceding the survey
+Assistance during delivery: don't know or missing,1.2,1998,Total,Three years preceding the survey
+Assistance during delivery: don't know or missing,1.7,1998,Total,Five years preceding the survey
+Assistance during delivery: don't know or missing,0.9,1998,Total,Two years preceding the survey
+Assistance during delivery: Total,100,1998,Total,Three years preceding the survey
+Assistance during delivery: Total,100,1998,Total,Five years preceding the survey
+Assistance during delivery: Total,100,1998,Total,Two years preceding the survey
+Assistance during delivery from a skilled provider,85.5,1998,Total,Three years preceding the survey
+Assistance during delivery from a skilled provider,84.4,1998,Total,Five years preceding the survey
+Assistance during delivery from a skilled provider,86.4,1998,Total,Two years preceding the survey
+Delivery by cesarean section,15.4,1998,Total,Three years preceding the survey
+Delivery by cesarean section,15.5,1998,Total,Five years preceding the survey
+Delivery by cesarean section,15.1,1998,Total,Two years preceding the survey
+Children with symptoms of ARI,21.9,1998,Total,Three years preceding the survey
+Children with symptoms of ARI,19.3,1998,Total,Five years preceding the survey
+Number of children born in the last five (or three) years,2912,1998,Total,Three years preceding the survey
+Number of children born in the last five (or three) years,4740,1998,Total,Five years preceding the survey
+Number of children born in the last five (or three) years (unweighted),2958,1998,Total,Three years preceding the survey
+Number of children born in the last five (or three) years (unweighted),4797,1998,Total,Five years preceding the survey
+Children with ARI for whom advice or treatment was sought,81.9,1998,Total,Three years preceding the survey
+Children with ARI for whom advice or treatment was sought,78.2,1998,Total,Five years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years,637,1998,Total,Three years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years,913,1998,Total,Five years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),607,1998,Total,Three years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),862,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Advice or treatment was sought,62.1,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Advice or treatment was sought,60.6,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Oral rehydration solution (ORS),52.7,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Oral rehydration solution (ORS),51.2,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Recommended home fluids (RHF) at home,70.6,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Recommended home fluids (RHF) at home,68.6,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Either ORS or RHF,83.1,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Either ORS or RHF,81,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Increased fluids,56.6,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Increased fluids,57.1,1998,Total,Five years preceding the survey
+Treatment of diarrhea: ORT or increased fluids,90.2,1998,Total,Three years preceding the survey
+Treatment of diarrhea: ORT or increased fluids,89.1,1998,Total,Five years preceding the survey
+"Treatment of diarrhea: No ORS, RHF or increased fluids",9.8,1998,Total,Three years preceding the survey
+"Treatment of diarrhea: No ORS, RHF or increased fluids",10.9,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Intravenous solution,0.5,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Intravenous solution,0.4,1998,Total,Five years preceding the survey
+Treatment of diarrhea: Home remedy - other,87.6,1998,Total,Three years preceding the survey
+Treatment of diarrhea: Home remedy - other,86.3,1998,Total,Five years preceding the survey
+Treatment of diarrhea: No treatment,0.6,1998,Total,Three years preceding the survey
+Treatment of diarrhea: No treatment,0.5,1998,Total,Five years preceding the survey
+Treatment of diarrhea: don't know or missing,0.9,1998,Total,Three years preceding the survey
+Treatment of diarrhea: don't know or missing,1.7,1998,Total,Five years preceding the survey
+Number of children born in the last five (or three) years,508,1998,Total,Three years preceding the survey
+Number of children born in the last five (or three) years,627,1998,Total,Five years preceding the survey
+Number of children born in the last five (or three) years (unweighted),523,1998,Total,Three years preceding the survey
+Number of children born in the last five (or three) years (unweighted),634,1998,Total,Five years preceding the survey
+Antenatal care provider: Doctor,17.1,2016,Total,Three years preceding the survey
+Antenatal care provider: Doctor,17.1,2016,Total,Five years preceding the survey
+Antenatal care provider: Doctor,16.1,2016,Total,Two years preceding the survey
+Antenatal care provider: Nurse/midwife,76.8,2016,Total,Three years preceding the survey
+Antenatal care provider: Nurse/midwife,76.6,2016,Total,Five years preceding the survey
+Antenatal care provider: Nurse/midwife,77,2016,Total,Two years preceding the survey
+Antenatal care provider: Other,0.6,2016,Total,Three years preceding the survey
+Antenatal care provider: Other,0.6,2016,Total,Five years preceding the survey
+Antenatal care provider: Other,0.5,2016,Total,Two years preceding the survey
+No antenatal care,5.5,2016,Total,Three years preceding the survey
+No antenatal care,5.7,2016,Total,Five years preceding the survey
+No antenatal care,6.5,2016,Total,Two years preceding the survey
+Antenatal care: Total,100,2016,Total,Three years preceding the survey
+Antenatal care: Total,100,2016,Total,Five years preceding the survey
+Antenatal care: Total,100,2016,Total,Two years preceding the survey
+Antenatal care from a skilled provider,93.9,2016,Total,Three years preceding the survey
+Antenatal care from a skilled provider,93.7,2016,Total,Five years preceding the survey
+Antenatal care from a skilled provider,93.1,2016,Total,Two years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,1962,2016,Total,Three years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,3036,2016,Total,Five years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years,1386,2016,Total,Two years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),1977,2016,Total,Three years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),3036,2016,Total,Five years preceding the survey
+Number of women with a live birth (or stillbirth) in the last two (or three/five) years (unweighted),1376,2016,Total,Two years preceding the survey
+Place of delivery: Public sector,88.3,2016,Total,Three years preceding the survey
+Place of delivery: Public sector,87.4,2016,Total,Five years preceding the survey
+Place of delivery: Public sector,88.4,2016,Total,Two years preceding the survey
+Place of delivery: Private sector,7.7,2016,Total,Three years preceding the survey
+Place of delivery: Private sector,8.5,2016,Total,Five years preceding the survey
+Place of delivery: Private sector,7.7,2016,Total,Two years preceding the survey
+Place of delivery: At home,3.6,2016,Total,Three years preceding the survey
+Place of delivery: At home,3.7,2016,Total,Five years preceding the survey
+Place of delivery: At home,3.4,2016,Total,Two years preceding the survey
+Place of delivery: Other,0.3,2016,Total,Three years preceding the survey
+Place of delivery: Other,0.4,2016,Total,Five years preceding the survey
+Place of delivery: Other,0.5,2016,Total,Two years preceding the survey
+Place of delivery: Total,100,2016,Total,Three years preceding the survey
+Place of delivery: Total,100,2016,Total,Five years preceding the survey
+Place of delivery: Total,100,2016,Total,Two years preceding the survey
+Place of delivery: Health facility,96,2016,Total,Three years preceding the survey
+Place of delivery: Health facility,95.9,2016,Total,Five years preceding the survey
+Place of delivery: Health facility,96.1,2016,Total,Two years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,2091,2016,Total,Three years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,3572,2016,Total,Five years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years,1414,2016,Total,Two years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),2105,2016,Total,Three years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),3548,2016,Total,Five years preceding the survey
+Number of live births (or stillbirths) in the last two (or three/five) years (unweighted),1406,2016,Total,Two years preceding the survey
+Assistance during delivery: Doctor,29.1,2016,Total,Three years preceding the survey
+Assistance during delivery: Doctor,28.7,2016,Total,Five years preceding the survey
+Assistance during delivery: Doctor,29.5,2016,Total,Two years preceding the survey
+Assistance during delivery: Nurse/midwife,67.6,2016,Total,Three years preceding the survey
+Assistance during delivery: Nurse/midwife,68,2016,Total,Five years preceding the survey
+Assistance during delivery: Nurse/midwife,67.6,2016,Total,Two years preceding the survey
+Assistance during delivery: Traditional birth attendant,0.2,2016,Total,Three years preceding the survey
+Assistance during delivery: Traditional birth attendant,0.1,2016,Total,Five years preceding the survey
+Assistance during delivery: Traditional birth attendant,0.2,2016,Total,Two years preceding the survey
+Assistance during delivery: Relative or other,1.6,2016,Total,Three years preceding the survey
+Assistance during delivery: Relative or other,1.9,2016,Total,Five years preceding the survey
+Assistance during delivery: Relative or other,1.8,2016,Total,Two years preceding the survey
+Assistance during delivery: No one,1.5,2016,Total,Three years preceding the survey
+Assistance during delivery: No one,1.2,2016,Total,Five years preceding the survey
+Assistance during delivery: No one,0.9,2016,Total,Two years preceding the survey
+Assistance during delivery: Total,100,2016,Total,Three years preceding the survey
+Assistance during delivery: Total,100,2016,Total,Five years preceding the survey
+Assistance during delivery: Total,100,2016,Total,Two years preceding the survey
+Assistance during delivery from a skilled provider,96.7,2016,Total,Three years preceding the survey
+Assistance during delivery from a skilled provider,96.7,2016,Total,Five years preceding the survey
+Assistance during delivery from a skilled provider,97.1,2016,Total,Two years preceding the survey
+Delivery by cesarean section,24.9,2016,Total,Three years preceding the survey
+Delivery by cesarean section,24.2,2016,Total,Five years preceding the survey
+Delivery by cesarean section,25.3,2016,Total,Two years preceding the survey
+Provider of mothers' first postnatal checkup: Doctor/nurse/midwife,83.2,2016,Total,NA
+Provider of mothers' first postnatal checkup: Community health worker,0.2,2016,Total,NA
+Provider of mothers' first postnatal checkup: Traditional birth attendant,0.2,2016,Total,NA
+No postnatal checkup for mother within first two days of birth,16.4,2016,Total,NA
+Provider of mothers' first postnatal checkup: Total,100,2016,Total,NA
+Number of mothers,1386,2016,Total,NA
+Number of mothers (unweighted),1376,2016,Total,NA
+Provider of newborns' first postnatal checkup: Doctor/nurse/midwife,86.2,2016,Total,NA
+Provider of newborns' first postnatal checkup: Community health worker,0,2016,Total,NA
+No postnatal checkup for newborn within first two days of birth,13.8,2016,Total,NA
+Provider of newborns' first postnatal checkup: Total,100,2016,Total,NA
+Number of newborns,1386,2016,Total,NA
+Number of newborns (unweighted),1376,2016,Total,NA
+Children with symptoms of ARI,3.4,2016,Total,Three years preceding the survey
+Children with symptoms of ARI,3.1,2016,Total,Five years preceding the survey
+Number of children born in the last five (or three) years,2025,2016,Total,Three years preceding the survey
+Number of children born in the last five (or three) years,3444,2016,Total,Five years preceding the survey
+Number of children born in the last five (or three) years (unweighted),2026,2016,Total,Three years preceding the survey
+Number of children born in the last five (or three) years (unweighted),3413,2016,Total,Five years preceding the survey
+Children with ARI for whom advice or treatment was sought,96.9,2016,Total,Three years preceding the survey
+Children with ARI for whom advice or treatment was sought,87.6,2016,Total,Five years preceding the survey
+Children with symptoms of ARI who received antibiotics,46.7,2016,Total,Three years preceding the survey
+Children with symptoms of ARI who received antibiotics,42,2016,Total,Five years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years,68,2016,Total,Three years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years,107,2016,Total,Five years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),59,2016,Total,Three years preceding the survey
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),94,2016,Total,Five years preceding the survey
+Children with fever for whom advice or treatment was sought,66.8,2016,Total,Three years preceding the survey
+Children with fever for whom advice or treatment was sought,68.4,2016,Total,Five years preceding the survey
+Child took antimalarial drugs for fever,0.2,2016,Total,Three years preceding the survey
+Child took antimalarial drugs for fever,0.5,2016,Total,Five years preceding the survey
+Child took antibiotic drugs for fever,29.2,2016,Total,Three years preceding the survey
+Child took antibiotic drugs for fever,30.3,2016,Total,Five years preceding the survey
+Number of children with fever in the last two weeks,422,2016,Total,Three years preceding the survey
+Number of children with fever in the last two weeks,679,2016,Total,Five years preceding the survey
+Number of children with fever in the last two weeks (unweighted),410,2016,Total,Three years preceding the survey
+Number of children with fever in the last two weeks (unweighted),647,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Advice or treatment was sought,59.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Advice or treatment was sought,63,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Oral rehydration solution (ORS),46.5,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Oral rehydration solution (ORS),51.4,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Recommended home fluids (RHF) at home,67.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Recommended home fluids (RHF) at home,72.5,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Either ORS or RHF,75.4,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Either ORS or RHF,80.5,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Zinc supplements,33.7,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Zinc supplements,36.8,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Increased fluids,14.6,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Increased fluids,15,2016,Total,Five years preceding the survey
+Treatment of diarrhea: ORT or increased fluids,79.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: ORT or increased fluids,83.3,2016,Total,Five years preceding the survey
+"Treatment of diarrhea: No ORS, RHF or increased fluids",20.8,2016,Total,Three years preceding the survey
+"Treatment of diarrhea: No ORS, RHF or increased fluids",16.7,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Antibiotics,7.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Antibiotics,10.6,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Antimotility drugs,2.4,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Antimotility drugs,1.8,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Intravenous solution,0.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Intravenous solution,0.6,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Injection,0.5,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Injection,1.1,2016,Total,Five years preceding the survey
+Treatment of diarrhea: Home remedy - other,9.1,2016,Total,Three years preceding the survey
+Treatment of diarrhea: Home remedy - other,10.3,2016,Total,Five years preceding the survey
+Treatment of diarrhea: No treatment,16.2,2016,Total,Three years preceding the survey
+Treatment of diarrhea: No treatment,12.1,2016,Total,Five years preceding the survey
+Number of children born in the last five (or three) years,246,2016,Total,Three years preceding the survey
+Number of children born in the last five (or three) years,356,2016,Total,Five years preceding the survey
+Number of children born in the last five (or three) years (unweighted),256,2016,Total,Three years preceding the survey
+Number of children born in the last five (or three) years (unweighted),350,2016,Total,Five years preceding the survey
