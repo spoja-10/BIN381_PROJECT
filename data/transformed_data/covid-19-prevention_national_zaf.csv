@@ -1,36 +1,36 @@
-Indicator,Value,SurveyYear,CharacteristicCategory,CharacteristicLabel,ByVariableLabel
-#indicator+name,NA,NA,NA,NA,#indicator+label
-Population using an improved water source,83.5,1998,Total,Total,NA
-Population using water piped into dwelling,36,1998,Total,Total,NA
-Population using water piped into yard/plot,23.1,1998,Total,Total,NA
-Population using a public tap/standpipe,19.3,1998,Total,Total,NA
-Population with improved water source on the premises,60.3,1998,Total,Total,NA
-Population with basic water service,80.2,1998,Total,Total,NA
-Population with limited water service,3.3,1998,Total,Total,NA
-Population with water more than 30 minutes away round trip,8.4,1998,Total,Total,NA
-Population with an improved sanitation facility,46.4,1998,Total,Total,NA
-Population with an unimproved sanitation facility,40.8,1998,Total,Total,NA
-Population using open defecation,12.8,1998,Total,Total,NA
-Households with one room for sleeping,29.4,1998,Total,Total,NA
-Mean number of persons per sleeping room,1.9,1998,Total,Total,NA
-Mean number of household members,4.2,1998,Total,Total,NA
-Population using an improved water source,93.4,2016,Total,Total,NA
-Population using water piped into dwelling,45.5,2016,Total,Total,NA
-Population using water piped into yard/plot,24,2016,Total,Total,NA
-Population using a public tap/standpipe,13.6,2016,Total,Total,NA
-Population with improved water source on the premises,76.5,2016,Total,Total,NA
-Population with basic water service,90.1,2016,Total,Total,NA
-Population with limited water service,3.2,2016,Total,Total,NA
-Population with water more than 30 minutes away round trip,5.8,2016,Total,Total,NA
-Population with water not available for at least one day,33,2016,Total,Total,NA
-Population with an improved sanitation facility,96,2016,Total,Total,NA
-Population with an unimproved sanitation facility,1.7,2016,Total,Total,NA
-Population using open defecation,2.2,2016,Total,Total,NA
-Population with basic sanitation service,81.1,2016,Total,Total,NA
-Population with limited sanitation service,15,2016,Total,Total,NA
-Population with a place for handwashing was observed,86.1,2016,Total,Total,NA
-"Population with a basic handwashing facility, with soap and water available",46,2016,Total,Total,NA
-"Population with a limited handwashing facility, lacking soap and/or water",46.5,2016,Total,Total,NA
-Households with one room for sleeping,35.1,2016,Total,Total,NA
-Mean number of persons per sleeping room,1.5,2016,Total,Total,NA
-Mean number of household members,3.4,2016,Total,Total,NA
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
+#indicator+name,NA,NA,NA,#indicator+label
+Population using an improved water source,83.5,1998,Total,NA
+Population using water piped into dwelling,36,1998,Total,NA
+Population using water piped into yard/plot,23.1,1998,Total,NA
+Population using a public tap/standpipe,19.3,1998,Total,NA
+Population with improved water source on the premises,60.3,1998,Total,NA
+Population with basic water service,80.2,1998,Total,NA
+Population with limited water service,3.3,1998,Total,NA
+Population with water more than 30 minutes away round trip,8.4,1998,Total,NA
+Population with an improved sanitation facility,46.4,1998,Total,NA
+Population with an unimproved sanitation facility,40.8,1998,Total,NA
+Population using open defecation,12.8,1998,Total,NA
+Households with one room for sleeping,29.4,1998,Total,NA
+Mean number of persons per sleeping room,1.9,1998,Total,NA
+Mean number of household members,4.2,1998,Total,NA
+Population using an improved water source,93.4,2016,Total,NA
+Population using water piped into dwelling,45.5,2016,Total,NA
+Population using water piped into yard/plot,24,2016,Total,NA
+Population using a public tap/standpipe,13.6,2016,Total,NA
+Population with improved water source on the premises,76.5,2016,Total,NA
+Population with basic water service,90.1,2016,Total,NA
+Population with limited water service,3.2,2016,Total,NA
+Population with water more than 30 minutes away round trip,5.8,2016,Total,NA
+Population with water not available for at least one day,33,2016,Total,NA
+Population with an improved sanitation facility,96,2016,Total,NA
+Population with an unimproved sanitation facility,1.7,2016,Total,NA
+Population using open defecation,2.2,2016,Total,NA
+Population with basic sanitation service,81.1,2016,Total,NA
+Population with limited sanitation service,15,2016,Total,NA
+Population with a place for handwashing was observed,86.1,2016,Total,NA
+"Population with a basic handwashing facility, with soap and water available",46,2016,Total,NA
+"Population with a limited handwashing facility, lacking soap and/or water",46.5,2016,Total,NA
+Households with one room for sleeping,35.1,2016,Total,NA
+Mean number of persons per sleeping room,1.5,2016,Total,NA
+Mean number of household members,3.4,2016,Total,NA
