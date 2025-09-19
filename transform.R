@@ -13,7 +13,7 @@ manual_drop_cols <- c(
   "DataId","ISO3","SurveyId","IndicatorId","IndicatorOrder","Precision", "DHS_CountryCode", "CountryName", "IndicatorType",
   "CharacteristicId","CharacteristicOrder","ByVariableId",
   "SDRID","RegionId","CILow","CIHigh","LevelRank","SurveyType","SurveyYearLabel",
-  "DenominatorWeighted", "DenominatorUnweighted", "CharacteristicLabel", "IsTotal", "IsPreferred"
+  "DenominatorWeighted", "DenominatorUnweighted", "IsTotal", "IsPreferred"
 )
 
 clean_output_dirs_first <- TRUE
