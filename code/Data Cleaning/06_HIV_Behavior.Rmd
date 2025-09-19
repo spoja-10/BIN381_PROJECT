@@ -3,3 +3,206 @@ title: "06_HIV_Behavior"
 output: html_document
 ---
 
+# HIV Behavior - National South Africa
+
+## Load Libraries
+
+```{r}
+# Data manipulation
+library(dplyr)
+library(tidyr)
+library(readr)
+library(here)
+library(purrr)
+
+# Visualization and summaries
+library(ggplot2)
+library(skimr)
+library(visdat)
+```
+
+## Load Data
+```{r}
+# Load the HIV behavior dataset
+hiv_df <- read_csv(
+  here("data", "raw", "hiv-behavior_national_zaf.csv"),
+  col_names = TRUE,   # use first row as column names
+  col_types = cols()  # suppress guessing messages
+)
+
+# Step 2: Remove first row if it contains metadata
+hiv_df <- hiv_df[-1, ]
+
+# Step 3: Reset row names
+rownames(hiv_df) <- NULL
+
+cat("HIV behavior dataset loaded successfully.\n")
+cat("Dimensions:", dim(hiv_df), "\n")
+```
+
+## Initial Assessment 
+```{r}
+# Quick glimpse
+glimpse(hiv_df)
+
+# Summary of missingness
+skim(hiv_df)
+
+# Visualize missing values
+vis_miss(hiv_df)
+
+
+```
+
+
+## Handle Duplicates
+
+```{r}
+# Check for exact duplicates
+cat("Exact duplicates:", sum(duplicated(hiv_df)), "\n")
+
+# Remove exact duplicates
+hiv_df <- hiv_df %>% distinct()
+cat("Dimensions after duplicate removal:", dim(hiv_df), "\n")
+
+
+```
+## Covert Data Types
+```{r}
+# Convert numeric columns safely
+num_cols <- c("value", "precision", "denominator_weighted", "denominator_unweighted",
+              "ci_low", "ci_high", "survey_year", "indicator_order",
+              "characteristic_id", "characteristic_order", "survey_year_label")
+num_cols <- num_cols[num_cols %in% colnames(hiv_df)] # only existing columns
+
+hiv_df <- hiv_df %>%
+  mutate(across(all_of(num_cols), as.numeric))
+
+# Logical columns
+logical_cols <- c("is_total", "is_preferred")
+logical_cols <- logical_cols[logical_cols %in% colnames(hiv_df)]
+hiv_df <- hiv_df %>% mutate(across(all_of(logical_cols), ~as.logical(as.integer(.))))
+
+# Check structure
+str(hiv_df)
+
+```
+## Handle Missing Values
+
+```{r}
+# Impute survey_year_label with survey_year if missing
+if ("survey_year_label" %in% colnames(hiv_df)) {
+  hiv_df <- hiv_df %>%
+    mutate(survey_year_label = ifelse(is.na(survey_year_label), survey_year, survey_year_label))
+}
+
+# Impute survey_type with "Unknown" if missing
+if ("survey_type" %in% colnames(hiv_df)) {
+  hiv_df <- hiv_df %>%
+    mutate(survey_type = ifelse(is.na(survey_type), "Unknown", survey_type))
+}
+
+# Recalculate missing summary
+missing_summary <- data.frame(
+  Column = colnames(hiv_df),
+  n_missing = colSums(is.na(hiv_df)),
+  total_rows = nrow(hiv_df),
+  missing_percent = round(colSums(is.na(hiv_df))/nrow(hiv_df)*100, 2)
+)
+
+# Impute denominators with median of available values
+hiv_df <- hiv_df %>%
+  mutate(
+    DenominatorWeighted = ifelse(is.na(DenominatorWeighted),
+                                 median(DenominatorWeighted, na.rm = TRUE),
+                                 DenominatorWeighted),
+    DenominatorUnweighted = ifelse(is.na(DenominatorUnweighted),
+                                   median(DenominatorUnweighted, na.rm = TRUE),
+                                   DenominatorUnweighted)
+  )
+
+# Function to calculate mode
+get_mode <- function(x) {
+  ux <- unique(x[!is.na(x)])
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Impute missing values with most frequent value
+hiv_df <- hiv_df %>%
+  mutate(
+    DHS_CountryCode = ifelse(is.na(DHS_CountryCode), get_mode(DHS_CountryCode), DHS_CountryCode),
+    IndicatorOrder = ifelse(is.na(IndicatorOrder), get_mode(IndicatorOrder), IndicatorOrder),
+    IndicatorType = ifelse(is.na(IndicatorType), get_mode(IndicatorType), IndicatorType),
+    CharacteristicId = ifelse(is.na(CharacteristicId), get_mode(CharacteristicId), CharacteristicId),
+    CharacteristicOrder = ifelse(is.na(CharacteristicOrder), get_mode(CharacteristicOrder), CharacteristicOrder),
+    CharacteristicCategory = ifelse(is.na(CharacteristicCategory), get_mode(CharacteristicCategory), CharacteristicCategory),
+    CharacteristicLabel = ifelse(is.na(CharacteristicLabel), get_mode(CharacteristicLabel), CharacteristicLabel),
+    IsTotal = ifelse(is.na(IsTotal), get_mode(IsTotal), IsTotal),
+    IsPreferred = ifelse(is.na(IsPreferred), get_mode(IsPreferred), IsPreferred),
+    SDRID = ifelse(is.na(SDRID), get_mode(SDRID), SDRID),
+    SurveyYearLabel = ifelse(is.na(SurveyYearLabel), get_mode(SurveyYearLabel), SurveyYearLabel),
+    SurveyType = ifelse(is.na(SurveyType), get_mode(SurveyType), SurveyType)
+  )
+# Drop columns that are 100% missing
+cols_to_drop <- c("ByVariableLabel", "RegionId", "CILow", "CIHigh", "LevelRank")
+cols_to_drop <- intersect(cols_to_drop, colnames(hiv_df))  # only if they exist
+
+hiv_df <- hiv_df %>% select(-all_of(cols_to_drop))
+cat("Dropped completely missing columns:\n")
+print(cols_to_drop)
+
+# Verify that missing values are handled
+colSums(is.na(hiv_df))
+
+
+```
+## Handle Outliers
+
+```{r}
+# Winsorize HIV Behavior 'Value' at 1st and 99th percentiles
+lower_val <- quantile(hiv_df$Value, 0.01, na.rm = TRUE)
+upper_val <- quantile(hiv_df$Value, 0.99, na.rm = TRUE)
+
+hiv_df <- hiv_df %>%
+  mutate(
+    Value = pmax(pmin(Value, upper_val), lower_val)
+  )
+
+hiv_df <- hiv_df %>%
+  mutate(Value_log = log1p(Value))
+
+# Check summary
+summary(hiv_df$Value_log)
+
+# Visualize with boxplot
+ggplot(hiv_df, aes(y = Value)) +
+  geom_boxplot(fill = "steelblue", outlier.color = "red") +
+  labs(title = "Boxplot of HIV Behavior 'Value' After Winsorization")
+
+# Summarize
+summary(hiv_df$Value)
+
+
+```
+
+```{r}
+
+
+# Quick check of structure and summary
+str(hiv_df)
+summary(hiv_df)
+
+# Check for any remaining NAs
+colSums(is.na(hiv_df))
+
+# Save cleaned dataset
+write_csv(hiv_df, here("data", "processed", "hiv-behavior_national_zaf_clean.csv"))
+
+cat("HIV behavior dataset cleaned and saved to data/processed/hiv-behavior_national_zaf_clean.csv\n")
+
+```
+
+
+
+
+

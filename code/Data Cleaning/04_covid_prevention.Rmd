@@ -5,7 +5,7 @@ output: html_document
 
 # Covid 19 Prevention
 
-## Load Libraries
+## 1. Load Libraries & data
 
 ```{r }
 # Data manipulation
@@ -19,23 +19,25 @@ library(purrr)
 library(ggplot2)
 library(skimr)
 library(visdat)
-```
 
-## Load Data
-```{r}
 # Load the COVID-19 prevention dataset
 # Load the COVID-19 prevention dataset, skipping first row if it contains metadata
-covid_df <- read_csv(
-  here("data", "raw", "covid-19-prevention_national_zaf.csv"),
-  skip = 1,            # skip metadata row
-  col_types = cols()   # suppress guessing messages
-)
+covid_df <- read_csv(here("data", "raw", "covid-19-prevention_national_zaf.csv"))
 
+# Step 2: Remove first row (metadata)
+covid_df <- covid_df[-1, ]
+
+# Step 3: Reset row names
+rownames(covid_df) <- NULL
+
+# Step 4: Optional: in
 cat("COVID-19 prevention dataset loaded successfully.\n")
 cat("Dimensions:", dim(covid_df), "\n")
 
 ```
-## Initial Data Assessment and Column Renaming
+## 2. Initial Data Assessment and Column Renaming
+
+- Column names are standardized to lowercase with underscores for readability. The dataset structure, summary statistics, and missingness are explored to identify potential quality issues.
 
 ```{r}
 # Quick glimpse of dataset
@@ -47,32 +49,15 @@ skim(covid_df)
 # visualize missing values
 vis_miss(covid_df)
 
-# Rename unnamed columns (...6, ...11, etc.) to meaningful names
-covid_df <- covid_df %>%
-  rename_with(~paste0("col_", seq_along(.)), .cols = everything())
+# Clean column names to lowercase with underscores
+covid_df <- covid_df %>% janitor::clean_names()
 
-cat("Columns renamed systematically.\n")
-cat("New column names:\n")
-print(colnames(covid_df))
+# Check new names
+colnames(covid_df)
 
 ```
-## Rename Columns Meaningfully
-```{r}
-# Replace generic col_1, col_2, ... with actual names
-colnames(covid_df) <- c(
-  "iso3", "data_id", "indicator", "value", "precision",
-  "dhs_country_code", "country_name", "survey_year", "survey_id",
-  "indicator_id", "indicator_order", "indicator_type", "characteristic_id",
-  "characteristic_order", "characteristic_category", "characteristic_label",
-  "by_variable_id", "by_variable_label", "is_total", "is_preferred",
-  "sdrid", "region_id", "survey_year_label", "survey_type",
-  "denominator_weighted", "denominator_unweighted", "ci_low", "ci_high",
-  "level_rank"
-)
 
-cat("Columns renamed to meaningful names.\n")
-print(colnames(covid_df))
-```
+
 
 ## Handle Duplicates
 
@@ -81,13 +66,7 @@ print(colnames(covid_df))
 exact_dups <- sum(duplicated(covid_df))
 cat("Exact duplicate rows:", exact_dups, "\n")
 
-# Check for semantic duplicates (same indicator, survey_year, characteristic_id, value)
-semantic_dups <- covid_df %>%
-  group_by(indicator, survey_year, characteristic_id, value) %>%
-  filter(n() > 1) %>%
-  ungroup()
 
-cat("Semantic duplicate groups:", nrow(semantic_dups), "\n")
 
 # Remove all duplicates, keeping first occurrence
 covid_df <- covid_df %>%
@@ -99,82 +78,84 @@ cat("Dimensions after duplicate removal:", dim(covid_df), "\n")
 ```
 
 ## Convert Data Types
+- Ensures all numeric, integer, and logical columns have correct types for downstream analysis. Prevents calculation errors and improves consistency.
 ```{r}
 # Convert numeric columns
 covid_df <- covid_df %>%
   mutate(
-    across(c(value, precision, denominator_weighted, denominator_unweighted,
-             ci_low, ci_high), as.numeric),
-    across(c(survey_year, indicator_order, characteristic_id,
-             characteristic_order, survey_year_label, by_variable_id), as.integer),
+    across(c(value, precision, denominator_weighted, denominator_unweighted, ci_low, ci_high), as.numeric),
+    across(c(survey_year, indicator_order, characteristic_id, characteristic_order, survey_year_label, by_variable_id), as.integer),
     across(c(is_total, is_preferred), ~as.logical(as.integer(.)))
   )
 
-# Quick check of new types
-str(covid_df)
 ```
 
+## Drop Redundant Columns
+```{r}
+
+redundant_cols <- c("iso3", "data_id", "dhs_country_code", "country_name", 
+                    "survey_id", "indicator_id", "sdrid", "region_id", 
+                    "survey_type", "level_rank", "denominator_weighted", "denominator_unweighted")
+
+covid_df <- covid_df %>% select(-any_of(redundant_cols))
+
+# Remove columns that are entirely NA
+covid_df <- covid_df %>% select(where(~!all(is.na(.))))
+
+cat("Redundant and empty columns removed.\n")
+cat("New dimensions:", dim(covid_df), "\n")
+
+```
 ## Handle Missing Values
+- Numeric columns: filled with the median
+
+- Character columns: filled with the most frequent value
+
+- Logical columns: missing values set to FALSE
+
+- Key metadata (survey_year_label, survey_type) imputed explicitly for clarity
 ```{r}
-# Visualize missingness
-library(visdat)
-vis_miss(covid_df)
 
-# Summarize missing values
-missing_summary <- covid_df %>%
-  summarise(across(everything(), ~sum(is.na(.)))) %>%
-  pivot_longer(everything(), names_to = "column", values_to = "n_missing") %>%
-  mutate(total_rows = nrow(covid_df),
-         missing_percent = round(n_missing / total_rows * 100, 2))
-
-missing_summary %>% arrange(desc(missing_percent))
-
-
-```
-
-```{r}
 covid_df <- covid_df %>%
   select(where(~!all(is.na(.))))
 
-# Check remaining missing values
-missing_summary <- covid_df %>%
-  summarise(across(everything(), ~sum(is.na(.)))) %>%
-  pivot_longer(cols = everything(), names_to = "column", values_to = "n_missing") %>%
-  mutate(
-    total_rows = nrow(covid_df),
-    missing_percent = round(n_missing / total_rows * 100, 2)
-  )
 
-## Handle Remaining Missing Values
+impute_mode <- function(x) {
+  ux <- na.omit(x)
+  if(length(ux) == 0) return(x)
+  rep(names(sort(table(ux), decreasing = TRUE))[1], length(x))
+}
 
-# Impute missing survey_year_label with survey_year if available
+
 covid_df <- covid_df %>%
   mutate(
-    survey_year_label = ifelse(is.na(survey_year_label), survey_year, survey_year_label)
+    # Numeric columns → median
+    across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm = TRUE), .)),
+    
+    # Character columns → mode
+    across(where(is.character), ~ifelse(is.na(.), impute_mode(.), .)),
+    
+    # Logical columns → set missing to FALSE (or TRUE if appropriate)
+    across(where(is.logical), ~ifelse(is.na(.), FALSE, .))
   )
 
-# For survey_type, if missing, set as "Unknown"
-covid_df <- covid_df %>%
-  mutate(
-    survey_type = ifelse(is.na(survey_type), "Unknown", survey_type)
-  )
 
-cat("Missing values addressed.\n")
-
-
-
-# Recalculate missing values
 missing_summary <- data.frame(
   Column = colnames(covid_df),
   n_missing = colSums(is.na(covid_df)),
   total_rows = nrow(covid_df),
-  missing_percent = round(colSums(is.na(covid_df))/nrow(covid_df)*100, 2)
+  missing_percent = round(colSums(is.na(covid_df)) / nrow(covid_df) * 100, 2)
 )
 
 missing_summary %>% arrange(desc(missing_percent))
+
+
 ```
 
+
+
 ## Handle Outliers
+- Extreme values in value are capped to the IQR boundaries (Winsorization), which reduces their influence while keeping most data intact.
 ```{r}
 # Quick check for extreme values in 'value' and denominators
 summary(covid_df$value)
@@ -188,16 +169,6 @@ outliers <- covid_df %>%
 
 cat("Potential outlier rows in 'value':", nrow(outliers), "\n")
 
-```
-## Handle Noise & Special Values
-```{r}
-covid_df <- covid_df %>%
-  mutate(
-    is_total = ifelse(is_total %in% c(TRUE, FALSE), is_total, NA),
-    is_preferred = ifelse(is_preferred %in% c(TRUE, FALSE), is_preferred, NA)
-  )
-
-cat("Noise and special values handled.\n")
 ```
 
 ## Final Validation 

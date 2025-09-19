@@ -30,6 +30,9 @@ library(mice)     # for advanced imputation
 # Load data with correct path from project root
 anth_df <- read.csv(here("data", "raw", "anthropometry_national_zaf.csv"))
 
+# Skip first metadata row
+anth_df <- anth_df[-1, ]
+
 cat("Initial dataset loaded successfully.\n")
 cat("Dimensions:", dim(anth_df), "\n")
 
@@ -40,8 +43,9 @@ cat("Dimensions:", dim(anth_df), "\n")
 ```{r initial_assessment}
 
 
-# Clean column names for sanity
+# Clean column names
 anth_df <- janitor::clean_names(anth_df)
+colnames(anth_df)
 
 # Peek at structure and summary
 glimpse(anth_df)
@@ -51,10 +55,11 @@ skim(anth_df)
 vis_miss(anth_df)
 ```
 
+
 ## 3. Data Cleaning Process
 
 ### 3.1 Handle Duplicates Systematically
-
+- Duplicates can distort analysis. We remove exact duplicates to maintain dataset integrity.
 ```{r handle_duplicates}
 # Exact duplicates
 cat("Exact duplicates:", sum(duplicated(anth_df)), "\n")
@@ -68,22 +73,33 @@ cat("Dimensions after deduplication:", dim(anth_df), "\n")
 
 ### 3.2 Convert Data Types
 
+- Ensures numeric, integer, and logical columns are correctly typed for analysis.This prevents calculation errors and improves data quality.
 ```{r convert_types}
-cmr_df <- cmr_df %>%
+# Define the columns safely
+numeric_cols <- intersect(c("value", "precision", "denominator_weighted", "denominator_unweighted"), colnames(anth_df))
+integer_cols <- intersect(c("survey_year", "indicator_order", "characteristic_id", 
+                            "characteristic_order", "survey_year_label", "by_variable_id", "region_id"), colnames(anth_df))
+logical_cols <- intersect(c("is_total", "is_preferred"), colnames(anth_df))
+
+# Apply conversions only if the columns exist
+anth_df <- anth_df %>%
   mutate(
-    across(c(Value, Precision, DenominatorWeighted, DenominatorUnweighted), as.numeric),
-    across(c(SurveyYear, IndicatorOrder, CharacteristicId, CharacteristicOrder,
-             SurveyYearLabel, ByVariableId, RegionId), as.integer),
-    across(c(IsTotal, IsPreferred), ~as.logical(as.integer(.)))
+    across(all_of(numeric_cols), as.numeric),
+    across(all_of(integer_cols), as.integer),
+    across(all_of(logical_cols), ~as.logical(as.integer(.)))
   )
 
 cat("Data types converted successfully.\n")
+
 ```
 
 ### 3.3 Handle Missing Values
+- Columns with excessive missingness are dropped to maintain analysis integrity.
+
+- Remaining missing values are imputed (numeric → median, categorical → mode) to allow modeling and prevent bias.
 
 ```{r handle_missing}
-# Missingness summary
+# Summarize missingness
 missing_summary <- data.frame(
   Column = names(anth_df),
   Missing_Count = colSums(is.na(anth_df)),
@@ -92,55 +108,93 @@ missing_summary <- data.frame(
 
 print(missing_summary)
 
-# Drop columns with >40% missing
-cols_to_drop <- missing_summary %>% 
-  filter(Missing_Percent > 40) %>% pull(Column)
-
+# Drop columns with >40% missing values
+cols_to_drop <- missing_summary %>% filter(Missing_Percent > 40) %>% pull(Column)
 anth_df <- anth_df %>% select(-all_of(cols_to_drop))
 
-# Simple imputation: median for numeric, mode for categorical
+# Impute remaining missing values: median for numeric, mode for categorical
 impute_mode <- function(x) {
   ux <- na.omit(x)
-  if (length(ux) == 0) return(x)
+  if(length(ux)==0) return(x)
   rep(names(sort(table(ux), decreasing=TRUE))[1], length(x))
 }
 
 anth_df <- anth_df %>%
-  mutate(across(where(is.numeric),
-                ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
-  mutate(across(where(is.character),
-                ~ifelse(is.na(.), impute_mode(.), .)))
+  mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
+  mutate(across(where(is.character), ~ifelse(is.na(.), impute_mode(.), .)))
 
 cat("Remaining NAs after imputation:", sum(is.na(anth_df)), "\n")
+
 ```
+### 3.4 Remove redundant columns
+- Metadata columns such as survey type or country identifiers are removed as they do not contribute to analysis.
+```{r}
 
-### 3.4 Handle Missing Values
+# -----------------------------
+# Remove redundant columns
+# -----------------------------
+# Define columns that are metadata or unnecessary for analysis
+redundant_cols <- c("survey_type", "survey_id", "country_name", "iso3")  # adjust names to match anth_df
 
-```{r Handle_Missing_Values}
-# Example: detect outliers in anthropometric measures using IQR
+# Remove them safely
+anth_df <- anth_df %>%
+  select(-any_of(redundant_cols))
+
+cat("Redundant columns removed. New dimensions:", dim(anth_df), "\n")
+
+```
+### 3.5 Remove columns with all missing values
+
+- Detect numeric/logical columns that have all missing values.
+
+- Remove them without touching the rest of the data.
+
+- Report what was removed and the new dataset dimensions.
+
+```{r}
+# Remove columns that are completely NA or have no valid numeric/logical data
+cols_to_remove <- anth_df %>% 
+  select(where(~all(is.na(.) | is.nan(.)))) %>% 
+  colnames()
+
+anth_df <- anth_df %>% select(-all_of(cols_to_remove))
+
+cat("Removed empty/unusable columns. New dimensions:", dim(anth_df), "\n")
+
+```
+# Handle Outliers
+- Outliers can skew results. Winsorizing caps extreme values at the IQR boundaries, preserving the bulk of the data while mitigating extreme effects.
+```{r Handle Outliers}
+# Detect numeric columns
 num_cols <- anth_df %>% select(where(is.numeric))
 
+# Compute IQR bounds
 outlier_bounds <- function(x) {
-  qnt <- quantile(x, probs=c(.25, .75), na.rm=TRUE)
+  qnt <- quantile(x, probs=c(0.25, 0.75), na.rm=TRUE)
   iqr <- diff(qnt)
   c(lower=qnt[1]-1.5*iqr, upper=qnt[2]+1.5*iqr)
 }
 
 bounds <- map(num_cols, outlier_bounds)
 
-# Clip outliers (winsorization)
+# Winsorize numeric variables
 anth_df <- anth_df %>%
   mutate(across(where(is.numeric),
                 ~pmin(pmax(., bounds[[cur_column()]]["lower"]),
                       bounds[[cur_column()]]["upper"])))
+
 ```
 
 ### 3.5 Deal with Noise / Special Values
+- Special values like negative heights/weights are logically impossible.Any negative value is replaced by the median of that column.
 ```{r Noise_Special_Values}
-# Replace impossible values (e.g., negative heights/weights) with NA
+
+
 anth_df <- anth_df %>%
   mutate(across(matches("height|weight"),
-                ~ifelse(. < 0, NA, .)))
+                ~ifelse(. < 0, median(., na.rm = TRUE), .)))
+
+
 ```
 
 ## 4. Final Data Validation

@@ -392,8 +392,6 @@ cat(&quot;Initial dataset loaded successfully.\n&quot;)</code></pre>
 <pre><code>## Initial dataset loaded successfully.</code></pre>
 <pre class="r"><code>cat(&quot;Dimensions:&quot;, dim(acc_df), &quot;\n&quot;)</code></pre>
 <pre><code>## Dimensions: 276 29</code></pre>
-<pre class="r"><code>getwd()</code></pre>
-<pre><code>## [1] &quot;C:/Users/morul/School/3rd Year/BIN381/BIN381_PROJECT/BIN381_PROJECT/code/Data Cleaning&quot;</code></pre>
 </div>
 <div id="initial-data-assessment" class="section level2">
 <h2>2. Initial Data Assessment</h2>
@@ -883,6 +881,10 @@ cat(&quot;Number of exact duplicate rows:&quot;, duplicate_count, &quot;\n&quot;
 </div>
 <div id="convert-data-types" class="section level3">
 <h3>3.2 Convert Data Types</h3>
+<p>Purpose: Ensure that each column in the dataset has the correct data
+type so that subsequent analysis and calculations work as expected.
+Wrong data types (e.g., numbers stored as text) can lead to errors or
+incorrect results.</p>
 <pre class="r"><code># Explicitly only select columns that exist
 numeric_cols &lt;- c(&quot;Value&quot;, &quot;Precision&quot;, &quot;DenominatorWeighted&quot;, &quot;DenominatorUnweighted&quot;)
 integer_cols &lt;- c(&quot;SurveyYear&quot;, &quot;IndicatorOrder&quot;, &quot;CharacteristicOrder&quot;, &quot;SurveyYearLabel&quot;, &quot;RegionId&quot;)
@@ -980,10 +982,6 @@ cat(&quot;Redundant columns removed. New dimensions:&quot;, dim(acc_df), &quot;\
 <div id="handle-outliers-and-anomalies" class="section level3">
 <h3>3.5 Handle Outliers and Anomalies</h3>
 <pre class="r"><code>### 3.5 Handle Outliers and Anomalies
-
-library(dplyr)
-library(ggplot2)
-library(tidyr)
 
 # 1. Automatically detect numeric columns
 numeric_cols &lt;- acc_df %&gt;%

@@ -5,7 +5,7 @@ output: html_document
 
 # Data Cleaning: Child Mortality Rates
 
-## Load Libraries 
+## Load Libraries
 
 ```{r load_libs}
 # Data manipulation
@@ -14,6 +14,8 @@ library(tidyr)
 library(readr)
 library(here)
 library(purrr)
+library(stringr)
+
 
 # Extras for cleaning and exploration
 library(janitor)  # clean column names
@@ -24,13 +26,17 @@ library(ggplot2)  # visualizations
 ```
 
 ## Load Dataset
+
 ```{r load_data}
 # Load the child mortality dataset
 cmr_df <- read_csv(
   here("data", "raw", "child-mortality-rates_national_zaf.csv"),
-  
-  col_types = cols() # suppress column guessing warnings
+  col_types = cols()  # suppress column guessing warnings
 )
+
+# Remove first metadata row if present
+cmr_df <- cmr_df[-1, ]
+rownames(cmr_df) <- NULL
 
 cat("Dataset loaded successfully.\n")
 cat("Dimensions:", dim(cmr_df), "\n")
@@ -39,130 +45,151 @@ cat("Dimensions:", dim(cmr_df), "\n")
 
 ```
 
-## Initial Data Assessment 
-```{r data_assessment }
-# Clean column names for readability
-cmr_df <- cmr_df %>% janitor::clean_names()
+## Initial Data Assessment
 
-# Glimpse the dataset structure
+```{r data_assessment }
+# Clean column names
+cmr_df <- janitor::clean_names(cmr_df)
+
+# Peek at structure
 glimpse(cmr_df)
 
-# Summary statistics for initial quality check
+# Summary stats
 skim(cmr_df)
 
 # Visualize missingness
-visdat::vis_miss(cmr_df)
+vis_miss(cmr_df)
+
+```
+
+# Handle Duplicates
+
+```{r}
+cat("Exact duplicates:", sum(duplicated(cmr_df)), "\n")
+
+cmr_df <- cmr_df %>% distinct()
+
+cat("Dimensions after deduplication:", dim(cmr_df), "\n")
+
+
 ```
 
 ## Drop Redundant / Empty Columns
 
 ```{r redundant_empty_columns}
-# Columns we can safely remove
-cols_to_drop <- c(
-  "iso3", "data_id", "dhs_country_code", "country_name", "survey_id", 
-  "indicator_id", "sdrid", "region_id", "survey_type", "level_rank",
-  "denominator_weighted", "denominator_unweighted"
-)
+redundant_cols <- c("iso3", "data_id", "dhs_country_code", "country_name", "survey_id",
+                    "indicator_id", "sdrid", "region_id", "survey_type", "level_rank",
+                    "denominator_weighted", "denominator_unweighted", "by_variable_label")
 
-cmr_df <- cmr_df %>% select(-all_of(cols_to_drop))
+# Remove safely
+cmr_df <- cmr_df %>% select(-any_of(redundant_cols))
 
-# Check the new structure
-glimpse(cmr_df)
-cat("Dimensions after dropping redundant columns:", dim(cmr_df), "\n")
+
+cat("Dimensions after removing redundant/empty columns:", dim(cmr_df), "\n")
+
 
 ```
 
 ## Convert Column Types
 
+-   Ensure numeric, integer, and logical columns are typed correctly for analysis.
+
 ```{r convert_column_types}
 # Convert columns to appropriate types
+# Define expected columns by type
+# If you use janitor::clean_names(), use lowercase names
+numeric_cols <- c("value", "precision", "ci_low", "ci_high")
+integer_cols <- c("survey_year", "indicator_order", "characteristic_id",
+                  "characteristic_order", "survey_year_label")
+logical_cols <- c("is_total", "is_preferred")
+
+
+# Standardize column names to match R-safe format
+colnames(cmr_df) <- str_replace_all(colnames(cmr_df), "\\s+", "_")
+colnames(cmr_df) <- str_to_title(colnames(cmr_df)) # optional for uniformity
+
+# Function to safely convert columns if they exist
+safe_convert <- function(df, cols, fun) {
+  existing <- cols[cols %in% colnames(df)]
+  if(length(existing) > 0) {
+    df <- df %>% mutate(across(all_of(existing), fun))
+  }
+  return(df)
+}
+
+# Apply conversions
 cmr_df <- cmr_df %>%
-  mutate(
-    # Numeric values
-    value = as.numeric(value),
-    precision = as.numeric(precision),
-    survey_year = as.integer(survey_year),
-    indicator_order = as.integer(indicator_order),
-    characteristic_id = as.integer(characteristic_id),
-    characteristic_order = as.integer(characteristic_order),
-    survey_year_label = as.integer(survey_year_label),
-    ci_low = as.numeric(ci_low),
-    ci_high = as.numeric(ci_high),
-    
-    # Logical flags
-    is_total = as.logical(is_total),
-    is_preferred = as.logical(is_preferred)
-  )
+  safe_convert(numeric_cols, as.numeric) %>%
+  safe_convert(integer_cols, as.integer) %>%
+  safe_convert(logical_cols, ~as.logical(as.integer(.)))
 
-# Verify conversion
-glimpse(cmr_df)
-```
-
-## Remove Metadata Row
-```{r remove_metadata}
-# Remove the first row (metadata labels)
-cmr_df <- cmr_df[-1, ]
-
-# Reset row names
-rownames(cmr_df) <- NULL
-
-# Verify
+# Check final types
 glimpse(cmr_df)
 ```
 
 ## Handle Missing Values
+
 ```{r handle_missing_values}
-# Check missing values per column
-missing_summary <- cmr_df %>%
-  summarise(across(everything(), ~sum(is.na(.)))) %>%
-  pivot_longer(cols = everything(), names_to = "column", values_to = "n_missing") %>%
-  mutate(
-    total_rows = nrow(cmr_df),
-    missing_percent = round((n_missing / total_rows) * 100, 2)
-  )
+# Function to get mode
+impute_mode <- function(x){
+  ux <- na.omit(x)
+  if(length(ux)==0) return(x)
+  rep(names(sort(table(ux), decreasing=TRUE))[1], length(x))
+}
 
-missing_summary %>% arrange(desc(missing_percent))
+cmr_df <- cmr_df %>%
+  mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm=TRUE), .))) %>%
+  mutate(across(where(is.character), ~ifelse(is.na(.), impute_mode(.), .)))
 
-# Optional: visualize missingness
-visdat::vis_miss(cmr_df)
-```
+cat("Remaining NAs:", sum(is.na(cmr_df)), "\n")
 
-## Remove Low-Value Columns
-```{r remove_low}
-# Drop by_variable_label if you don't need it
-cmr_df <- cmr_df %>% select(-by_variable_label)
-
-# check again for missingness
-colSums(is.na(cmr_df))
-
-# Final glimpse
-glimpse(cmr_df)
 ```
 
 ## Handle Outliers
+
 ```{r Outliers}
-# Quick summary of value
-summary(cmr_df$value)
+num_cols <- cmr_df %>% select(where(is.numeric))
 
-# Identify potential outliers
-boxplot_stats <- boxplot.stats(cmr_df$value)
-outliers <- boxplot_stats$out
-outliers
+outlier_bounds <- function(x) {
+  qnt <- quantile(x, probs=c(0.25, 0.75), na.rm=TRUE)
+  iqr <- diff(qnt)
+  c(lower=qnt[1]-1.5*iqr, upper=qnt[2]+1.5*iqr)
+}
 
-# Keep only values less than, say, 100
-cmr_df_clean <- cmr_df %>% filter(value <= 100)
+bounds <- map(num_cols, outlier_bounds)
 
-# Verify removal
-summary(cmr_df_clean$value)
-nrow(cmr_df_clean)
+cmr_df <- cmr_df %>%
+  mutate(across(where(is.numeric),
+                ~pmin(pmax(., bounds[[cur_column()]]["lower"]),
+                      bounds[[cur_column()]]["upper"])))
+
+```
+
+## Handle Noise / Special Values
+
+```{r}
+cmr_df <- cmr_df %>%
+  mutate(across(where(is.numeric),
+                ~ifelse(. < 0, median(., na.rm = TRUE), .)))
+
+```
+
+## Final Validation
+
+```{r}
+cat("=== FINAL CLEANED DATA ===\n")
+cat("Dimensions:", dim(cmr_df), "\n")
+skim(cmr_df)
+
 ```
 
 ## Save the Cleaned Dataset
+
 ```{r save dataset}
 # Save cleaned dataset to processed folder
-write_csv(cmr_df_clean, here("data", "processed", "child-mortality-rates_cleaned.csv"))
+write_csv(cmr_df, here("data", "processed", "child-mortality-rates_cleaned.csv"))
 
 cat("Cleaned dataset saved successfully.\n")
-cat("Dimensions:", dim(cmr_df_clean), "\n")
+cat("Dimensions:", dim(cmr_df), "\n")
 
 ```
