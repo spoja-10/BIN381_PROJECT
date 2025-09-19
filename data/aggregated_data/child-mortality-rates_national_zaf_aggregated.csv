@@ -1,0 +1,32 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+1998,Child mortality (5 year periods),15,15,1
+1998,Child mortality rate,15,15,2
+1998,Early neonatal deaths,66,66,1
+1998,Infant mortality rate,43.5,43.5,2
+1998,Infant mortality rate (5 year periods),45,45,1
+1998,Neonatal mortality rate,19.5,19.5,2
+1998,Neonatal mortality rate (5 year periods),20,20,1
+1998,Number of pregnancies of 7+ months duration,5119,5119,1
+1998,Number of pregnancies of 7+ months duration (unweighted),5183,5183,1
+1998,Perinatal mortality rate (5 years),38,38,1
+1998,Postneonatal mortality (5 year periods),26,26,1
+1998,Postneonatal mortality rate,24.5,24.5,2
+1998,Stillbirths,127,127,1
+1998,Under-five mortality rate,58,58,2
+1998,Under-five mortality rate (5 year periods),59,59,1
+2016,Child mortality (5 year periods),7,7,1
+2016,Child mortality rate,7.5,7.5,2
+2016,Early neonatal deaths,66,66,1
+2016,Infant mortality rate,39,39,2
+2016,Infant mortality rate (5 year periods),35,35,1
+2016,Neonatal mortality rate,23,23,2
+2016,Neonatal mortality rate (5 year periods),21,21,1
+2016,Number of pregnancies of 7+ months duration,3577,3577,1
+2016,Number of pregnancies of 7+ months duration (unweighted),3563,3563,1
+2016,Perinatal mortality rate (5 years),29,29,1
+2016,Postneonatal mortality (5 year periods),14,14,1
+2016,Postneonatal mortality rate,16,16,2
+2016,Stillbirths,37,37,1
+2016,Under-five mortality rate,46.5,46.5,2
+2016,Under-five mortality rate (5 year periods),42,42,1
+NA,#indicator+name,NA,NA,1

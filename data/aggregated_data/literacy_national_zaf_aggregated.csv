@@ -1,0 +1,22 @@
+SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
+2016,Men for whom no card with required language was available,0.1,0.1,1
+2016,Men who are blind/visually impaired,0,0,1
+2016,Men who are literate,94.9,94.9,1
+2016,Men who can read a whole sentence,71.4,71.4,1
+2016,Men who can read part of a sentence,12.8,12.8,1
+2016,Men who cannot read at all,4.9,4.9,1
+2016,Men with secondary or higher education,10.8,10.8,1
+2016,Men's literacy: Total,100,100,1
+2016,Number of men,3202,3202,1
+2016,Number of men (unweighted),3179,3179,1
+2016,Number of women,8514,8514,1
+2016,Number of women (unweighted),11805,11805,1
+2016,Women for whom no card with required language was available,0.1,0.1,1
+2016,Women who are blind/visually impaired,0.1,0.1,1
+2016,Women who are literate,96.3,96.3,1
+2016,Women who can read a whole sentence,76.2,76.2,1
+2016,Women who can read part of a sentence,8.2,8.2,1
+2016,Women who cannot read at all,3.5,3.5,1
+2016,Women with secondary or higher education,11.8,11.8,1
+2016,Women's literacy: Total,100,100,1
+NA,#indicator+name,NA,NA,1
