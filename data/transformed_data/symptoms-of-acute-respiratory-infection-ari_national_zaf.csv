@@ -1,28 +1,28 @@
-Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
-#indicator+name,NA,NA,NA,#indicator+label
-Children with symptoms of ARI,21.9,1998,Total,Three years preceding the survey
-Children with symptoms of ARI,19.3,1998,Total,Five years preceding the survey
-Number of children born in the last five (or three) years,2912,1998,Total,Three years preceding the survey
-Number of children born in the last five (or three) years,4740,1998,Total,Five years preceding the survey
-Number of children born in the last five (or three) years (unweighted),2958,1998,Total,Three years preceding the survey
-Number of children born in the last five (or three) years (unweighted),4797,1998,Total,Five years preceding the survey
-Children with ARI for whom advice or treatment was sought,81.9,1998,Total,Three years preceding the survey
-Children with ARI for whom advice or treatment was sought,78.2,1998,Total,Five years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years,637,1998,Total,Three years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years,913,1998,Total,Five years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years (unweighted),607,1998,Total,Three years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years (unweighted),862,1998,Total,Five years preceding the survey
-Children with symptoms of ARI,3.4,2016,Total,Three years preceding the survey
-Children with symptoms of ARI,3.1,2016,Total,Five years preceding the survey
-Number of children born in the last five (or three) years,2025,2016,Total,Three years preceding the survey
-Number of children born in the last five (or three) years,3444,2016,Total,Five years preceding the survey
-Number of children born in the last five (or three) years (unweighted),2026,2016,Total,Three years preceding the survey
-Number of children born in the last five (or three) years (unweighted),3413,2016,Total,Five years preceding the survey
-Children with ARI for whom advice or treatment was sought,96.9,2016,Total,Three years preceding the survey
-Children with ARI for whom advice or treatment was sought,87.6,2016,Total,Five years preceding the survey
-Children with symptoms of ARI who received antibiotics,46.7,2016,Total,Three years preceding the survey
-Children with symptoms of ARI who received antibiotics,42,2016,Total,Five years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years,68,2016,Total,Three years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years,107,2016,Total,Five years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years (unweighted),59,2016,Total,Three years preceding the survey
-Number of children with symptoms of ARI born in the last five (or three) years (unweighted),94,2016,Total,Five years preceding the survey
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel,SurveyType,DenominatorWeighted,DenominatorUnweighted
+#indicator+name,NA,NA,NA,#indicator+label,NA,NA,NA
+Children with symptoms of ARI,21.9,1998,Total,Three years preceding the survey,DHS,2912,2958
+Children with symptoms of ARI,19.3,1998,Total,Five years preceding the survey,DHS,4740,4797
+Number of children born in the last five (or three) years,2912,1998,Total,Three years preceding the survey,DHS,NA,2958
+Number of children born in the last five (or three) years,4740,1998,Total,Five years preceding the survey,DHS,NA,4797
+Number of children born in the last five (or three) years (unweighted),2958,1998,Total,Three years preceding the survey,DHS,2912,NA
+Number of children born in the last five (or three) years (unweighted),4797,1998,Total,Five years preceding the survey,DHS,4740,NA
+Children with ARI for whom advice or treatment was sought,81.9,1998,Total,Three years preceding the survey,DHS,637,607
+Children with ARI for whom advice or treatment was sought,78.2,1998,Total,Five years preceding the survey,DHS,913,862
+Number of children with symptoms of ARI born in the last five (or three) years,637,1998,Total,Three years preceding the survey,DHS,NA,607
+Number of children with symptoms of ARI born in the last five (or three) years,913,1998,Total,Five years preceding the survey,DHS,NA,862
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),607,1998,Total,Three years preceding the survey,DHS,637,NA
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),862,1998,Total,Five years preceding the survey,DHS,913,NA
+Children with symptoms of ARI,3.4,2016,Total,Three years preceding the survey,DHS,2025,2026
+Children with symptoms of ARI,3.1,2016,Total,Five years preceding the survey,DHS,3444,3413
+Number of children born in the last five (or three) years,2025,2016,Total,Three years preceding the survey,DHS,NA,2026
+Number of children born in the last five (or three) years,3444,2016,Total,Five years preceding the survey,DHS,NA,3413
+Number of children born in the last five (or three) years (unweighted),2026,2016,Total,Three years preceding the survey,DHS,2025,NA
+Number of children born in the last five (or three) years (unweighted),3413,2016,Total,Five years preceding the survey,DHS,3444,NA
+Children with ARI for whom advice or treatment was sought,96.9,2016,Total,Three years preceding the survey,DHS,68,59
+Children with ARI for whom advice or treatment was sought,87.6,2016,Total,Five years preceding the survey,DHS,107,94
+Children with symptoms of ARI who received antibiotics,46.7,2016,Total,Three years preceding the survey,DHS,68,59
+Children with symptoms of ARI who received antibiotics,42,2016,Total,Five years preceding the survey,DHS,107,94
+Number of children with symptoms of ARI born in the last five (or three) years,68,2016,Total,Three years preceding the survey,DHS,NA,59
+Number of children with symptoms of ARI born in the last five (or three) years,107,2016,Total,Five years preceding the survey,DHS,NA,94
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),59,2016,Total,Three years preceding the survey,DHS,68,NA
+Number of children with symptoms of ARI born in the last five (or three) years (unweighted),94,2016,Total,Five years preceding the survey,DHS,107,NA

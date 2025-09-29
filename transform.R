@@ -12,8 +12,8 @@ transformed_folder <- "C:/Users/charl/OneDrive/Documents/BIN381_PROJECT/data/tra
 manual_drop_cols <- c(
   "DataId","ISO3","SurveyId","IndicatorId","IndicatorOrder","Precision", "DHS_CountryCode", "CountryName", "IndicatorType",
   "CharacteristicId","CharacteristicOrder","ByVariableId",
-  "SDRID","RegionId","CILow","CIHigh","LevelRank","SurveyType","SurveyYearLabel",
-  "DenominatorWeighted", "DenominatorUnweighted", "IsTotal", "IsPreferred", "CharacteristicLabel"
+  "SDRID","RegionId","CILow","CIHigh","LevelRank", "SurveyYearLabel",
+  "IsTotal", "IsPreferred", "CharacteristicLabel"
 )
 
 clean_output_dirs_first <- TRUE
@@ -67,4 +67,3 @@ process_file <- function(f) {
 # Run batch
 transformed_files <- map_chr(files, process_file)
 message("\nAll files processed. Transformed files saved in: ", transformed_folder)
-

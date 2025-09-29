@@ -6,7 +6,7 @@ SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
 1998,Number of sexually active young women,2343,2343,1
 1998,Number of sexually active young women (unweighted),2390,2390,1
 1998,Number of young women,4324,4324,1
-1998,Number of young women (unweighted),4459,4459,1
+1998,Number of young women (unweighted),4459,4459,2
 1998,Number of young women age 18-24,2955,2955,1
 1998,Number of young women age 18-24 (unweighted),2993,2993,1
 1998,Sex before the age of 15 [Women],8,8,1
@@ -65,11 +65,11 @@ SurveyYear,Indicator,mean_value,median_value,nummber_of_observations
 2016,Number of women with multiple partners in the 12 months preceding the survey,387,387,1
 2016,Number of women with multiple partners in the 12 months preceding the survey (unweighted),394,394,1
 2016,Number of young men,592.6666666666666,287,3
-2016,Number of young men (unweighted),619.6666666666666,308,3
+2016,Number of young men (unweighted),791.5,807.5,4
 2016,Number of young men age 18-24,848,848,1
 2016,Number of young men age 18-24 (unweighted),888,888,1
 2016,Number of young women,1183,575,3
-2016,Number of young women (unweighted),1406.3333333333333,1153,3
+2016,Number of young women (unweighted),1783,2033,4
 2016,Number of young women age 18-24,1984,1984,1
 2016,Number of young women age 18-24 (unweighted),1995,1995,1
 2016,Paid for sexual intercourse in the past 12 months,2.9,2.9,1

@@ -1,42 +1,42 @@
-Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
-#indicator+name,NA,NA,NA,#indicator+label
-Neonatal mortality rate (5 year periods),20,1998,Five year periods,NA
-Postneonatal mortality (5 year periods),26,1998,Five year periods,NA
-Infant mortality rate (5 year periods),45,1998,Five year periods,NA
-Child mortality (5 year periods),15,1998,Five year periods,NA
-Under-five mortality rate (5 year periods),59,1998,Five year periods,NA
-Neonatal mortality rate,20,1998,Total,Five years preceding the survey
-Neonatal mortality rate,19,1998,Total,Ten years preceding the survey
-Postneonatal mortality rate,26,1998,Total,Five years preceding the survey
-Postneonatal mortality rate,23,1998,Total,Ten years preceding the survey
-Infant mortality rate,45,1998,Total,Five years preceding the survey
-Infant mortality rate,42,1998,Total,Ten years preceding the survey
-Child mortality rate,15,1998,Total,Five years preceding the survey
-Child mortality rate,15,1998,Total,Ten years preceding the survey
-Under-five mortality rate,59,1998,Total,Five years preceding the survey
-Under-five mortality rate,57,1998,Total,Ten years preceding the survey
-Stillbirths,127,1998,Total 15-49,NA
-Early neonatal deaths,66,1998,Total 15-49,NA
-Perinatal mortality rate (5 years),38,1998,Total 15-49,NA
-Number of pregnancies of 7+ months duration,5119,1998,Total 15-49,NA
-Number of pregnancies of 7+ months duration (unweighted),5183,1998,Total 15-49,NA
-Neonatal mortality rate (5 year periods),21,2016,Five year periods,NA
-Postneonatal mortality (5 year periods),14,2016,Five year periods,NA
-Infant mortality rate (5 year periods),35,2016,Five year periods,NA
-Child mortality (5 year periods),7,2016,Five year periods,NA
-Under-five mortality rate (5 year periods),42,2016,Five year periods,NA
-Neonatal mortality rate,21,2016,Total,Five years preceding the survey
-Neonatal mortality rate,25,2016,Total,Ten years preceding the survey
-Postneonatal mortality rate,14,2016,Total,Five years preceding the survey
-Postneonatal mortality rate,18,2016,Total,Ten years preceding the survey
-Infant mortality rate,35,2016,Total,Five years preceding the survey
-Infant mortality rate,43,2016,Total,Ten years preceding the survey
-Child mortality rate,7,2016,Total,Five years preceding the survey
-Child mortality rate,8,2016,Total,Ten years preceding the survey
-Under-five mortality rate,42,2016,Total,Five years preceding the survey
-Under-five mortality rate,51,2016,Total,Ten years preceding the survey
-Stillbirths,37,2016,Total 15-49,NA
-Early neonatal deaths,66,2016,Total 15-49,NA
-Perinatal mortality rate (5 years),29,2016,Total 15-49,NA
-Number of pregnancies of 7+ months duration,3577,2016,Total 15-49,NA
-Number of pregnancies of 7+ months duration (unweighted),3563,2016,Total 15-49,NA
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel,SurveyType,DenominatorWeighted,DenominatorUnweighted
+#indicator+name,NA,NA,NA,#indicator+label,NA,NA,NA
+Neonatal mortality rate (5 year periods),20,1998,Five year periods,NA,DHS,NA,NA
+Postneonatal mortality (5 year periods),26,1998,Five year periods,NA,DHS,NA,NA
+Infant mortality rate (5 year periods),45,1998,Five year periods,NA,DHS,NA,NA
+Child mortality (5 year periods),15,1998,Five year periods,NA,DHS,NA,NA
+Under-five mortality rate (5 year periods),59,1998,Five year periods,NA,DHS,NA,NA
+Neonatal mortality rate,20,1998,Total,Five years preceding the survey,DHS,NA,NA
+Neonatal mortality rate,19,1998,Total,Ten years preceding the survey,DHS,NA,NA
+Postneonatal mortality rate,26,1998,Total,Five years preceding the survey,DHS,NA,NA
+Postneonatal mortality rate,23,1998,Total,Ten years preceding the survey,DHS,NA,NA
+Infant mortality rate,45,1998,Total,Five years preceding the survey,DHS,NA,NA
+Infant mortality rate,42,1998,Total,Ten years preceding the survey,DHS,NA,NA
+Child mortality rate,15,1998,Total,Five years preceding the survey,DHS,NA,NA
+Child mortality rate,15,1998,Total,Ten years preceding the survey,DHS,NA,NA
+Under-five mortality rate,59,1998,Total,Five years preceding the survey,DHS,NA,NA
+Under-five mortality rate,57,1998,Total,Ten years preceding the survey,DHS,NA,NA
+Stillbirths,127,1998,Total 15-49,NA,DHS,NA,NA
+Early neonatal deaths,66,1998,Total 15-49,NA,DHS,NA,NA
+Perinatal mortality rate (5 years),38,1998,Total 15-49,NA,DHS,5119,5183
+Number of pregnancies of 7+ months duration,5119,1998,Total 15-49,NA,DHS,NA,5183
+Number of pregnancies of 7+ months duration (unweighted),5183,1998,Total 15-49,NA,DHS,5119,NA
+Neonatal mortality rate (5 year periods),21,2016,Five year periods,NA,DHS,NA,NA
+Postneonatal mortality (5 year periods),14,2016,Five year periods,NA,DHS,NA,NA
+Infant mortality rate (5 year periods),35,2016,Five year periods,NA,DHS,NA,NA
+Child mortality (5 year periods),7,2016,Five year periods,NA,DHS,NA,NA
+Under-five mortality rate (5 year periods),42,2016,Five year periods,NA,DHS,NA,NA
+Neonatal mortality rate,21,2016,Total,Five years preceding the survey,DHS,NA,NA
+Neonatal mortality rate,25,2016,Total,Ten years preceding the survey,DHS,NA,NA
+Postneonatal mortality rate,14,2016,Total,Five years preceding the survey,DHS,NA,NA
+Postneonatal mortality rate,18,2016,Total,Ten years preceding the survey,DHS,NA,NA
+Infant mortality rate,35,2016,Total,Five years preceding the survey,DHS,NA,NA
+Infant mortality rate,43,2016,Total,Ten years preceding the survey,DHS,NA,NA
+Child mortality rate,7,2016,Total,Five years preceding the survey,DHS,NA,NA
+Child mortality rate,8,2016,Total,Ten years preceding the survey,DHS,NA,NA
+Under-five mortality rate,42,2016,Total,Five years preceding the survey,DHS,NA,NA
+Under-five mortality rate,51,2016,Total,Ten years preceding the survey,DHS,NA,NA
+Stillbirths,37,2016,Total 15-49,NA,DHS,NA,NA
+Early neonatal deaths,66,2016,Total 15-49,NA,DHS,NA,NA
+Perinatal mortality rate (5 years),29,2016,Total 15-49,NA,DHS,3577,3563
+Number of pregnancies of 7+ months duration,3577,2016,Total 15-49,NA,DHS,NA,3563
+Number of pregnancies of 7+ months duration (unweighted),3563,2016,Total 15-49,NA,DHS,3577,NA

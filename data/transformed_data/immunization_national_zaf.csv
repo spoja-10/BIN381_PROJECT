@@ -1,118 +1,118 @@
-Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel
-#indicator+name,NA,NA,NA,#indicator+label
-BCG vaccination received,96.8,1998,Source of vaccination information,12-23
-BCG vaccination received,94.9,1998,Source of vaccination information,24-35
-DPT 1 vaccination received,93.3,1998,Source of vaccination information,12-23
-DPT 1 vaccination received,93.1,1998,Source of vaccination information,24-35
-DPT 2 vaccination received,86.2,1998,Source of vaccination information,12-23
-DPT 2 vaccination received,82.4,1998,Source of vaccination information,24-35
-DPT 3 vaccination received,76.4,1998,Source of vaccination information,12-23
-DPT 3 vaccination received,73.8,1998,Source of vaccination information,24-35
-Polio 0 vaccination received,91.2,1998,Source of vaccination information,12-23
-Polio 0 vaccination received,87.7,1998,Source of vaccination information,24-35
-Polio 1 vaccination received,91,1998,Source of vaccination information,12-23
-Polio 1 vaccination received,89,1998,Source of vaccination information,24-35
-Polio 2 vaccination received,82.7,1998,Source of vaccination information,12-23
-Polio 2 vaccination received,80,1998,Source of vaccination information,24-35
-Polio 3 vaccination received,72.1,1998,Source of vaccination information,12-23
-Polio 3 vaccination received,68.3,1998,Source of vaccination information,24-35
-Measles vaccination received,82.2,1998,Source of vaccination information,12-23
-Measles vaccination received,87.6,1998,Source of vaccination information,24-35
-Fully vaccinated (8 basic antigens),63.4,1998,Source of vaccination information,12-23
-Fully vaccinated (8 basic antigens),62.6,1998,Source of vaccination information,24-35
-Received no vaccinations,2.2,1998,Source of vaccination information,12-23
-Received no vaccinations,3.9,1998,Source of vaccination information,24-35
-Number of children 12-23 months,973,1998,Source of vaccination information,12-23
-Number of children 12-23 months,933,1998,Source of vaccination information,24-35
-Number of children 12-23 months (unweighted),971,1998,Source of vaccination information,12-23
-Number of children 12-23 months (unweighted),951,1998,Source of vaccination information,24-35
-BCG vaccination received,96.8,1998,Total,NA
-DPT 1 vaccination received,93.3,1998,Total,NA
-DPT 2 vaccination received,86.2,1998,Total,NA
-DPT 3 vaccination received,76.4,1998,Total,NA
-Polio 0 vaccination received,91.2,1998,Total,NA
-Polio 1 vaccination received,91,1998,Total,NA
-Polio 2 vaccination received,82.7,1998,Total,NA
-Polio 3 vaccination received,72.1,1998,Total,NA
-Measles vaccination received,82.2,1998,Total,NA
-Fully vaccinated (8 basic antigens),63.4,1998,Total,NA
-Received no vaccinations,2.2,1998,Total,NA
-Number of children 12-23 months,973,1998,Total,NA
-Number of children 12-23 months (unweighted),971,1998,Total,NA
-BCG vaccination received in first year,94.1,1998,Total,NA
-DPT 1 vaccination received in first year,91.1,1998,Total,NA
-DPT 2 vaccination received in first year,80.4,1998,Total,NA
-DPT 3 vaccination received in first year,70.5,1998,Total,NA
-Polio 0 vaccination received in first year,84.7,1998,Total,NA
-Polio 1 vaccination received in first year,87.3,1998,Total,NA
-Polio 2 vaccination received in first year,78,1998,Total,NA
-Polio 3 vaccination received in first year,62.7,1998,Total,NA
-Measles vaccination received in first year,40.2,1998,Total,NA
-Fully vaccinated (8 basic antigens),29.9,1998,Total,NA
-Received no vaccinations in first year,15.2,1998,Total,NA
-Percentage showing a vaccination card,61.8,1998,Total,NA
-Number of children one to four years of age,3734,1998,Total,NA
-Number of children one to four years of age (unweighted),3761,1998,Total,NA
-BCG vaccination received,92.5,2016,Source of vaccination information,12-23
-BCG vaccination received,91.5,2016,Source of vaccination information,24-35
-DPT 1 vaccination received,91.2,2016,Source of vaccination information,12-23
-DPT 1 vaccination received,87.5,2016,Source of vaccination information,24-35
-DPT 2 vaccination received,75.3,2016,Source of vaccination information,12-23
-DPT 2 vaccination received,71,2016,Source of vaccination information,24-35
-DPT 3 vaccination received,64.9,2016,Source of vaccination information,12-23
-DPT 3 vaccination received,63.3,2016,Source of vaccination information,24-35
-Polio 0 vaccination received,92.3,2016,Source of vaccination information,12-23
-Polio 0 vaccination received,88.3,2016,Source of vaccination information,24-35
-Polio 1 vaccination received,78.1,2016,Source of vaccination information,12-23
-Polio 1 vaccination received,74.3,2016,Source of vaccination information,24-35
-Measles vaccination received,86.1,2016,Source of vaccination information,12-23
-Measles vaccination received,84.4,2016,Source of vaccination information,24-35
-Hepatitis 1 vaccination received,90.2,2016,Source of vaccination information,12-23
-Hepatitis 1 vaccination received,87,2016,Source of vaccination information,24-35
-Hepatitis 2 vaccination received,73.4,2016,Source of vaccination information,12-23
-Hepatitis 2 vaccination received,71.6,2016,Source of vaccination information,24-35
-Hepatitis 3 vaccination received,65,2016,Source of vaccination information,12-23
-Hepatitis 3 vaccination received,65.8,2016,Source of vaccination information,24-35
-Haemophilus influenza type b 1 vaccination received,91.2,2016,Source of vaccination information,12-23
-Haemophilus influenza type b 1 vaccination received,87.5,2016,Source of vaccination information,24-35
-Haemophilus influenza type b 2 vaccination received,75.3,2016,Source of vaccination information,12-23
-Haemophilus influenza type b 2 vaccination received,71,2016,Source of vaccination information,24-35
-Haemophilus influenza type b 3 vaccination received,64.9,2016,Source of vaccination information,12-23
-Haemophilus influenza type b 3 vaccination received,63.3,2016,Source of vaccination information,24-35
-Fully vaccinated (8 basic antigens),61.2,2016,Source of vaccination information,12-23
-Fully vaccinated (8 basic antigens),61.1,2016,Source of vaccination information,24-35
-Received no vaccinations,5.3,2016,Source of vaccination information,12-23
-Received no vaccinations,7.8,2016,Source of vaccination information,24-35
-Number of children 12-23 months,677,2016,Source of vaccination information,12-23
-Number of children 12-23 months,660,2016,Source of vaccination information,24-35
-Number of children 12-23 months (unweighted),670,2016,Source of vaccination information,12-23
-Number of children 12-23 months (unweighted),676,2016,Source of vaccination information,24-35
-BCG vaccination received,92.5,2016,Total,NA
-DPT 1 vaccination received,91.2,2016,Total,NA
-DPT 2 vaccination received,75.3,2016,Total,NA
-DPT 3 vaccination received,64.9,2016,Total,NA
-Polio 0 vaccination received,92.3,2016,Total,NA
-Polio 1 vaccination received,78.1,2016,Total,NA
-Measles vaccination received,86.1,2016,Total,NA
-Hepatitis 1 vaccination received,90.2,2016,Total,NA
-Hepatitis 2 vaccination received,73.4,2016,Total,NA
-Hepatitis 3 vaccination received,65,2016,Total,NA
-Haemophilus influenza type b 1 vaccination received,91.2,2016,Total,NA
-Haemophilus influenza type b 2 vaccination received,75.3,2016,Total,NA
-Haemophilus influenza type b 3 vaccination received,64.9,2016,Total,NA
-Fully vaccinated (8 basic antigens),61.2,2016,Total,NA
-Received no vaccinations,5.3,2016,Total,NA
-Number of children 12-23 months,677,2016,Total,NA
-Number of children 12-23 months (unweighted),670,2016,Total,NA
-BCG vaccination received in first year,91.4,2016,Total,NA
-DPT 1 vaccination received in first year,88.5,2016,Total,NA
-DPT 2 vaccination received in first year,72.7,2016,Total,NA
-DPT 3 vaccination received in first year,63.3,2016,Total,NA
-Polio 0 vaccination received in first year,89.9,2016,Total,NA
-Polio 1 vaccination received in first year,75.9,2016,Total,NA
-Measles vaccination received in first year,79.7,2016,Total,NA
-Fully vaccinated (8 basic antigens),56.7,2016,Total,NA
-Received no vaccinations in first year,8.9,2016,Total,NA
-Percentage showing a vaccination card,63.7,2016,Total,NA
-Number of children one to four years of age,1337,2016,Total,NA
-Number of children one to four years of age (unweighted),1346,2016,Total,NA
+Indicator,Value,SurveyYear,CharacteristicCategory,ByVariableLabel,SurveyType,DenominatorWeighted,DenominatorUnweighted
+#indicator+name,NA,NA,NA,#indicator+label,NA,NA,NA
+BCG vaccination received,96.8,1998,Source of vaccination information,12-23,DHS,973,971
+BCG vaccination received,94.9,1998,Source of vaccination information,24-35,DHS,933,951
+DPT 1 vaccination received,93.3,1998,Source of vaccination information,12-23,DHS,973,971
+DPT 1 vaccination received,93.1,1998,Source of vaccination information,24-35,DHS,933,951
+DPT 2 vaccination received,86.2,1998,Source of vaccination information,12-23,DHS,973,971
+DPT 2 vaccination received,82.4,1998,Source of vaccination information,24-35,DHS,933,951
+DPT 3 vaccination received,76.4,1998,Source of vaccination information,12-23,DHS,973,971
+DPT 3 vaccination received,73.8,1998,Source of vaccination information,24-35,DHS,933,951
+Polio 0 vaccination received,91.2,1998,Source of vaccination information,12-23,DHS,973,971
+Polio 0 vaccination received,87.7,1998,Source of vaccination information,24-35,DHS,933,951
+Polio 1 vaccination received,91,1998,Source of vaccination information,12-23,DHS,973,971
+Polio 1 vaccination received,89,1998,Source of vaccination information,24-35,DHS,933,951
+Polio 2 vaccination received,82.7,1998,Source of vaccination information,12-23,DHS,973,971
+Polio 2 vaccination received,80,1998,Source of vaccination information,24-35,DHS,933,951
+Polio 3 vaccination received,72.1,1998,Source of vaccination information,12-23,DHS,973,971
+Polio 3 vaccination received,68.3,1998,Source of vaccination information,24-35,DHS,933,951
+Measles vaccination received,82.2,1998,Source of vaccination information,12-23,DHS,973,971
+Measles vaccination received,87.6,1998,Source of vaccination information,24-35,DHS,933,951
+Fully vaccinated (8 basic antigens),63.4,1998,Source of vaccination information,12-23,DHS,973,971
+Fully vaccinated (8 basic antigens),62.6,1998,Source of vaccination information,24-35,DHS,933,951
+Received no vaccinations,2.2,1998,Source of vaccination information,12-23,DHS,973,971
+Received no vaccinations,3.9,1998,Source of vaccination information,24-35,DHS,933,951
+Number of children 12-23 months,973,1998,Source of vaccination information,12-23,DHS,NA,971
+Number of children 12-23 months,933,1998,Source of vaccination information,24-35,DHS,NA,951
+Number of children 12-23 months (unweighted),971,1998,Source of vaccination information,12-23,DHS,973,NA
+Number of children 12-23 months (unweighted),951,1998,Source of vaccination information,24-35,DHS,933,NA
+BCG vaccination received,96.8,1998,Total,NA,DHS,973,971
+DPT 1 vaccination received,93.3,1998,Total,NA,DHS,973,971
+DPT 2 vaccination received,86.2,1998,Total,NA,DHS,973,971
+DPT 3 vaccination received,76.4,1998,Total,NA,DHS,973,971
+Polio 0 vaccination received,91.2,1998,Total,NA,DHS,973,971
+Polio 1 vaccination received,91,1998,Total,NA,DHS,973,971
+Polio 2 vaccination received,82.7,1998,Total,NA,DHS,973,971
+Polio 3 vaccination received,72.1,1998,Total,NA,DHS,973,971
+Measles vaccination received,82.2,1998,Total,NA,DHS,973,971
+Fully vaccinated (8 basic antigens),63.4,1998,Total,NA,DHS,973,971
+Received no vaccinations,2.2,1998,Total,NA,DHS,973,971
+Number of children 12-23 months,973,1998,Total,NA,DHS,NA,971
+Number of children 12-23 months (unweighted),971,1998,Total,NA,DHS,973,NA
+BCG vaccination received in first year,94.1,1998,Total,NA,DHS,3734,3761
+DPT 1 vaccination received in first year,91.1,1998,Total,NA,DHS,3734,3761
+DPT 2 vaccination received in first year,80.4,1998,Total,NA,DHS,3734,3761
+DPT 3 vaccination received in first year,70.5,1998,Total,NA,DHS,3734,3761
+Polio 0 vaccination received in first year,84.7,1998,Total,NA,DHS,3734,3761
+Polio 1 vaccination received in first year,87.3,1998,Total,NA,DHS,3734,3761
+Polio 2 vaccination received in first year,78,1998,Total,NA,DHS,3734,3761
+Polio 3 vaccination received in first year,62.7,1998,Total,NA,DHS,3734,3761
+Measles vaccination received in first year,40.2,1998,Total,NA,DHS,3734,3761
+Fully vaccinated (8 basic antigens),29.9,1998,Total,NA,DHS,3734,3761
+Received no vaccinations in first year,15.2,1998,Total,NA,DHS,3734,3761
+Percentage showing a vaccination card,61.8,1998,Total,NA,DHS,3734,3761
+Number of children one to four years of age,3734,1998,Total,NA,DHS,NA,3761
+Number of children one to four years of age (unweighted),3761,1998,Total,NA,DHS,3734,NA
+BCG vaccination received,92.5,2016,Source of vaccination information,12-23,DHS,677,670
+BCG vaccination received,91.5,2016,Source of vaccination information,24-35,DHS,660,676
+DPT 1 vaccination received,91.2,2016,Source of vaccination information,12-23,DHS,677,670
+DPT 1 vaccination received,87.5,2016,Source of vaccination information,24-35,DHS,660,676
+DPT 2 vaccination received,75.3,2016,Source of vaccination information,12-23,DHS,677,670
+DPT 2 vaccination received,71,2016,Source of vaccination information,24-35,DHS,660,676
+DPT 3 vaccination received,64.9,2016,Source of vaccination information,12-23,DHS,677,670
+DPT 3 vaccination received,63.3,2016,Source of vaccination information,24-35,DHS,660,676
+Polio 0 vaccination received,92.3,2016,Source of vaccination information,12-23,DHS,677,670
+Polio 0 vaccination received,88.3,2016,Source of vaccination information,24-35,DHS,660,676
+Polio 1 vaccination received,78.1,2016,Source of vaccination information,12-23,DHS,677,670
+Polio 1 vaccination received,74.3,2016,Source of vaccination information,24-35,DHS,660,676
+Measles vaccination received,86.1,2016,Source of vaccination information,12-23,DHS,677,670
+Measles vaccination received,84.4,2016,Source of vaccination information,24-35,DHS,660,676
+Hepatitis 1 vaccination received,90.2,2016,Source of vaccination information,12-23,DHS,677,670
+Hepatitis 1 vaccination received,87,2016,Source of vaccination information,24-35,DHS,660,676
+Hepatitis 2 vaccination received,73.4,2016,Source of vaccination information,12-23,DHS,677,670
+Hepatitis 2 vaccination received,71.6,2016,Source of vaccination information,24-35,DHS,660,676
+Hepatitis 3 vaccination received,65,2016,Source of vaccination information,12-23,DHS,677,670
+Hepatitis 3 vaccination received,65.8,2016,Source of vaccination information,24-35,DHS,660,676
+Haemophilus influenza type b 1 vaccination received,91.2,2016,Source of vaccination information,12-23,DHS,677,670
+Haemophilus influenza type b 1 vaccination received,87.5,2016,Source of vaccination information,24-35,DHS,660,676
+Haemophilus influenza type b 2 vaccination received,75.3,2016,Source of vaccination information,12-23,DHS,677,670
+Haemophilus influenza type b 2 vaccination received,71,2016,Source of vaccination information,24-35,DHS,660,676
+Haemophilus influenza type b 3 vaccination received,64.9,2016,Source of vaccination information,12-23,DHS,677,670
+Haemophilus influenza type b 3 vaccination received,63.3,2016,Source of vaccination information,24-35,DHS,660,676
+Fully vaccinated (8 basic antigens),61.2,2016,Source of vaccination information,12-23,DHS,677,670
+Fully vaccinated (8 basic antigens),61.1,2016,Source of vaccination information,24-35,DHS,660,676
+Received no vaccinations,5.3,2016,Source of vaccination information,12-23,DHS,677,670
+Received no vaccinations,7.8,2016,Source of vaccination information,24-35,DHS,660,676
+Number of children 12-23 months,677,2016,Source of vaccination information,12-23,DHS,NA,670
+Number of children 12-23 months,660,2016,Source of vaccination information,24-35,DHS,NA,676
+Number of children 12-23 months (unweighted),670,2016,Source of vaccination information,12-23,DHS,677,NA
+Number of children 12-23 months (unweighted),676,2016,Source of vaccination information,24-35,DHS,660,NA
+BCG vaccination received,92.5,2016,Total,NA,DHS,677,670
+DPT 1 vaccination received,91.2,2016,Total,NA,DHS,677,670
+DPT 2 vaccination received,75.3,2016,Total,NA,DHS,677,670
+DPT 3 vaccination received,64.9,2016,Total,NA,DHS,677,670
+Polio 0 vaccination received,92.3,2016,Total,NA,DHS,677,670
+Polio 1 vaccination received,78.1,2016,Total,NA,DHS,677,670
+Measles vaccination received,86.1,2016,Total,NA,DHS,677,670
+Hepatitis 1 vaccination received,90.2,2016,Total,NA,DHS,677,670
+Hepatitis 2 vaccination received,73.4,2016,Total,NA,DHS,677,670
+Hepatitis 3 vaccination received,65,2016,Total,NA,DHS,677,670
+Haemophilus influenza type b 1 vaccination received,91.2,2016,Total,NA,DHS,677,670
+Haemophilus influenza type b 2 vaccination received,75.3,2016,Total,NA,DHS,677,670
+Haemophilus influenza type b 3 vaccination received,64.9,2016,Total,NA,DHS,677,670
+Fully vaccinated (8 basic antigens),61.2,2016,Total,NA,DHS,677,670
+Received no vaccinations,5.3,2016,Total,NA,DHS,677,670
+Number of children 12-23 months,677,2016,Total,NA,DHS,NA,670
+Number of children 12-23 months (unweighted),670,2016,Total,NA,DHS,677,NA
+BCG vaccination received in first year,91.4,2016,Total,NA,DHS,1337,1346
+DPT 1 vaccination received in first year,88.5,2016,Total,NA,DHS,1337,1346
+DPT 2 vaccination received in first year,72.7,2016,Total,NA,DHS,1337,1346
+DPT 3 vaccination received in first year,63.3,2016,Total,NA,DHS,1337,1346
+Polio 0 vaccination received in first year,89.9,2016,Total,NA,DHS,1337,1346
+Polio 1 vaccination received in first year,75.9,2016,Total,NA,DHS,1337,1346
+Measles vaccination received in first year,79.7,2016,Total,NA,DHS,1337,1346
+Fully vaccinated (8 basic antigens),56.7,2016,Total,NA,DHS,1337,1346
+Received no vaccinations in first year,8.9,2016,Total,NA,DHS,1337,1346
+Percentage showing a vaccination card,63.7,2016,Total,NA,DHS,1337,1346
+Number of children one to four years of age,1337,2016,Total,NA,DHS,NA,1346
+Number of children one to four years of age (unweighted),1346,2016,Total,NA,DHS,1337,NA
